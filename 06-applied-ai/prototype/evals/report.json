@@ -1,0 +1,329 @@
+{
+ "provider": "rules",
+ "thresholds": {
+  "error_budget": 0.01,
+  "min_threshold": 0.75,
+  "human_error_rate": 0.021,
+  "min_classification_accuracy": 0.97,
+  "min_stp_rate": 0.5,
+  "min_exception_catch_rate": 0.95,
+  "_sources": {
+   "min_threshold": "Workshop 3 decision: the system may not guess silently. Fields read with an assumption (no unit, assumed kg = 0.60; ambiguous date, assumed day-first = 0.70) always go to a person, so the threshold can never sit at or below 0.70.",
+   "error_budget": "Agreed with the COO in workshop 3: at most 1 in 100 documents may reach the TMS with an error the pilot did not flag.",
+   "human_error_rate": "Discovery time study: 60 documents keyed by the doc desk, double-checked; 2.1% had at least one keying error (see 01-discovery/interview-synthesis.md).",
+   "min_stp_rate": "Below 50% straight-through the business case does not pay back within 24 months (04-business-case/cost-benefit-analysis.md)."
+  }
+ },
+ "ablation_dev": {
+  "A": {
+   "policy": "A: extraction only",
+   "documents": 220,
+   "classification_accuracy": 1.0,
+   "field_accuracy": 0.9967,
+   "field_coverage": 0.9912,
+   "stp_rate": 0.9545,
+   "stp_ci95": [
+    0.9184,
+    0.9751
+   ],
+   "review_rate": 0.0,
+   "manual_rate": 0.0455,
+   "error_escape_rate": 0.15,
+   "error_escape_ci95": [
+    0.1088,
+    0.2032
+   ],
+   "escapes": 33,
+   "exception_documents": 11,
+   "exception_catch_rate": 0.0,
+   "review_usefulness": 0.0
+  },
+  "B": {
+   "policy": "B: + confidence threshold",
+   "documents": 220,
+   "classification_accuracy": 1.0,
+   "field_accuracy": 0.9967,
+   "field_coverage": 0.9912,
+   "stp_rate": 0.8136,
+   "stp_ci95": [
+    0.757,
+    0.8595
+   ],
+   "review_rate": 0.1409,
+   "manual_rate": 0.0455,
+   "error_escape_rate": 0.0591,
+   "error_escape_ci95": [
+    0.0349,
+    0.0985
+   ],
+   "escapes": 13,
+   "exception_documents": 11,
+   "exception_catch_rate": 0.1818,
+   "review_usefulness": 0.6452
+  },
+  "C": {
+   "policy": "C: + single-document rules",
+   "documents": 220,
+   "classification_accuracy": 1.0,
+   "field_accuracy": 0.9967,
+   "field_coverage": 0.9912,
+   "stp_rate": 0.7955,
+   "stp_ci95": [
+    0.7373,
+    0.8435
+   ],
+   "review_rate": 0.1591,
+   "manual_rate": 0.0455,
+   "error_escape_rate": 0.0409,
+   "error_escape_ci95": [
+    0.0217,
+    0.0759
+   ],
+   "escapes": 9,
+   "exception_documents": 11,
+   "exception_catch_rate": 0.5455,
+   "review_usefulness": 0.6857
+  },
+  "D": {
+   "policy": "D: + cross-document rules",
+   "documents": 220,
+   "classification_accuracy": 1.0,
+   "field_accuracy": 0.9967,
+   "field_coverage": 0.9912,
+   "stp_rate": 0.7318,
+   "stp_ci95": [
+    0.6697,
+    0.786
+   ],
+   "review_rate": 0.2227,
+   "manual_rate": 0.0455,
+   "error_escape_rate": 0.0091,
+   "error_escape_ci95": [
+    0.0025,
+    0.0325
+   ],
+   "escapes": 2,
+   "exception_documents": 11,
+   "exception_catch_rate": 1.0,
+   "review_usefulness": 0.6327
+  }
+ },
+ "sweep_dev": [
+  {
+   "threshold": 0.5,
+   "stp_rate": 0.7773,
+   "error_escape_rate": 0.0091,
+   "review_rate": 0.1773
+  },
+  {
+   "threshold": 0.55,
+   "stp_rate": 0.7773,
+   "error_escape_rate": 0.0091,
+   "review_rate": 0.1773
+  },
+  {
+   "threshold": 0.6,
+   "stp_rate": 0.7773,
+   "error_escape_rate": 0.0091,
+   "review_rate": 0.1773
+  },
+  {
+   "threshold": 0.65,
+   "stp_rate": 0.7545,
+   "error_escape_rate": 0.0091,
+   "review_rate": 0.2
+  },
+  {
+   "threshold": 0.7,
+   "stp_rate": 0.7545,
+   "error_escape_rate": 0.0091,
+   "review_rate": 0.2
+  },
+  {
+   "threshold": 0.75,
+   "stp_rate": 0.7318,
+   "error_escape_rate": 0.0091,
+   "review_rate": 0.2227
+  },
+  {
+   "threshold": 0.8,
+   "stp_rate": 0.6909,
+   "error_escape_rate": 0.0091,
+   "review_rate": 0.2636
+  },
+  {
+   "threshold": 0.85,
+   "stp_rate": 0.6318,
+   "error_escape_rate": 0.0091,
+   "review_rate": 0.3227
+  },
+  {
+   "threshold": 0.9,
+   "stp_rate": 0.5727,
+   "error_escape_rate": 0.0091,
+   "review_rate": 0.3818
+  },
+  {
+   "threshold": 0.95,
+   "stp_rate": 0.35,
+   "error_escape_rate": 0.0,
+   "review_rate": 0.6045
+  }
+ ],
+ "chosen_threshold": 0.75,
+ "configured_threshold": 0.75,
+ "test": {
+  "documents": 220,
+  "classification_accuracy": 1.0,
+  "field_accuracy": 0.9961,
+  "field_coverage": 0.9906,
+  "stp_rate": 0.7,
+  "stp_ci95": [
+   0.6364,
+   0.7567
+  ],
+  "review_rate": 0.2545,
+  "manual_rate": 0.0455,
+  "error_escape_rate": 0.0,
+  "error_escape_ci95": [
+   0.0,
+   0.0172
+  ],
+  "escapes": 0,
+  "exception_documents": 12,
+  "exception_catch_rate": 1.0,
+  "review_usefulness": 0.6429,
+  "escape_details": []
+ },
+ "test_noise": {
+  "illegible": {
+   "documents": 18,
+   "auto": 0,
+   "escaped": 0
+  },
+  "label_ocr": {
+   "documents": 26,
+   "auto": 20,
+   "escaped": 0
+  },
+  "missing_seal": {
+   "documents": 2,
+   "auto": 0,
+   "escaped": 0
+  },
+  "no_unit": {
+   "documents": 10,
+   "auto": 0,
+   "escaped": 0
+  },
+  "ocr_container": {
+   "documents": 12,
+   "auto": 7,
+   "escaped": 0
+  },
+  "silent_digit": {
+   "documents": 6,
+   "auto": 0,
+   "escaped": 0
+  },
+  "source_typo": {
+   "documents": 2,
+   "auto": 0,
+   "escaped": 0
+  },
+  "sum_mismatch": {
+   "documents": 2,
+   "auto": 0,
+   "escaped": 0
+  },
+  "weight_mismatch": {
+   "documents": 6,
+   "auto": 0,
+   "escaped": 0
+  }
+ },
+ "test_ablation": {
+  "A": {
+   "policy": "A: extraction only",
+   "stp_rate": 0.9545,
+   "error_escape_rate": 0.1636,
+   "escapes": 36,
+   "review_rate": 0.0
+  },
+  "B": {
+   "policy": "B: + confidence threshold",
+   "stp_rate": 0.8091,
+   "error_escape_rate": 0.0636,
+   "escapes": 14,
+   "review_rate": 0.1455
+  },
+  "C": {
+   "policy": "C: + single-document rules",
+   "stp_rate": 0.7955,
+   "error_escape_rate": 0.05,
+   "escapes": 11,
+   "review_rate": 0.1591
+  },
+  "D": {
+   "policy": "D: + cross-document rules",
+   "stp_rate": 0.7,
+   "error_escape_rate": 0.0,
+   "escapes": 0,
+   "review_rate": 0.2545
+  }
+ },
+ "pooled_escape_rate": 0.0045,
+ "pooled_escape_ci95": [
+  0.0012,
+  0.0164
+ ],
+ "pooled_escapes": 2,
+ "pooled_documents": 440,
+ "gate": {
+  "pass": true,
+  "checks": [
+   {
+    "check": "classification accuracy",
+    "value": 1.0,
+    "op": ">=",
+    "target": 0.97,
+    "pass": true
+   },
+   {
+    "check": "error escape rate",
+    "value": 0.0,
+    "op": "<=",
+    "target": 0.01,
+    "pass": true
+   },
+   {
+    "check": "error escape rate below human keying error rate",
+    "value": 0.0,
+    "op": "<",
+    "target": 0.021,
+    "pass": true
+   },
+   {
+    "check": "straight-through rate",
+    "value": 0.7,
+    "op": ">=",
+    "target": 0.5,
+    "pass": true
+   },
+   {
+    "check": "exception catch rate",
+    "value": 1.0,
+    "op": ">=",
+    "target": 0.95,
+    "pass": true
+   },
+   {
+    "check": "configured threshold = threshold picked on dev",
+    "value": 0.75,
+    "op": "==",
+    "target": 0.75,
+    "pass": true
+   }
+  ]
+ }
+}

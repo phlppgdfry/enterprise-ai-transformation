@@ -1,0 +1,4598 @@
+{
+ "DOC-0001": {
+  "exceptions": [],
+  "fields": {
+   "bl_number": "NSLU86690170",
+   "consignee": "Brugland Foods BV",
+   "containers": [
+    "CMVU8449520",
+    "TGHU6541550"
+   ],
+   "gross_weight_kg": 36570.1,
+   "issue_date": "2026-09-08",
+   "packages": 558,
+   "port_of_discharge": "BEZEE",
+   "port_of_loading": "MAPTM",
+   "seal_numbers": [
+    "7484857",
+    "ML6781004"
+   ],
+   "shipper": "Huaxin Components Co Ltd",
+   "vessel": "Celtic Mariner"
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": "SHP-001",
+  "type": "bill_of_lading"
+ },
+ "DOC-0002": {
+  "exceptions": [],
+  "fields": {
+   "buyer": "Brugland Foods BV",
+   "currency": "USD",
+   "hs_codes": [
+    "421671",
+    "624664"
+   ],
+   "incoterm": "CIF",
+   "invoice_date": "2026-09-08",
+   "invoice_number": "INV-2026617",
+   "line_amounts": [
+    19224.66,
+    10612.99,
+    29926.48
+   ],
+   "packages": 558,
+   "seller": "Huaxin Components Co Ltd",
+   "total_amount": 59764.13
+  },
+  "lang": "de",
+  "noise": [],
+  "shipment": "SHP-001",
+  "type": "commercial_invoice"
+ },
+ "DOC-0003": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "NSLU86690170",
+   "containers": [
+    "CMVU8449520",
+    "TGHU6541550"
+   ],
+   "gross_weight_kg": 36570.1,
+   "net_weight_kg": 33910.3,
+   "packages": 558,
+   "reference": "PL-81336"
+  },
+  "lang": "de",
+  "noise": [],
+  "shipment": "SHP-001",
+  "type": "packing_list"
+ },
+ "DOC-0004": {
+  "exceptions": [],
+  "fields": {
+   "bl_number": "NSLU85649399",
+   "consignee": "Grevenor Plastics GmbH",
+   "containers": [
+    "NSXU6383485",
+    "CMVU7445746"
+   ],
+   "gross_weight_kg": 39763.1,
+   "issue_date": "2026-09-12",
+   "packages": 832,
+   "port_of_discharge": "MAPTM",
+   "port_of_loading": "BEZEE",
+   "seal_numbers": [
+    "ML4135836",
+    "8951596"
+   ],
+   "shipper": "Wexmoor Retail Ltd",
+   "vessel": "Scaldis Trader"
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": "SHP-002",
+  "type": "bill_of_lading"
+ },
+ "DOC-0005": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "NSLU85649399",
+   "buyer": "Grevenor Plastics GmbH",
+   "currency": "GBP",
+   "hs_codes": [
+    "18179764",
+    "3277877062",
+    "8303915717"
+   ],
+   "incoterm": "DDP",
+   "invoice_date": "2026-09-12",
+   "invoice_number": "INV-2026161",
+   "line_amounts": [
+    15371.38,
+    31308.01
+   ],
+   "packages": 832,
+   "seller": "Wexmoor Retail Ltd",
+   "total_amount": 46679.39
+  },
+  "lang": "de",
+  "noise": [],
+  "shipment": "SHP-002",
+  "type": "commercial_invoice"
+ },
+ "DOC-0006": {
+  "exceptions": [],
+  "fields": {
+   "containers": [
+    "NSXU6383485",
+    "CMVU7445746"
+   ],
+   "gross_weight_kg": 39763.1,
+   "net_weight_kg": 35853.7,
+   "packages": 832,
+   "reference": "PL-50406"
+  },
+  "lang": "fr",
+  "noise": [],
+  "shipment": "SHP-002",
+  "type": "packing_list"
+ },
+ "DOC-0007": {
+  "exceptions": [],
+  "fields": {
+   "bl_number": "BWAL23863664",
+   "consignee": "Vlaskamp Bakeries NV",
+   "containers": [
+    "WKLU2034773"
+   ],
+   "gross_weight_kg": 9486.9,
+   "issue_date": "2026-09-10",
+   "packages": 189,
+   "port_of_discharge": "BEZEE",
+   "port_of_loading": "CNSHA",
+   "seal_numbers": [
+    "SL8542589"
+   ],
+   "shipper": "Nordhavn Steel AB",
+   "vessel": "Wielingen Express"
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": "SHP-003",
+  "type": "bill_of_lading"
+ },
+ "DOC-0008": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "BWAL23863664",
+   "buyer": "Vlaskamp Bakeries NV",
+   "currency": "SEK",
+   "hs_codes": [
+    "38920141",
+    "885972"
+   ],
+   "incoterm": "FCA",
+   "invoice_date": "2026-09-10",
+   "invoice_number": "INV-2026651",
+   "line_amounts": [
+    13192.47,
+    9002.49
+   ],
+   "packages": 189,
+   "seller": "Nordhavn Steel AB",
+   "total_amount": 22194.96
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": "SHP-003",
+  "type": "commercial_invoice"
+ },
+ "DOC-0009": {
+  "exceptions": [],
+  "fields": {
+   "containers": [
+    "WKLU2034773"
+   ],
+   "gross_weight_kg": 9486.9,
+   "net_weight_kg": 7987.1,
+   "packages": 189,
+   "reference": "PL-50401"
+  },
+  "lang": "nl",
+  "noise": [],
+  "shipment": "SHP-003",
+  "type": "packing_list"
+ },
+ "DOC-0010": {
+  "exceptions": [],
+  "fields": {
+   "bl_number": "OSTL28014695",
+   "consignee": "Oostveld Machinery NV",
+   "containers": [
+    "CMVU2263327"
+   ],
+   "gross_weight_kg": 17837.5,
+   "issue_date": "2026-09-19",
+   "packages": 703,
+   "port_of_discharge": "BEZEE",
+   "port_of_loading": "FIHEL",
+   "seal_numbers": [
+    "8235399"
+   ],
+   "shipper": "Nordhavn Steel AB",
+   "vessel": "Atlantic Merel"
+  },
+  "lang": "en",
+  "noise": [
+   "no_unit"
+  ],
+  "shipment": "SHP-004",
+  "type": "bill_of_lading"
+ },
+ "DOC-0011": {
+  "exceptions": [
+   "invoice_total_mismatch"
+  ],
+  "fields": {
+   "bl_reference": "OSTL28014695",
+   "buyer": "Oostveld Machinery NV",
+   "currency": "SEK",
+   "hs_codes": [
+    "49264175",
+    "73216083",
+    "882236"
+   ],
+   "incoterm": "EXW",
+   "invoice_date": "2026-09-19",
+   "invoice_number": "INV-2026348",
+   "line_amounts": [
+    18239.62,
+    11258.03,
+    47394.93
+   ],
+   "packages": 703,
+   "seller": "Nordhavn Steel AB",
+   "total_amount": 76892.08
+  },
+  "lang": "de",
+  "noise": [
+   "sum_mismatch"
+  ],
+  "shipment": "SHP-004",
+  "type": "commercial_invoice"
+ },
+ "DOC-0012": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "OSTL28014695",
+   "containers": [
+    "CMVU2263327"
+   ],
+   "gross_weight_kg": 17837.5,
+   "net_weight_kg": 15437.9,
+   "packages": 703,
+   "reference": "PL-72919"
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": "SHP-004",
+  "type": "packing_list"
+ },
+ "DOC-0013": {
+  "exceptions": [
+   "container_check_digit"
+  ],
+  "fields": {
+   "bl_number": "BWAL17150896",
+   "consignee": "Brugland Foods BV",
+   "containers": [
+    "TGHU9754560",
+    "HLDU5312908"
+   ],
+   "gross_weight_kg": 19930.1,
+   "issue_date": "2026-09-04",
+   "packages": 307,
+   "port_of_discharge": "BEZEE",
+   "port_of_loading": "USBAL",
+   "seal_numbers": [
+    "SL6725923",
+    "ML4731499"
+   ],
+   "shipper": "Calderwick Paper Ltd",
+   "vessel": "Celtic Mariner"
+  },
+  "lang": "nl",
+  "noise": [
+   "source_typo"
+  ],
+  "shipment": "SHP-005",
+  "type": "bill_of_lading"
+ },
+ "DOC-0014": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "BWAL17150896",
+   "buyer": "Brugland Foods BV",
+   "currency": "GBP",
+   "hs_codes": [
+    "17300571",
+    "981916"
+   ],
+   "incoterm": "DDP",
+   "invoice_date": "2026-09-04",
+   "invoice_number": "INV-2026518",
+   "line_amounts": [
+    34854.03
+   ],
+   "packages": 307,
+   "seller": "Calderwick Paper Ltd",
+   "total_amount": 34854.03
+  },
+  "lang": "nl",
+  "noise": [],
+  "shipment": "SHP-005",
+  "type": "commercial_invoice"
+ },
+ "DOC-0015": {
+  "exceptions": [],
+  "fields": {
+   "containers": [
+    "TGHU9754565",
+    "HLDU5312908"
+   ],
+   "gross_weight_kg": 19930.1,
+   "net_weight_kg": 17931.8,
+   "packages": 307,
+   "reference": "PL-76785"
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": "SHP-005",
+  "type": "packing_list"
+ },
+ "DOC-0016": {
+  "exceptions": [],
+  "fields": {
+   "bl_number": "BWAL33679056",
+   "consignee": "Vlaskamp Bakeries NV",
+   "containers": [
+    "HLDU9017618",
+    "CMVU0745973",
+    "OSTU9775522"
+   ],
+   "gross_weight_kg": 42266.5,
+   "issue_date": "2026-09-07",
+   "packages": 415,
+   "port_of_discharge": "BEZEE",
+   "port_of_loading": "PTLIS",
+   "seal_numbers": [
+    "8354686",
+    "ML5823117",
+    "SL7860245"
+   ],
+   "shipper": "Lanterra Ceramics SpA",
+   "vessel": "Scaldis Trader"
+  },
+  "lang": "de",
+  "noise": [
+   "ocr_container"
+  ],
+  "shipment": "SHP-006",
+  "type": "bill_of_lading"
+ },
+ "DOC-0017": {
+  "exceptions": [],
+  "fields": {
+   "buyer": "Vlaskamp Bakeries NV",
+   "currency": "EUR",
+   "hs_codes": [
+    "318472",
+    "46193079",
+    "5455514440"
+   ],
+   "incoterm": "FCA",
+   "invoice_date": "2026-09-07",
+   "invoice_number": "INV-2026398",
+   "line_amounts": [
+    45317.02,
+    22037.41,
+    22342.77,
+    46838.7
+   ],
+   "packages": 415,
+   "seller": "Lanterra Ceramics SpA",
+   "total_amount": 136535.9
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": "SHP-006",
+  "type": "commercial_invoice"
+ },
+ "DOC-0018": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "BWAL33679056",
+   "containers": [
+    "HLDU9017618",
+    "CMVU0745973",
+    "OSTU9775522"
+   ],
+   "gross_weight_kg": 42266.5,
+   "net_weight_kg": 36390.3,
+   "packages": 415,
+   "reference": "PL-24981"
+  },
+  "lang": "en",
+  "noise": [
+   "illegible"
+  ],
+  "shipment": "SHP-006",
+  "type": "packing_list"
+ },
+ "DOC-0019": {
+  "exceptions": [],
+  "fields": {
+   "bl_number": "BWAL31510304",
+   "consignee": "Grevenor Plastics GmbH",
+   "containers": [
+    "TGHU4529073",
+    "CMVU7408125",
+    "OSTU7530069"
+   ],
+   "gross_weight_kg": 51111.0,
+   "issue_date": "2026-09-03",
+   "packages": 369,
+   "port_of_discharge": "BEZEE",
+   "port_of_loading": "IEORK",
+   "seal_numbers": [
+    "ML2176175",
+    "2361236",
+    "5111721"
+   ],
+   "shipper": "Lanterra Ceramics SpA",
+   "vessel": "Wielingen Express"
+  },
+  "lang": "de",
+  "noise": [
+   "illegible"
+  ],
+  "shipment": "SHP-007",
+  "type": "bill_of_lading"
+ },
+ "DOC-0020": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "BWAL31510304",
+   "buyer": "Grevenor Plastics GmbH",
+   "currency": "EUR",
+   "hs_codes": [
+    "28923073",
+    "47946001"
+   ],
+   "incoterm": "DDP",
+   "invoice_date": "2026-09-03",
+   "invoice_number": "INV-2026824",
+   "line_amounts": [
+    22421.43,
+    18095.58,
+    47735.85
+   ],
+   "packages": 369,
+   "seller": "Lanterra Ceramics SpA",
+   "total_amount": 88252.86
+  },
+  "lang": "de",
+  "noise": [],
+  "shipment": "SHP-007",
+  "type": "commercial_invoice"
+ },
+ "DOC-0021": {
+  "exceptions": [],
+  "fields": {
+   "containers": [
+    "TGHU4529073",
+    "CMVU7408125",
+    "OSTU7530069"
+   ],
+   "gross_weight_kg": 51111.0,
+   "net_weight_kg": 45192.9,
+   "packages": 369,
+   "reference": "PL-11953"
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": "SHP-007",
+  "type": "packing_list"
+ },
+ "DOC-0022": {
+  "exceptions": [],
+  "fields": {
+   "bl_number": "BWAL42044825",
+   "consignee": "Oostveld Machinery NV",
+   "containers": [
+    "TGHU8304645"
+   ],
+   "gross_weight_kg": 15164.5,
+   "issue_date": "2026-09-08",
+   "packages": 389,
+   "port_of_discharge": "BEZEE",
+   "port_of_loading": "PTLIS",
+   "seal_numbers": [
+    "SL7270939"
+   ],
+   "shipper": "Sundra Textiles Pvt Ltd",
+   "vessel": "Atlantic Merel"
+  },
+  "lang": "fr",
+  "noise": [],
+  "shipment": "SHP-008",
+  "type": "bill_of_lading"
+ },
+ "DOC-0023": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "BWAL42044825",
+   "buyer": "Oostveld Machinery NV",
+   "currency": "USD",
+   "hs_codes": [
+    "074578",
+    "387111",
+    "608809"
+   ],
+   "incoterm": "FOB",
+   "invoice_date": "2026-09-08",
+   "invoice_number": "INV-2026649",
+   "line_amounts": [
+    11194.87,
+    47170.19,
+    30652.31,
+    36099.74
+   ],
+   "packages": 389,
+   "seller": "Sundra Textiles Pvt Ltd",
+   "total_amount": 125117.11
+  },
+  "lang": "de",
+  "noise": [],
+  "shipment": "SHP-008",
+  "type": "commercial_invoice"
+ },
+ "DOC-0024": {
+  "exceptions": [],
+  "fields": {
+   "containers": [
+    "TGHU8304645"
+   ],
+   "gross_weight_kg": 15164.5,
+   "net_weight_kg": 14071.7,
+   "packages": 389,
+   "reference": "PL-14101"
+  },
+  "lang": "nl",
+  "noise": [],
+  "shipment": "SHP-008",
+  "type": "packing_list"
+ },
+ "DOC-0025": {
+  "exceptions": [],
+  "fields": {
+   "bl_number": "BWAL32952754",
+   "consignee": "Oostveld Machinery NV",
+   "containers": [
+    "TGHU0312731",
+    "OSTU1402965"
+   ],
+   "gross_weight_kg": 13093.8,
+   "issue_date": "2026-09-10",
+   "packages": 756,
+   "port_of_discharge": "BEZEE",
+   "port_of_loading": "USBAL",
+   "seal_numbers": [
+    "3600968",
+    "ML1312574"
+   ],
+   "shipper": "Huaxin Components Co Ltd",
+   "vessel": "Hollandia Bay"
+  },
+  "lang": "de",
+  "noise": [],
+  "shipment": "SHP-009",
+  "type": "bill_of_lading"
+ },
+ "DOC-0026": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "BWAL32952754",
+   "buyer": "Oostveld Machinery NV",
+   "currency": "USD",
+   "hs_codes": [
+    "346250",
+    "5911476419",
+    "75567339"
+   ],
+   "incoterm": "DDP",
+   "invoice_date": "2026-09-10",
+   "invoice_number": "INV-2026163",
+   "line_amounts": [
+    26820.16,
+    33890.12,
+    39710.06
+   ],
+   "packages": 756,
+   "seller": "Huaxin Components Co Ltd",
+   "total_amount": 100420.34
+  },
+  "lang": "fr",
+  "noise": [],
+  "shipment": "SHP-009",
+  "type": "commercial_invoice"
+ },
+ "DOC-0027": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "BWAL32952754",
+   "containers": [
+    "TGHU0312731",
+    "OSTU1402965"
+   ],
+   "gross_weight_kg": 13093.8,
+   "net_weight_kg": 11328.3,
+   "packages": 756,
+   "reference": "PL-79660"
+  },
+  "lang": "de",
+  "noise": [
+   "ocr_container"
+  ],
+  "shipment": "SHP-009",
+  "type": "packing_list"
+ },
+ "DOC-0028": {
+  "exceptions": [],
+  "fields": {
+   "bl_number": "OSTL18399327",
+   "consignee": "Maison Vérane SAS",
+   "containers": [
+    "TGHU3877834",
+    "BRTU5665409"
+   ],
+   "gross_weight_kg": 25649.7,
+   "issue_date": "2026-09-04",
+   "packages": 590,
+   "port_of_discharge": "BEZEE",
+   "port_of_loading": "CNSHA",
+   "seal_numbers": [
+    "SL2060505",
+    "ML6789209"
+   ],
+   "shipper": "Nordhavn Steel AB",
+   "vessel": "MV Noordster"
+  },
+  "lang": "de",
+  "noise": [
+   "ocr_container",
+   "no_unit"
+  ],
+  "shipment": "SHP-010",
+  "type": "bill_of_lading"
+ },
+ "DOC-0029": {
+  "exceptions": [],
+  "fields": {
+   "buyer": "Maison Vérane SAS",
+   "currency": "SEK",
+   "hs_codes": [
+    "9209189629"
+   ],
+   "incoterm": "FOB",
+   "invoice_date": "2026-09-04",
+   "invoice_number": "INV-2026318",
+   "line_amounts": [
+    12903.61,
+    35179.51,
+    10166.38
+   ],
+   "packages": 590,
+   "seller": "Nordhavn Steel AB",
+   "total_amount": 58249.5
+  },
+  "lang": "fr",
+  "noise": [],
+  "shipment": "SHP-010",
+  "type": "commercial_invoice"
+ },
+ "DOC-0030": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "OSTL18399327",
+   "containers": [
+    "TGHU3877834",
+    "BRTU5665409"
+   ],
+   "gross_weight_kg": 25649.7,
+   "net_weight_kg": 23804.7,
+   "packages": 590,
+   "reference": "PL-45828"
+  },
+  "lang": "de",
+  "noise": [],
+  "shipment": "SHP-010",
+  "type": "packing_list"
+ },
+ "DOC-0031": {
+  "exceptions": [],
+  "fields": {
+   "bl_number": "CMVE87534640",
+   "consignee": "Grevenor Plastics GmbH",
+   "containers": [
+    "TGHU8338120",
+    "NSXU6686202"
+   ],
+   "gross_weight_kg": 41115.5,
+   "issue_date": "2026-09-04",
+   "packages": 146,
+   "port_of_discharge": "BEZEE",
+   "port_of_loading": "IEORK",
+   "seal_numbers": [
+    "ML1557962",
+    "ML4927588"
+   ],
+   "shipper": "Huaxin Components Co Ltd",
+   "vessel": "Celtic Mariner"
+  },
+  "lang": "en",
+  "noise": [
+   "label_ocr"
+  ],
+  "shipment": "SHP-011",
+  "type": "bill_of_lading"
+ },
+ "DOC-0032": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "CMVE87534640",
+   "buyer": "Grevenor Plastics GmbH",
+   "currency": "USD",
+   "hs_codes": [
+    "18950125",
+    "8459341099"
+   ],
+   "incoterm": "CIF",
+   "invoice_date": "2026-09-04",
+   "invoice_number": "INV-2026669",
+   "line_amounts": [
+    5480.8,
+    33193.87,
+    28016.42
+   ],
+   "packages": 146,
+   "seller": "Huaxin Components Co Ltd",
+   "total_amount": 66691.09
+  },
+  "lang": "nl",
+  "noise": [
+   "label_ocr"
+  ],
+  "shipment": "SHP-011",
+  "type": "commercial_invoice"
+ },
+ "DOC-0033": {
+  "exceptions": [],
+  "fields": {
+   "containers": [
+    "TGHU8338120",
+    "NSXU6686202"
+   ],
+   "gross_weight_kg": 41115.5,
+   "net_weight_kg": 38439.0,
+   "packages": 146,
+   "reference": "PL-53228"
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": "SHP-011",
+  "type": "packing_list"
+ },
+ "DOC-0034": {
+  "exceptions": [],
+  "fields": {
+   "bl_number": "CMVE79020134",
+   "consignee": "Grevenor Plastics GmbH",
+   "containers": [
+    "WKLU1200210"
+   ],
+   "gross_weight_kg": 18443.4,
+   "issue_date": "2026-09-09",
+   "packages": 321,
+   "port_of_discharge": "BEZEE",
+   "port_of_loading": "ESBIO",
+   "seal_numbers": [
+    "7571701"
+   ],
+   "shipper": "Brugland Foods BV",
+   "vessel": "Baltic Wren"
+  },
+  "lang": "de",
+  "noise": [],
+  "shipment": "SHP-012",
+  "type": "bill_of_lading"
+ },
+ "DOC-0035": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "CMVE79020134",
+   "buyer": "Grevenor Plastics GmbH",
+   "currency": "EUR",
+   "hs_codes": [
+    "412701",
+    "88029706",
+    "982815"
+   ],
+   "incoterm": "DAP",
+   "invoice_date": "2026-09-09",
+   "invoice_number": "INV-2026178",
+   "line_amounts": [
+    26528.25,
+    39072.47,
+    22635.23,
+    47202.7
+   ],
+   "packages": 321,
+   "seller": "Brugland Foods BV",
+   "total_amount": 135438.65
+  },
+  "lang": "fr",
+  "noise": [
+   "label_ocr"
+  ],
+  "shipment": "SHP-012",
+  "type": "commercial_invoice"
+ },
+ "DOC-0036": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "CMVE79020134",
+   "containers": [
+    "WKLU1200210"
+   ],
+   "gross_weight_kg": 18443.4,
+   "net_weight_kg": 16414.6,
+   "packages": 321,
+   "reference": "PL-26332"
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": "SHP-012",
+  "type": "packing_list"
+ },
+ "DOC-0037": {
+  "exceptions": [],
+  "fields": {
+   "bl_number": "BWAL42172130",
+   "consignee": "Maison Vérane SAS",
+   "containers": [
+    "NSXU6610254"
+   ],
+   "gross_weight_kg": 11568.9,
+   "issue_date": "2026-09-05",
+   "packages": 948,
+   "port_of_discharge": "SGSIN",
+   "port_of_loading": "BEZEE",
+   "seal_numbers": [
+    "9266877"
+   ],
+   "shipper": "Riverside Agri Inc",
+   "vessel": "North Sea Kestrel"
+  },
+  "lang": "nl",
+  "noise": [],
+  "shipment": "SHP-013",
+  "type": "bill_of_lading"
+ },
+ "DOC-0038": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "BWAL42172130",
+   "buyer": "Maison Vérane SAS",
+   "currency": "USD",
+   "hs_codes": [
+    "02235373",
+    "924704"
+   ],
+   "incoterm": "FOB",
+   "invoice_date": "2026-09-05",
+   "invoice_number": "INV-2026342",
+   "line_amounts": [
+    20865.81,
+    32149.71,
+    17190.95,
+    26819.35
+   ],
+   "packages": 948,
+   "seller": "Riverside Agri Inc",
+   "total_amount": 97025.82
+  },
+  "lang": "nl",
+  "noise": [
+   "label_ocr"
+  ],
+  "shipment": "SHP-013",
+  "type": "commercial_invoice"
+ },
+ "DOC-0039": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "BWAL42172130",
+   "containers": [
+    "NSXU6610254"
+   ],
+   "gross_weight_kg": 11568.9,
+   "net_weight_kg": 10289.7,
+   "packages": 948,
+   "reference": "PL-67567"
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": "SHP-013",
+  "type": "packing_list"
+ },
+ "DOC-0040": {
+  "exceptions": [],
+  "fields": {
+   "bl_number": "BWAL23403112",
+   "consignee": "Grevenor Plastics GmbH",
+   "containers": [
+    "BRTU6548789"
+   ],
+   "gross_weight_kg": 11328.3,
+   "issue_date": "2026-09-03",
+   "packages": 257,
+   "port_of_discharge": "BEZEE",
+   "port_of_loading": "SGSIN",
+   "seal_numbers": [
+    "ML1118709"
+   ],
+   "shipper": "Thistlebank Distillers Ltd",
+   "vessel": "Wielingen Express"
+  },
+  "lang": "fr",
+  "noise": [],
+  "shipment": "SHP-014",
+  "type": "bill_of_lading"
+ },
+ "DOC-0041": {
+  "exceptions": [],
+  "fields": {
+   "buyer": "Grevenor Plastics GmbH",
+   "currency": "GBP",
+   "hs_codes": [
+    "5030799475",
+    "68956574"
+   ],
+   "incoterm": "DAP",
+   "invoice_date": "2026-09-03",
+   "invoice_number": "INV-2026859",
+   "line_amounts": [
+    32871.68,
+    11826.16
+   ],
+   "packages": 257,
+   "seller": "Thistlebank Distillers Ltd",
+   "total_amount": 44697.84
+  },
+  "lang": "nl",
+  "noise": [],
+  "shipment": "SHP-014",
+  "type": "commercial_invoice"
+ },
+ "DOC-0042": {
+  "exceptions": [],
+  "fields": {
+   "containers": [
+    "BRTU6548789"
+   ],
+   "gross_weight_kg": 11328.3,
+   "net_weight_kg": 10687.7,
+   "packages": 257,
+   "reference": "PL-33384"
+  },
+  "lang": "nl",
+  "noise": [],
+  "shipment": "SHP-014",
+  "type": "packing_list"
+ },
+ "DOC-0043": {
+  "exceptions": [],
+  "fields": {
+   "bl_number": "BWAL29027712",
+   "consignee": "Oostveld Machinery NV",
+   "containers": [
+    "BRTU6566360"
+   ],
+   "gross_weight_kg": 16207.9,
+   "issue_date": "2026-09-17",
+   "packages": 712,
+   "port_of_discharge": "BEZEE",
+   "port_of_loading": "SGSIN",
+   "seal_numbers": [
+    "ML2817485"
+   ],
+   "shipper": "Sundra Textiles Pvt Ltd",
+   "vessel": "North Sea Kestrel"
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": "SHP-015",
+  "type": "bill_of_lading"
+ },
+ "DOC-0044": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "BWAL29027712",
+   "buyer": "Oostveld Machinery NV",
+   "currency": "USD",
+   "hs_codes": [
+    "36645930",
+    "956052"
+   ],
+   "incoterm": "CFR",
+   "invoice_date": "2026-09-17",
+   "invoice_number": "INV-2026635",
+   "line_amounts": [
+    35718.04
+   ],
+   "packages": 712,
+   "seller": "Sundra Textiles Pvt Ltd",
+   "total_amount": 35718.04
+  },
+  "lang": "de",
+  "noise": [],
+  "shipment": "SHP-015",
+  "type": "commercial_invoice"
+ },
+ "DOC-0045": {
+  "exceptions": [],
+  "fields": {
+   "containers": [
+    "BRTU6566360"
+   ],
+   "gross_weight_kg": 16207.9,
+   "net_weight_kg": 15276.9,
+   "packages": 712,
+   "reference": "PL-28684"
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": "SHP-015",
+  "type": "packing_list"
+ },
+ "DOC-0046": {
+  "exceptions": [],
+  "fields": {
+   "bl_number": "CMVE48398601",
+   "consignee": "Oostveld Machinery NV",
+   "containers": [
+    "WKLU9218957"
+   ],
+   "gross_weight_kg": 21092.6,
+   "issue_date": "2026-09-04",
+   "packages": 796,
+   "port_of_discharge": "BEZEE",
+   "port_of_loading": "USSAV",
+   "seal_numbers": [
+    "SL9408823"
+   ],
+   "shipper": "Brugland Foods BV",
+   "vessel": "Baltic Wren"
+  },
+  "lang": "en",
+  "noise": [
+   "ocr_container"
+  ],
+  "shipment": "SHP-016",
+  "type": "bill_of_lading"
+ },
+ "DOC-0047": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "CMVE48398601",
+   "buyer": "Oostveld Machinery NV",
+   "currency": "EUR",
+   "hs_codes": [
+    "0482833063",
+    "274544",
+    "59511785"
+   ],
+   "incoterm": "DAP",
+   "invoice_date": "2026-09-04",
+   "invoice_number": "INV-2026656",
+   "line_amounts": [
+    11715.3,
+    11187.2,
+    2280.48,
+    23931.67
+   ],
+   "packages": 796,
+   "seller": "Brugland Foods BV",
+   "total_amount": 49114.65
+  },
+  "lang": "fr",
+  "noise": [],
+  "shipment": "SHP-016",
+  "type": "commercial_invoice"
+ },
+ "DOC-0048": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "CMVE48398601",
+   "containers": [
+    "WKLU9218957"
+   ],
+   "gross_weight_kg": 21092.6,
+   "net_weight_kg": 19829.7,
+   "packages": 796,
+   "reference": "PL-19508"
+  },
+  "lang": "en",
+  "noise": [
+   "ocr_container",
+   "label_ocr"
+  ],
+  "shipment": "SHP-016",
+  "type": "packing_list"
+ },
+ "DOC-0049": {
+  "exceptions": [],
+  "fields": {
+   "bl_number": "NSLU66289470",
+   "consignee": "Kestrel Pharma GmbH",
+   "containers": [
+    "BRTU6648324",
+    "OSTU6067181",
+    "CMVU3753843"
+   ],
+   "gross_weight_kg": 23418.9,
+   "issue_date": "2026-09-14",
+   "packages": 69,
+   "port_of_discharge": "MAPTM",
+   "port_of_loading": "BEZEE",
+   "seal_numbers": [
+    "ML4354867",
+    "SL4074192",
+    "SL8278338"
+   ],
+   "shipper": "Thistlebank Distillers Ltd",
+   "vessel": "Scaldis Trader"
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": "SHP-017",
+  "type": "bill_of_lading"
+ },
+ "DOC-0050": {
+  "exceptions": [],
+  "fields": {
+   "buyer": "Kestrel Pharma GmbH",
+   "currency": "GBP",
+   "hs_codes": [
+    "07678796",
+    "084566"
+   ],
+   "incoterm": "DAP",
+   "invoice_date": "2026-09-14",
+   "invoice_number": "INV-2026220",
+   "line_amounts": [
+    16059.68,
+    37007.75,
+    2098.97,
+    14941.83
+   ],
+   "packages": 69,
+   "seller": "Thistlebank Distillers Ltd",
+   "total_amount": 70108.23
+  },
+  "lang": "fr",
+  "noise": [],
+  "shipment": "SHP-017",
+  "type": "commercial_invoice"
+ },
+ "DOC-0051": {
+  "exceptions": [],
+  "fields": {
+   "containers": [
+    "BRTU6648324",
+    "OSTU6067181",
+    "CMVU3753843"
+   ],
+   "gross_weight_kg": 23418.9,
+   "net_weight_kg": 22063.3,
+   "packages": 69,
+   "reference": "PL-35910"
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": "SHP-017",
+  "type": "packing_list"
+ },
+ "DOC-0052": {
+  "exceptions": [],
+  "fields": {
+   "bl_number": "BWAL76518993",
+   "consignee": "Kestrel Pharma GmbH",
+   "containers": [
+    "CMVU8702999",
+    "TGHU0027858"
+   ],
+   "gross_weight_kg": 17880.2,
+   "issue_date": "2026-09-05",
+   "packages": 1181,
+   "port_of_discharge": "USSAV",
+   "port_of_loading": "BEZEE",
+   "seal_numbers": [
+    "7596445",
+    "7098181"
+   ],
+   "shipper": "Bayline Industrial LLC",
+   "vessel": "Wielingen Express"
+  },
+  "lang": "fr",
+  "noise": [],
+  "shipment": "SHP-018",
+  "type": "bill_of_lading"
+ },
+ "DOC-0053": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "BWAL76518993",
+   "buyer": "Kestrel Pharma GmbH",
+   "currency": "USD",
+   "hs_codes": [
+    "36357998",
+    "728989"
+   ],
+   "incoterm": "EXW",
+   "invoice_date": "2026-09-05",
+   "invoice_number": "INV-2026068",
+   "line_amounts": [
+    4334.32
+   ],
+   "packages": 1181,
+   "seller": "Bayline Industrial LLC",
+   "total_amount": 4334.32
+  },
+  "lang": "en",
+  "noise": [
+   "illegible"
+  ],
+  "shipment": "SHP-018",
+  "type": "commercial_invoice"
+ },
+ "DOC-0054": {
+  "exceptions": [],
+  "fields": {
+   "containers": [
+    "CMVU8702999",
+    "TGHU0027858"
+   ],
+   "gross_weight_kg": 17880.2,
+   "net_weight_kg": 15929.7,
+   "packages": 1181,
+   "reference": "PL-17016"
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": "SHP-018",
+  "type": "packing_list"
+ },
+ "DOC-0055": {
+  "exceptions": [],
+  "fields": {
+   "bl_number": "NSLU67490592",
+   "consignee": "Kestrel Pharma GmbH",
+   "containers": [
+    "CMVU1534770",
+    "CMVU1972570",
+    "WKLU1427380"
+   ],
+   "gross_weight_kg": 47590.6,
+   "issue_date": "2026-09-18",
+   "packages": 921,
+   "port_of_discharge": "CNNGB",
+   "port_of_loading": "BEZEE",
+   "seal_numbers": [
+    "6543129",
+    "SL9688686",
+    "ML5124275"
+   ],
+   "shipper": "Huaxin Components Co Ltd",
+   "vessel": "Hollandia Bay"
+  },
+  "lang": "de",
+  "noise": [],
+  "shipment": "SHP-019",
+  "type": "bill_of_lading"
+ },
+ "DOC-0056": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "NSLU67490592",
+   "buyer": "Kestrel Pharma GmbH",
+   "currency": "USD",
+   "hs_codes": [
+    "47311793"
+   ],
+   "incoterm": "DDP",
+   "invoice_date": "2026-09-18",
+   "invoice_number": "INV-2026879",
+   "line_amounts": [
+    41603.59,
+    46115.32,
+    13995.0,
+    4782.27
+   ],
+   "packages": 921,
+   "seller": "Huaxin Components Co Ltd",
+   "total_amount": 106496.18
+  },
+  "lang": "fr",
+  "noise": [],
+  "shipment": "SHP-019",
+  "type": "commercial_invoice"
+ },
+ "DOC-0057": {
+  "exceptions": [],
+  "fields": {
+   "containers": [
+    "CMVU1534770",
+    "CMVU1972570",
+    "WKLU1427380"
+   ],
+   "gross_weight_kg": 47590.6,
+   "net_weight_kg": 44896.4,
+   "packages": 921,
+   "reference": "PL-53491"
+  },
+  "lang": "de",
+  "noise": [],
+  "shipment": "SHP-019",
+  "type": "packing_list"
+ },
+ "DOC-0058": {
+  "exceptions": [],
+  "fields": {
+   "bl_number": "CMVE10691696",
+   "consignee": "Brugland Foods BV",
+   "containers": [
+    "OSTU4813445",
+    "OSTU8848265",
+    "WKLU4725727"
+   ],
+   "gross_weight_kg": 47953.6,
+   "issue_date": "2026-09-06",
+   "packages": 122,
+   "port_of_discharge": "GBFXT",
+   "port_of_loading": "BEZEE",
+   "seal_numbers": [
+    "ML9276076",
+    "8693622",
+    "8189633"
+   ],
+   "shipper": "Oostveld Machinery NV",
+   "vessel": "Atlantic Merel"
+  },
+  "lang": "nl",
+  "noise": [],
+  "shipment": "SHP-020",
+  "type": "bill_of_lading"
+ },
+ "DOC-0059": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "CMVE10691696",
+   "buyer": "Brugland Foods BV",
+   "currency": "EUR",
+   "hs_codes": [
+    "533014"
+   ],
+   "incoterm": "CFR",
+   "invoice_date": "2026-09-06",
+   "invoice_number": "INV-2026314",
+   "line_amounts": [
+    31470.1
+   ],
+   "packages": 122,
+   "seller": "Oostveld Machinery NV",
+   "total_amount": 31470.1
+  },
+  "lang": "de",
+  "noise": [],
+  "shipment": "SHP-020",
+  "type": "commercial_invoice"
+ },
+ "DOC-0060": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "CMVE10691696",
+   "containers": [
+    "OSTU4813445",
+    "OSTU8848265",
+    "WKLU4725727"
+   ],
+   "gross_weight_kg": 47953.6,
+   "net_weight_kg": 42603.7,
+   "packages": 122,
+   "reference": "PL-33126"
+  },
+  "lang": "nl",
+  "noise": [
+   "illegible"
+  ],
+  "shipment": "SHP-020",
+  "type": "packing_list"
+ },
+ "DOC-0061": {
+  "exceptions": [],
+  "fields": {
+   "bl_number": "OSTL00595732",
+   "consignee": "Oostveld Machinery NV",
+   "containers": [
+    "CMVU5610688"
+   ],
+   "gross_weight_kg": 8489.3,
+   "issue_date": "2026-09-09",
+   "packages": 530,
+   "port_of_discharge": "BEZEE",
+   "port_of_loading": "SEGOT",
+   "seal_numbers": [
+    "SL7223215"
+   ],
+   "shipper": "Vlaskamp Bakeries NV",
+   "vessel": "Celtic Mariner"
+  },
+  "lang": "en",
+  "noise": [
+   "label_ocr"
+  ],
+  "shipment": "SHP-021",
+  "type": "bill_of_lading"
+ },
+ "DOC-0062": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "OSTL00595732",
+   "buyer": "Oostveld Machinery NV",
+   "currency": "EUR",
+   "hs_codes": [
+    "22327049",
+    "51027412",
+    "83394832"
+   ],
+   "incoterm": "CIF",
+   "invoice_date": "2026-09-09",
+   "invoice_number": "INV-2026186",
+   "line_amounts": [
+    42737.23,
+    16354.15,
+    27856.31
+   ],
+   "packages": 530,
+   "seller": "Vlaskamp Bakeries NV",
+   "total_amount": 86947.69
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": "SHP-021",
+  "type": "commercial_invoice"
+ },
+ "DOC-0063": {
+  "exceptions": [
+   "weight_mismatch"
+  ],
+  "fields": {
+   "containers": [
+    "CMVU5610688"
+   ],
+   "gross_weight_kg": 7640.4,
+   "net_weight_kg": 6876.4,
+   "packages": 530,
+   "reference": "PL-29139"
+  },
+  "lang": "de",
+  "noise": [
+   "weight_mismatch"
+  ],
+  "shipment": "SHP-021",
+  "type": "packing_list"
+ },
+ "DOC-0064": {
+  "exceptions": [],
+  "fields": {
+   "bl_number": "OSTL80407410",
+   "consignee": "Brugland Foods BV",
+   "containers": [
+    "WKLU6718856"
+   ],
+   "gross_weight_kg": 6572.2,
+   "issue_date": "2026-09-19",
+   "packages": 301,
+   "port_of_discharge": "BEZEE",
+   "port_of_loading": "MAPTM",
+   "seal_numbers": [
+    "SL1077746"
+   ],
+   "shipper": "Maison Vérane SAS",
+   "vessel": "Baltic Wren"
+  },
+  "lang": "nl",
+  "noise": [],
+  "shipment": "SHP-022",
+  "type": "bill_of_lading"
+ },
+ "DOC-0065": {
+  "exceptions": [
+   "invoice_total_mismatch"
+  ],
+  "fields": {
+   "bl_reference": "OSTL80407410",
+   "buyer": "Brugland Foods BV",
+   "currency": "EUR",
+   "hs_codes": [
+    "8680286291"
+   ],
+   "incoterm": "DAP",
+   "invoice_date": "2026-09-19",
+   "invoice_number": "INV-2026356",
+   "line_amounts": [
+    37869.17
+   ],
+   "packages": 301,
+   "seller": "Maison Vérane SAS",
+   "total_amount": 37769.17
+  },
+  "lang": "de",
+  "noise": [
+   "sum_mismatch"
+  ],
+  "shipment": "SHP-022",
+  "type": "commercial_invoice"
+ },
+ "DOC-0066": {
+  "exceptions": [
+   "weight_mismatch"
+  ],
+  "fields": {
+   "bl_reference": "OSTL80407410",
+   "containers": [
+    "WKLU6718856"
+   ],
+   "gross_weight_kg": 7360.9,
+   "net_weight_kg": 5815.0,
+   "packages": 301,
+   "reference": "PL-76797"
+  },
+  "lang": "fr",
+  "noise": [
+   "weight_mismatch"
+  ],
+  "shipment": "SHP-022",
+  "type": "packing_list"
+ },
+ "DOC-0067": {
+  "exceptions": [],
+  "fields": {
+   "bl_number": "OSTL02881746",
+   "consignee": "Vlaskamp Bakeries NV",
+   "containers": [
+    "WKLU3250801",
+    "OSTU7100279"
+   ],
+   "gross_weight_kg": 16028.1,
+   "issue_date": "2026-09-08",
+   "packages": 164,
+   "port_of_discharge": "FIHEL",
+   "port_of_loading": "BEZEE",
+   "seal_numbers": [
+    "ML4520623",
+    "5784905"
+   ],
+   "shipper": "Peloria Chemicals SA",
+   "vessel": "Wielingen Express"
+  },
+  "lang": "de",
+  "noise": [],
+  "shipment": "SHP-023",
+  "type": "bill_of_lading"
+ },
+ "DOC-0068": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "OSTL02881746",
+   "buyer": "Vlaskamp Bakeries NV",
+   "currency": "EUR",
+   "hs_codes": [
+    "76750842"
+   ],
+   "incoterm": "CFR",
+   "invoice_date": "2026-09-08",
+   "invoice_number": "INV-2026611",
+   "line_amounts": [
+    12014.82
+   ],
+   "packages": 164,
+   "seller": "Peloria Chemicals SA",
+   "total_amount": 12014.82
+  },
+  "lang": "nl",
+  "noise": [],
+  "shipment": "SHP-023",
+  "type": "commercial_invoice"
+ },
+ "DOC-0069": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "OSTL02881746",
+   "containers": [
+    "WKLU3250801",
+    "OSTU7100279"
+   ],
+   "gross_weight_kg": 16028.1,
+   "net_weight_kg": 13813.0,
+   "packages": 164,
+   "reference": "PL-61040"
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": "SHP-023",
+  "type": "packing_list"
+ },
+ "DOC-0070": {
+  "exceptions": [],
+  "fields": {
+   "bl_number": "NSLU90204742",
+   "consignee": "Vlaskamp Bakeries NV",
+   "containers": [
+    "NSXU9409351"
+   ],
+   "gross_weight_kg": 15517.3,
+   "issue_date": "2026-09-02",
+   "packages": 741,
+   "port_of_discharge": "BEZEE",
+   "port_of_loading": "FIHEL",
+   "seal_numbers": [
+    "SL4227896"
+   ],
+   "shipper": "Kestrel Pharma GmbH",
+   "vessel": "Wielingen Express"
+  },
+  "lang": "nl",
+  "noise": [],
+  "shipment": "SHP-024",
+  "type": "bill_of_lading"
+ },
+ "DOC-0071": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "NSLU90204742",
+   "buyer": "Vlaskamp Bakeries NV",
+   "currency": "EUR",
+   "hs_codes": [
+    "06270015"
+   ],
+   "incoterm": "EXW",
+   "invoice_date": "2026-09-02",
+   "invoice_number": "INV-2026992",
+   "line_amounts": [
+    24551.47,
+    14265.53,
+    3505.36,
+    42872.42
+   ],
+   "packages": 741,
+   "seller": "Kestrel Pharma GmbH",
+   "total_amount": 85194.78
+  },
+  "lang": "fr",
+  "noise": [
+   "silent_digit"
+  ],
+  "shipment": "SHP-024",
+  "type": "commercial_invoice"
+ },
+ "DOC-0072": {
+  "exceptions": [],
+  "fields": {
+   "containers": [
+    "NSXU9409351"
+   ],
+   "gross_weight_kg": 15517.3,
+   "net_weight_kg": 14345.5,
+   "packages": 741,
+   "reference": "PL-51990"
+  },
+  "lang": "fr",
+  "noise": [
+   "no_unit"
+  ],
+  "shipment": "SHP-024",
+  "type": "packing_list"
+ },
+ "DOC-0073": {
+  "exceptions": [],
+  "fields": {
+   "bl_number": "BWAL45433814",
+   "consignee": "Maison Vérane SAS",
+   "containers": [
+    "OSTU5227120"
+   ],
+   "gross_weight_kg": 6392.5,
+   "issue_date": "2026-09-12",
+   "packages": 72,
+   "port_of_discharge": "BEZEE",
+   "port_of_loading": "GBPME",
+   "seal_numbers": [
+    "ML6488174"
+   ],
+   "shipper": "Wexmoor Retail Ltd",
+   "vessel": "Scaldis Trader"
+  },
+  "lang": "nl",
+  "noise": [],
+  "shipment": "SHP-025",
+  "type": "bill_of_lading"
+ },
+ "DOC-0074": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "BWAL45433814",
+   "buyer": "Maison Vérane SAS",
+   "currency": "GBP",
+   "hs_codes": [
+    "59003171"
+   ],
+   "incoterm": "FOB",
+   "invoice_date": "2026-09-12",
+   "invoice_number": "INV-2026092",
+   "line_amounts": [
+    15372.23,
+    25374.05,
+    32220.98
+   ],
+   "packages": 72,
+   "seller": "Wexmoor Retail Ltd",
+   "total_amount": 72967.26
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": "SHP-025",
+  "type": "commercial_invoice"
+ },
+ "DOC-0075": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "BWAL45433814",
+   "containers": [
+    "OSTU5227120"
+   ],
+   "gross_weight_kg": 6392.5,
+   "net_weight_kg": 5449.8,
+   "packages": 72,
+   "reference": "PL-48670"
+  },
+  "lang": "fr",
+  "noise": [
+   "label_ocr"
+  ],
+  "shipment": "SHP-025",
+  "type": "packing_list"
+ },
+ "DOC-0076": {
+  "exceptions": [],
+  "fields": {
+   "bl_number": "CMVE22710478",
+   "consignee": "Oostveld Machinery NV",
+   "containers": [
+    "OSTU9796839"
+   ],
+   "gross_weight_kg": 20330.7,
+   "issue_date": "2026-09-04",
+   "packages": 289,
+   "port_of_discharge": "BEZEE",
+   "port_of_loading": "GBFXT",
+   "seal_numbers": [
+    "SL3385248"
+   ],
+   "shipper": "Thistlebank Distillers Ltd",
+   "vessel": "Hollandia Bay"
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": "SHP-026",
+  "type": "bill_of_lading"
+ },
+ "DOC-0077": {
+  "exceptions": [],
+  "fields": {
+   "buyer": "Oostveld Machinery NV",
+   "currency": "GBP",
+   "hs_codes": [
+    "10890884",
+    "97258440"
+   ],
+   "incoterm": "DDP",
+   "invoice_date": "2026-09-04",
+   "invoice_number": "INV-2026757",
+   "line_amounts": [
+    25187.93
+   ],
+   "packages": 289,
+   "seller": "Thistlebank Distillers Ltd",
+   "total_amount": 25187.93
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": "SHP-026",
+  "type": "commercial_invoice"
+ },
+ "DOC-0078": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "CMVE22710478",
+   "containers": [
+    "OSTU9796839"
+   ],
+   "gross_weight_kg": 20330.7,
+   "net_weight_kg": 19018.4,
+   "packages": 289,
+   "reference": "PL-29127"
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": "SHP-026",
+  "type": "packing_list"
+ },
+ "DOC-0079": {
+  "exceptions": [],
+  "fields": {
+   "bl_number": "NSLU80162297",
+   "consignee": "Maison Vérane SAS",
+   "containers": [
+    "NSXU0085056"
+   ],
+   "gross_weight_kg": 21283.7,
+   "issue_date": "2026-09-20",
+   "packages": 498,
+   "port_of_discharge": "BEZEE",
+   "port_of_loading": "GBFXT",
+   "seal_numbers": [
+    "8257816"
+   ],
+   "shipper": "Wexmoor Retail Ltd",
+   "vessel": "Hollandia Bay"
+  },
+  "lang": "nl",
+  "noise": [],
+  "shipment": "SHP-027",
+  "type": "bill_of_lading"
+ },
+ "DOC-0080": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "NSLU80162297",
+   "buyer": "Maison Vérane SAS",
+   "currency": "GBP",
+   "hs_codes": [
+    "0348625915",
+    "58778137",
+    "83467188"
+   ],
+   "incoterm": "FOB",
+   "invoice_date": "2026-09-20",
+   "invoice_number": "INV-2026671",
+   "line_amounts": [
+    27234.33,
+    16644.86
+   ],
+   "packages": 498,
+   "seller": "Wexmoor Retail Ltd",
+   "total_amount": 43879.19
+  },
+  "lang": "fr",
+  "noise": [
+   "silent_digit"
+  ],
+  "shipment": "SHP-027",
+  "type": "commercial_invoice"
+ },
+ "DOC-0081": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "NSLU80162297",
+   "containers": [
+    "NSXU0085056"
+   ],
+   "gross_weight_kg": 21283.7,
+   "net_weight_kg": 19079.8,
+   "packages": 498,
+   "reference": "PL-28336"
+  },
+  "lang": "en",
+  "noise": [
+   "illegible"
+  ],
+  "shipment": "SHP-027",
+  "type": "packing_list"
+ },
+ "DOC-0082": {
+  "exceptions": [],
+  "fields": {
+   "bl_number": "NSLU33551900",
+   "consignee": "Maison Vérane SAS",
+   "containers": [
+    "OSTU1319608"
+   ],
+   "gross_weight_kg": 18359.1,
+   "issue_date": "2026-09-15",
+   "packages": 758,
+   "port_of_discharge": "BEZEE",
+   "port_of_loading": "MAPTM",
+   "seal_numbers": [
+    "3889257"
+   ],
+   "shipper": "Nordhavn Steel AB",
+   "vessel": "Celtic Mariner"
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": "SHP-028",
+  "type": "bill_of_lading"
+ },
+ "DOC-0083": {
+  "exceptions": [],
+  "fields": {
+   "buyer": "Maison Vérane SAS",
+   "currency": "SEK",
+   "hs_codes": [
+    "90799340",
+    "98934432"
+   ],
+   "incoterm": "EXW",
+   "invoice_date": "2026-09-15",
+   "invoice_number": "INV-2026102",
+   "line_amounts": [
+    35100.89,
+    37757.33,
+    22343.28
+   ],
+   "packages": 758,
+   "seller": "Nordhavn Steel AB",
+   "total_amount": 95201.5
+  },
+  "lang": "nl",
+  "noise": [],
+  "shipment": "SHP-028",
+  "type": "commercial_invoice"
+ },
+ "DOC-0084": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "NSLU33551900",
+   "containers": [
+    "OSTU1319608"
+   ],
+   "gross_weight_kg": 18359.1,
+   "net_weight_kg": 16045.6,
+   "packages": 758,
+   "reference": "PL-38205"
+  },
+  "lang": "en",
+  "noise": [
+   "illegible"
+  ],
+  "shipment": "SHP-028",
+  "type": "packing_list"
+ },
+ "DOC-0085": {
+  "exceptions": [],
+  "fields": {
+   "bl_number": "OSTL17141224",
+   "consignee": "Oostveld Machinery NV",
+   "containers": [
+    "HLDU7677931"
+   ],
+   "gross_weight_kg": 14627.3,
+   "issue_date": "2026-09-20",
+   "packages": 36,
+   "port_of_discharge": "BEZEE",
+   "port_of_loading": "PTLIS",
+   "seal_numbers": [
+    "SL6363358"
+   ],
+   "shipper": "Calderwick Paper Ltd",
+   "vessel": "Scaldis Trader"
+  },
+  "lang": "fr",
+  "noise": [],
+  "shipment": "SHP-029",
+  "type": "bill_of_lading"
+ },
+ "DOC-0086": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "OSTL17141224",
+   "buyer": "Oostveld Machinery NV",
+   "currency": "GBP",
+   "hs_codes": [
+    "1048743588",
+    "433059"
+   ],
+   "incoterm": "FOB",
+   "invoice_date": "2026-09-20",
+   "invoice_number": "INV-2026009",
+   "line_amounts": [
+    18163.16,
+    22151.39,
+    13384.81,
+    25018.08
+   ],
+   "packages": 36,
+   "seller": "Calderwick Paper Ltd",
+   "total_amount": 78717.44
+  },
+  "lang": "de",
+  "noise": [
+   "illegible"
+  ],
+  "shipment": "SHP-029",
+  "type": "commercial_invoice"
+ },
+ "DOC-0087": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "OSTL17141224",
+   "containers": [
+    "HLDU7677931"
+   ],
+   "gross_weight_kg": 14627.3,
+   "net_weight_kg": 13638.3,
+   "packages": 36,
+   "reference": "PL-58055"
+  },
+  "lang": "en",
+  "noise": [
+   "illegible"
+  ],
+  "shipment": "SHP-029",
+  "type": "packing_list"
+ },
+ "DOC-0088": {
+  "exceptions": [],
+  "fields": {
+   "bl_number": "NSLU71845314",
+   "consignee": "Brugland Foods BV",
+   "containers": [
+    "TGHU3462020"
+   ],
+   "gross_weight_kg": 8086.3,
+   "issue_date": "2026-09-06",
+   "packages": 662,
+   "port_of_discharge": "BEZEE",
+   "port_of_loading": "GBTIL",
+   "seal_numbers": [
+    "7133260"
+   ],
+   "shipper": "Vlaskamp Bakeries NV",
+   "vessel": "Baltic Wren"
+  },
+  "lang": "nl",
+  "noise": [
+   "ocr_container"
+  ],
+  "shipment": "SHP-030",
+  "type": "bill_of_lading"
+ },
+ "DOC-0089": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "NSLU71845314",
+   "buyer": "Brugland Foods BV",
+   "currency": "EUR",
+   "hs_codes": [
+    "475921",
+    "64347214",
+    "783467"
+   ],
+   "incoterm": "DDP",
+   "invoice_date": "2026-09-06",
+   "invoice_number": "INV-2026176",
+   "line_amounts": [
+    13155.38,
+    34032.58,
+    39123.88
+   ],
+   "packages": 662,
+   "seller": "Vlaskamp Bakeries NV",
+   "total_amount": 86311.84
+  },
+  "lang": "fr",
+  "noise": [],
+  "shipment": "SHP-030",
+  "type": "commercial_invoice"
+ },
+ "DOC-0090": {
+  "exceptions": [],
+  "fields": {
+   "containers": [
+    "TGHU3462020"
+   ],
+   "gross_weight_kg": 8086.3,
+   "net_weight_kg": 7013.2,
+   "packages": 662,
+   "reference": "PL-14911"
+  },
+  "lang": "en",
+  "noise": [
+   "no_unit"
+  ],
+  "shipment": "SHP-030",
+  "type": "packing_list"
+ },
+ "DOC-0091": {
+  "exceptions": [],
+  "fields": {
+   "bl_number": "CMVE76872934",
+   "consignee": "Grevenor Plastics GmbH",
+   "containers": [
+    "WKLU2166954",
+    "WKLU6171157",
+    "WKLU0902362"
+   ],
+   "gross_weight_kg": 62124.2,
+   "issue_date": "2026-09-15",
+   "packages": 85,
+   "port_of_discharge": "IEDUB",
+   "port_of_loading": "BEZEE",
+   "seal_numbers": [
+    "SL9575332",
+    "1688616",
+    "SL6967541"
+   ],
+   "shipper": "Wexmoor Retail Ltd",
+   "vessel": "Celtic Mariner"
+  },
+  "lang": "de",
+  "noise": [
+   "illegible"
+  ],
+  "shipment": "SHP-031",
+  "type": "bill_of_lading"
+ },
+ "DOC-0092": {
+  "exceptions": [],
+  "fields": {
+   "buyer": "Grevenor Plastics GmbH",
+   "currency": "GBP",
+   "hs_codes": [
+    "4910268108",
+    "627179",
+    "98459611"
+   ],
+   "incoterm": "FOB",
+   "invoice_date": "2026-09-15",
+   "invoice_number": "INV-2026574",
+   "line_amounts": [
+    42200.58,
+    27618.73,
+    10814.93,
+    35689.05
+   ],
+   "packages": 85,
+   "seller": "Wexmoor Retail Ltd",
+   "total_amount": 116323.29
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": "SHP-031",
+  "type": "commercial_invoice"
+ },
+ "DOC-0093": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "CMVE76872934",
+   "containers": [
+    "WKLU2166954",
+    "WKLU6171157",
+    "WKLU0902362"
+   ],
+   "gross_weight_kg": 62124.2,
+   "net_weight_kg": 54130.6,
+   "packages": 85,
+   "reference": "PL-99440"
+  },
+  "lang": "nl",
+  "noise": [],
+  "shipment": "SHP-031",
+  "type": "packing_list"
+ },
+ "DOC-0094": {
+  "exceptions": [],
+  "fields": {
+   "bl_number": "OSTL83559471",
+   "consignee": "Oostveld Machinery NV",
+   "containers": [
+    "CMVU3586094"
+   ],
+   "gross_weight_kg": 11473.8,
+   "issue_date": "2026-09-13",
+   "packages": 386,
+   "port_of_discharge": "SGSIN",
+   "port_of_loading": "BEZEE",
+   "seal_numbers": [
+    "SL6646471"
+   ],
+   "shipper": "Vlaskamp Bakeries NV",
+   "vessel": "Wielingen Express"
+  },
+  "lang": "de",
+  "noise": [],
+  "shipment": "SHP-032",
+  "type": "bill_of_lading"
+ },
+ "DOC-0095": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "OSTL83559471",
+   "buyer": "Oostveld Machinery NV",
+   "currency": "EUR",
+   "hs_codes": [
+    "1056954571"
+   ],
+   "incoterm": "DDP",
+   "invoice_date": "2026-09-13",
+   "invoice_number": "INV-2026702",
+   "line_amounts": [
+    31897.43,
+    2017.79,
+    23334.45,
+    41045.41
+   ],
+   "packages": 386,
+   "seller": "Vlaskamp Bakeries NV",
+   "total_amount": 98295.08
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": "SHP-032",
+  "type": "commercial_invoice"
+ },
+ "DOC-0096": {
+  "exceptions": [
+   "weight_mismatch"
+  ],
+  "fields": {
+   "bl_reference": "OSTL83559471",
+   "containers": [
+    "CMVU3586094"
+   ],
+   "gross_weight_kg": 10326.4,
+   "net_weight_kg": 9293.8,
+   "packages": 386,
+   "reference": "PL-83279"
+  },
+  "lang": "de",
+  "noise": [
+   "weight_mismatch"
+  ],
+  "shipment": "SHP-032",
+  "type": "packing_list"
+ },
+ "DOC-0097": {
+  "exceptions": [],
+  "fields": {
+   "bl_number": "OSTL21851701",
+   "consignee": "Oostveld Machinery NV",
+   "containers": [
+    "WKLU3376997",
+    "OSTU0701832"
+   ],
+   "gross_weight_kg": 29923.7,
+   "issue_date": "2026-09-12",
+   "packages": 114,
+   "port_of_discharge": "BEZEE",
+   "port_of_loading": "GBPME",
+   "seal_numbers": [
+    "SL4712125",
+    "ML4962885"
+   ],
+   "shipper": "Haldor Timber Oy",
+   "vessel": "Baltic Wren"
+  },
+  "lang": "fr",
+  "noise": [],
+  "shipment": "SHP-033",
+  "type": "bill_of_lading"
+ },
+ "DOC-0098": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "OSTL21851701",
+   "buyer": "Oostveld Machinery NV",
+   "currency": "EUR",
+   "hs_codes": [
+    "44639256",
+    "72649961",
+    "98811366"
+   ],
+   "incoterm": "FOB",
+   "invoice_date": "2026-09-12",
+   "invoice_number": "INV-2026701",
+   "line_amounts": [
+    17312.37,
+    44694.86
+   ],
+   "packages": 114,
+   "seller": "Haldor Timber Oy",
+   "total_amount": 62007.23
+  },
+  "lang": "en",
+  "noise": [
+   "label_ocr"
+  ],
+  "shipment": "SHP-033",
+  "type": "commercial_invoice"
+ },
+ "DOC-0099": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "OSTL21851701",
+   "containers": [
+    "WKLU3376997",
+    "OSTU0701832"
+   ],
+   "gross_weight_kg": 29923.7,
+   "net_weight_kg": 27350.0,
+   "packages": 114,
+   "reference": "PL-53592"
+  },
+  "lang": "de",
+  "noise": [
+   "label_ocr"
+  ],
+  "shipment": "SHP-033",
+  "type": "packing_list"
+ },
+ "DOC-0100": {
+  "exceptions": [],
+  "fields": {
+   "bl_number": "OSTL25002250",
+   "consignee": "Oostveld Machinery NV",
+   "containers": [
+    "BRTU8789595"
+   ],
+   "gross_weight_kg": 8595.6,
+   "issue_date": "2026-09-14",
+   "packages": 1157,
+   "port_of_discharge": "BEZEE",
+   "port_of_loading": "USBAL",
+   "seal_numbers": [
+    "ML3859238"
+   ],
+   "shipper": "Sundra Textiles Pvt Ltd",
+   "vessel": "Celtic Mariner"
+  },
+  "lang": "de",
+  "noise": [],
+  "shipment": "SHP-034",
+  "type": "bill_of_lading"
+ },
+ "DOC-0101": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "OSTL25002250",
+   "buyer": "Oostveld Machinery NV",
+   "currency": "USD",
+   "hs_codes": [
+    "33288723",
+    "7153186829",
+    "83573310"
+   ],
+   "incoterm": "EXW",
+   "invoice_date": "2026-09-14",
+   "invoice_number": "INV-2026219",
+   "line_amounts": [
+    18619.11,
+    21660.52,
+    41056.09
+   ],
+   "packages": 1157,
+   "seller": "Sundra Textiles Pvt Ltd",
+   "total_amount": 81335.72
+  },
+  "lang": "nl",
+  "noise": [],
+  "shipment": "SHP-034",
+  "type": "commercial_invoice"
+ },
+ "DOC-0102": {
+  "exceptions": [],
+  "fields": {
+   "containers": [
+    "BRTU8789595"
+   ],
+   "gross_weight_kg": 8595.6,
+   "net_weight_kg": 8026.9,
+   "packages": 1157,
+   "reference": "PL-31132"
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": "SHP-034",
+  "type": "packing_list"
+ },
+ "DOC-0103": {
+  "exceptions": [
+   "missing_required"
+  ],
+  "fields": {
+   "bl_number": "BWAL95480272",
+   "consignee": "Vlaskamp Bakeries NV",
+   "containers": [
+    "TGHU4598726",
+    "WKLU7784750",
+    "TGHU6935195"
+   ],
+   "gross_weight_kg": 26795.4,
+   "issue_date": "2026-09-02",
+   "packages": 1155,
+   "port_of_discharge": "IEDUB",
+   "port_of_loading": "BEZEE",
+   "shipper": "Oostveld Machinery NV",
+   "vessel": "Hollandia Bay"
+  },
+  "lang": "en",
+  "noise": [
+   "missing_seal"
+  ],
+  "shipment": "SHP-035",
+  "type": "bill_of_lading"
+ },
+ "DOC-0104": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "BWAL95480272",
+   "buyer": "Vlaskamp Bakeries NV",
+   "currency": "EUR",
+   "hs_codes": [
+    "565912"
+   ],
+   "incoterm": "DDP",
+   "invoice_date": "2026-09-02",
+   "invoice_number": "INV-2026144",
+   "line_amounts": [
+    34706.02,
+    21540.96,
+    42755.12,
+    25330.37
+   ],
+   "packages": 1155,
+   "seller": "Oostveld Machinery NV",
+   "total_amount": 124332.47
+  },
+  "lang": "nl",
+  "noise": [],
+  "shipment": "SHP-035",
+  "type": "commercial_invoice"
+ },
+ "DOC-0105": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "BWAL95480272",
+   "containers": [
+    "TGHU4598726",
+    "WKLU7784750",
+    "TGHU6935195"
+   ],
+   "gross_weight_kg": 26795.4,
+   "net_weight_kg": 25388.6,
+   "packages": 1155,
+   "reference": "PL-59919"
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": "SHP-035",
+  "type": "packing_list"
+ },
+ "DOC-0106": {
+  "exceptions": [
+   "container_check_digit"
+  ],
+  "fields": {
+   "bl_number": "OSTL60167232",
+   "consignee": "Grevenor Plastics GmbH",
+   "containers": [
+    "WKLU0229088"
+   ],
+   "gross_weight_kg": 12942.8,
+   "issue_date": "2026-09-17",
+   "packages": 520,
+   "port_of_discharge": "BEZEE",
+   "port_of_loading": "IEDUB",
+   "seal_numbers": [
+    "ML8462692"
+   ],
+   "shipper": "Riverside Agri Inc",
+   "vessel": "Scaldis Trader"
+  },
+  "lang": "de",
+  "noise": [
+   "source_typo"
+  ],
+  "shipment": "SHP-036",
+  "type": "bill_of_lading"
+ },
+ "DOC-0107": {
+  "exceptions": [],
+  "fields": {
+   "buyer": "Grevenor Plastics GmbH",
+   "currency": "USD",
+   "hs_codes": [
+    "061607",
+    "0736736492",
+    "4667773109"
+   ],
+   "incoterm": "CFR",
+   "invoice_date": "2026-09-17",
+   "invoice_number": "INV-2026972",
+   "line_amounts": [
+    38551.36,
+    23462.49,
+    24521.87
+   ],
+   "packages": 520,
+   "seller": "Riverside Agri Inc",
+   "total_amount": 86535.72
+  },
+  "lang": "fr",
+  "noise": [],
+  "shipment": "SHP-036",
+  "type": "commercial_invoice"
+ },
+ "DOC-0108": {
+  "exceptions": [
+   "weight_mismatch"
+  ],
+  "fields": {
+   "bl_reference": "OSTL60167232",
+   "containers": [
+    "WKLU0229082"
+   ],
+   "gross_weight_kg": 14495.9,
+   "net_weight_kg": 12148.1,
+   "packages": 520,
+   "reference": "PL-75951"
+  },
+  "lang": "fr",
+  "noise": [
+   "weight_mismatch"
+  ],
+  "shipment": "SHP-036",
+  "type": "packing_list"
+ },
+ "DOC-0109": {
+  "exceptions": [],
+  "fields": {
+   "bl_number": "CMVE28899457",
+   "consignee": "Kestrel Pharma GmbH",
+   "containers": [
+    "OSTU5427914",
+    "TGHU3609298",
+    "OSTU6185184"
+   ],
+   "gross_weight_kg": 50996.5,
+   "issue_date": "2026-09-02",
+   "packages": 35,
+   "port_of_discharge": "BEZEE",
+   "port_of_loading": "MAPTM",
+   "seal_numbers": [
+    "3517491",
+    "SL8999502",
+    "ML7619136"
+   ],
+   "shipper": "Riverside Agri Inc",
+   "vessel": "Scaldis Trader"
+  },
+  "lang": "en",
+  "noise": [
+   "label_ocr"
+  ],
+  "shipment": "SHP-037",
+  "type": "bill_of_lading"
+ },
+ "DOC-0110": {
+  "exceptions": [],
+  "fields": {
+   "buyer": "Kestrel Pharma GmbH",
+   "currency": "USD",
+   "hs_codes": [
+    "305173"
+   ],
+   "incoterm": "DAP",
+   "invoice_date": "2026-09-02",
+   "invoice_number": "INV-2026019",
+   "line_amounts": [
+    29003.0,
+    41639.17,
+    29101.31
+   ],
+   "packages": 35,
+   "seller": "Riverside Agri Inc",
+   "total_amount": 99743.48
+  },
+  "lang": "fr",
+  "noise": [
+   "label_ocr"
+  ],
+  "shipment": "SHP-037",
+  "type": "commercial_invoice"
+ },
+ "DOC-0111": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "CMVE28899457",
+   "containers": [
+    "OSTU5427914",
+    "TGHU3609298",
+    "OSTU6185184"
+   ],
+   "gross_weight_kg": 50996.5,
+   "net_weight_kg": 44996.8,
+   "packages": 35,
+   "reference": "PL-38974"
+  },
+  "lang": "en",
+  "noise": [
+   "ocr_container",
+   "label_ocr"
+  ],
+  "shipment": "SHP-037",
+  "type": "packing_list"
+ },
+ "DOC-0112": {
+  "exceptions": [],
+  "fields": {
+   "bl_number": "NSLU30437671",
+   "consignee": "Kestrel Pharma GmbH",
+   "containers": [
+    "HLDU3871980"
+   ],
+   "gross_weight_kg": 11711.5,
+   "issue_date": "2026-09-05",
+   "packages": 790,
+   "port_of_discharge": "BEZEE",
+   "port_of_loading": "CNSHA",
+   "seal_numbers": [
+    "9157138"
+   ],
+   "shipper": "Maison Vérane SAS",
+   "vessel": "Celtic Mariner"
+  },
+  "lang": "de",
+  "noise": [],
+  "shipment": "SHP-038",
+  "type": "bill_of_lading"
+ },
+ "DOC-0113": {
+  "exceptions": [],
+  "fields": {
+   "buyer": "Kestrel Pharma GmbH",
+   "currency": "EUR",
+   "hs_codes": [
+    "12315462",
+    "35521889"
+   ],
+   "incoterm": "FOB",
+   "invoice_date": "2026-09-05",
+   "invoice_number": "INV-2026897",
+   "line_amounts": [
+    8283.56,
+    40851.86,
+    47923.97,
+    44085.1
+   ],
+   "packages": 790,
+   "seller": "Maison Vérane SAS",
+   "total_amount": 141144.49
+  },
+  "lang": "de",
+  "noise": [],
+  "shipment": "SHP-038",
+  "type": "commercial_invoice"
+ },
+ "DOC-0114": {
+  "exceptions": [],
+  "fields": {
+   "containers": [
+    "HLDU3871980"
+   ],
+   "gross_weight_kg": 11711.5,
+   "net_weight_kg": 10567.0,
+   "packages": 790,
+   "reference": "PL-77030"
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": "SHP-038",
+  "type": "packing_list"
+ },
+ "DOC-0115": {
+  "exceptions": [
+   "missing_required"
+  ],
+  "fields": {
+   "bl_number": "NSLU34812564",
+   "consignee": "Maison Vérane SAS",
+   "containers": [
+    "OSTU7712530",
+    "WKLU4591525"
+   ],
+   "gross_weight_kg": 27174.7,
+   "issue_date": "2026-09-18",
+   "packages": 1107,
+   "port_of_discharge": "BEZEE",
+   "port_of_loading": "FIHEL",
+   "shipper": "Nordhavn Steel AB",
+   "vessel": "Atlantic Merel"
+  },
+  "lang": "nl",
+  "noise": [
+   "missing_seal"
+  ],
+  "shipment": "SHP-039",
+  "type": "bill_of_lading"
+ },
+ "DOC-0116": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "NSLU34812564",
+   "buyer": "Maison Vérane SAS",
+   "currency": "SEK",
+   "hs_codes": [
+    "03052912",
+    "4510033926",
+    "47478647"
+   ],
+   "incoterm": "FCA",
+   "invoice_date": "2026-09-18",
+   "invoice_number": "INV-2026886",
+   "line_amounts": [
+    22834.99,
+    31170.12,
+    4316.6
+   ],
+   "packages": 1107,
+   "seller": "Nordhavn Steel AB",
+   "total_amount": 58321.71
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": "SHP-039",
+  "type": "commercial_invoice"
+ },
+ "DOC-0117": {
+  "exceptions": [
+   "weight_mismatch"
+  ],
+  "fields": {
+   "containers": [
+    "OSTU7712530",
+    "WKLU4591525"
+   ],
+   "gross_weight_kg": 24457.2,
+   "net_weight_kg": 22011.5,
+   "packages": 1107,
+   "reference": "PL-30906"
+  },
+  "lang": "fr",
+  "noise": [
+   "weight_mismatch"
+  ],
+  "shipment": "SHP-039",
+  "type": "packing_list"
+ },
+ "DOC-0118": {
+  "exceptions": [],
+  "fields": {
+   "bl_number": "OSTL88568902",
+   "consignee": "Maison Vérane SAS",
+   "containers": [
+    "BRTU4929301"
+   ],
+   "gross_weight_kg": 20822.3,
+   "issue_date": "2026-09-10",
+   "packages": 1189,
+   "port_of_discharge": "BEZEE",
+   "port_of_loading": "MAPTM",
+   "seal_numbers": [
+    "3457742"
+   ],
+   "shipper": "Thistlebank Distillers Ltd",
+   "vessel": "North Sea Kestrel"
+  },
+  "lang": "nl",
+  "noise": [
+   "no_unit"
+  ],
+  "shipment": "SHP-040",
+  "type": "bill_of_lading"
+ },
+ "DOC-0119": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "OSTL88568902",
+   "buyer": "Maison Vérane SAS",
+   "currency": "GBP",
+   "hs_codes": [
+    "72188841",
+    "76377487",
+    "96752318"
+   ],
+   "incoterm": "CIF",
+   "invoice_date": "2026-09-10",
+   "invoice_number": "INV-2026468",
+   "line_amounts": [
+    37936.98,
+    38109.71
+   ],
+   "packages": 1189,
+   "seller": "Thistlebank Distillers Ltd",
+   "total_amount": 76046.69
+  },
+  "lang": "nl",
+  "noise": [],
+  "shipment": "SHP-040",
+  "type": "commercial_invoice"
+ },
+ "DOC-0120": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "OSTL88568902",
+   "containers": [
+    "BRTU4929301"
+   ],
+   "gross_weight_kg": 20822.3,
+   "net_weight_kg": 19748.0,
+   "packages": 1189,
+   "reference": "PL-85888"
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": "SHP-040",
+  "type": "packing_list"
+ },
+ "DOC-0121": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "CMVE76872934",
+   "containers": [
+    "WKLU0902362",
+    "WKLU2166954",
+    "WKLU6171157"
+   ],
+   "do_number": "DO6924167",
+   "pickup_reference": "UC4G6E",
+   "terminal": "Zeebrugge Terminal A",
+   "valid_until": "2026-09-22"
+  },
+  "lang": "de",
+  "noise": [],
+  "shipment": "SHP-031",
+  "type": "delivery_order"
+ },
+ "DOC-0122": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "BWAL23403112",
+   "containers": [
+    "BRTU6548789"
+   ],
+   "do_number": "DO3797995",
+   "pickup_reference": "373MKQ",
+   "terminal": "Zeebrugge Terminal B",
+   "valid_until": "2026-09-12"
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": "SHP-014",
+  "type": "delivery_order"
+ },
+ "DOC-0123": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "OSTL02881746",
+   "containers": [
+    "OSTU7100279"
+   ],
+   "do_number": "DO1447558",
+   "pickup_reference": "WZM38Q",
+   "terminal": "Zeebrugge Terminal B",
+   "valid_until": "2026-09-14"
+  },
+  "lang": "fr",
+  "noise": [],
+  "shipment": "SHP-023",
+  "type": "delivery_order"
+ },
+ "DOC-0124": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "CMVE79020134",
+   "containers": [
+    "WKLU1200210"
+   ],
+   "do_number": "DO6971414",
+   "pickup_reference": "L7SCUL",
+   "terminal": "Zeebrugge Terminal A",
+   "valid_until": "2026-09-20"
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": "SHP-012",
+  "type": "delivery_order"
+ },
+ "DOC-0125": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "NSLU86690170",
+   "containers": [
+    "CMVU8449520"
+   ],
+   "do_number": "DO2291264",
+   "pickup_reference": "6WS6CR",
+   "terminal": "Zeebrugge Ro-Ro Quay 2",
+   "valid_until": "2026-09-21"
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": "SHP-001",
+  "type": "delivery_order"
+ },
+ "DOC-0126": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "BWAL95480272",
+   "containers": [
+    "TGHU4598726",
+    "TGHU6935195",
+    "WKLU7784750"
+   ],
+   "do_number": "DO4053089",
+   "pickup_reference": "MHVVSZ",
+   "terminal": "Zeebrugge Terminal B",
+   "valid_until": "2026-09-12"
+  },
+  "lang": "de",
+  "noise": [],
+  "shipment": "SHP-035",
+  "type": "delivery_order"
+ },
+ "DOC-0127": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "NSLU66289470",
+   "containers": [
+    "OSTU6067181"
+   ],
+   "do_number": "DO6802523",
+   "pickup_reference": "V3RZUD",
+   "terminal": "Zeebrugge Terminal A",
+   "valid_until": "2026-09-25"
+  },
+  "lang": "en",
+  "noise": [
+   "ocr_container"
+  ],
+  "shipment": "SHP-017",
+  "type": "delivery_order"
+ },
+ "DOC-0128": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "NSLU66289470",
+   "containers": [
+    "BRTU6648324",
+    "CMVU3753843",
+    "OSTU6067181"
+   ],
+   "do_number": "DO0673474",
+   "pickup_reference": "WY9HUS",
+   "terminal": "Zeebrugge Terminal A",
+   "valid_until": "2026-09-23"
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": "SHP-017",
+  "type": "delivery_order"
+ },
+ "DOC-0129": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "CMVE22710478",
+   "containers": [
+    "OSTU9796839"
+   ],
+   "do_number": "DO4906832",
+   "pickup_reference": "TFLHSC",
+   "terminal": "Zeebrugge Ro-Ro Quay 2",
+   "valid_until": "2026-09-15"
+  },
+  "lang": "fr",
+  "noise": [],
+  "shipment": "SHP-026",
+  "type": "delivery_order"
+ },
+ "DOC-0130": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "NSLU85649399",
+   "containers": [
+    "CMVU7445746",
+    "NSXU6383485"
+   ],
+   "do_number": "DO2280407",
+   "pickup_reference": "4MGCHB",
+   "terminal": "Zeebrugge Ro-Ro Quay 2",
+   "valid_until": "2026-09-21"
+  },
+  "lang": "de",
+  "noise": [],
+  "shipment": "SHP-002",
+  "type": "delivery_order"
+ },
+ "DOC-0131": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "CMVE22710478",
+   "containers": [
+    "OSTU9796839"
+   ],
+   "do_number": "DO1343272",
+   "pickup_reference": "89GGPG",
+   "terminal": "Zeebrugge Terminal A",
+   "valid_until": "2026-09-12"
+  },
+  "lang": "nl",
+  "noise": [
+   "label_ocr"
+  ],
+  "shipment": "SHP-026",
+  "type": "delivery_order"
+ },
+ "DOC-0132": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "BWAL32952754",
+   "containers": [
+    "OSTU1402965",
+    "TGHU0312731"
+   ],
+   "do_number": "DO2821372",
+   "pickup_reference": "WB53S2",
+   "terminal": "Zeebrugge Terminal A",
+   "valid_until": "2026-09-19"
+  },
+  "lang": "en",
+  "noise": [
+   "illegible"
+  ],
+  "shipment": "SHP-009",
+  "type": "delivery_order"
+ },
+ "DOC-0133": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "OSTL00595732",
+   "containers": [
+    "CMVU5610688"
+   ],
+   "do_number": "DO3629926",
+   "pickup_reference": "6ZD49E",
+   "terminal": "Zeebrugge Terminal A",
+   "valid_until": "2026-09-18"
+  },
+  "lang": "fr",
+  "noise": [],
+  "shipment": "SHP-021",
+  "type": "delivery_order"
+ },
+ "DOC-0134": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "BWAL95480272",
+   "containers": [
+    "TGHU6935195",
+    "WKLU7784750"
+   ],
+   "do_number": "DO4264455",
+   "pickup_reference": "KUTCP6",
+   "terminal": "Zeebrugge Terminal B",
+   "valid_until": "2026-09-13"
+  },
+  "lang": "nl",
+  "noise": [
+   "label_ocr"
+  ],
+  "shipment": "SHP-035",
+  "type": "delivery_order"
+ },
+ "DOC-0135": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "NSLU33551900",
+   "containers": [
+    "OSTU1319608"
+   ],
+   "do_number": "DO0014264",
+   "pickup_reference": "RFF8AV",
+   "terminal": "Zeebrugge Terminal A",
+   "valid_until": "2026-09-20"
+  },
+  "lang": "nl",
+  "noise": [],
+  "shipment": "SHP-028",
+  "type": "delivery_order"
+ },
+ "DOC-0136": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "OSTL28014695",
+   "containers": [
+    "CMVU2263327"
+   ],
+   "do_number": "DO0890161",
+   "pickup_reference": "VG2FTR",
+   "terminal": "Zeebrugge Terminal A",
+   "valid_until": "2026-09-28"
+  },
+  "lang": "de",
+  "noise": [],
+  "shipment": "SHP-004",
+  "type": "delivery_order"
+ },
+ "DOC-0137": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "CMVE10691696",
+   "containers": [
+    "OSTU8848265"
+   ],
+   "do_number": "DO2520413",
+   "pickup_reference": "LC44L9",
+   "terminal": "Zeebrugge Terminal B",
+   "valid_until": "2026-09-13"
+  },
+  "lang": "de",
+  "noise": [],
+  "shipment": "SHP-020",
+  "type": "delivery_order"
+ },
+ "DOC-0138": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "BWAL33679056",
+   "containers": [
+    "CMVU0745973"
+   ],
+   "do_number": "DO7798220",
+   "pickup_reference": "T9WMWU",
+   "terminal": "Zeebrugge Terminal B",
+   "valid_until": "2026-09-15"
+  },
+  "lang": "nl",
+  "noise": [
+   "ocr_container"
+  ],
+  "shipment": "SHP-006",
+  "type": "delivery_order"
+ },
+ "DOC-0139": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "NSLU86690170",
+   "containers": [
+    "CMVU8449520",
+    "TGHU6541550"
+   ],
+   "do_number": "DO1903550",
+   "pickup_reference": "ZGQLXC",
+   "terminal": "Zeebrugge Terminal B",
+   "valid_until": "2026-09-19"
+  },
+  "lang": "fr",
+  "noise": [],
+  "shipment": "SHP-001",
+  "type": "delivery_order"
+ },
+ "DOC-0140": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "NSLU67490592",
+   "containers": [
+    "CMVU1534770",
+    "CMVU1972570"
+   ],
+   "do_number": "DO9345391",
+   "pickup_reference": "MG33KC",
+   "terminal": "Zeebrugge Terminal A",
+   "valid_until": "2026-09-27"
+  },
+  "lang": "de",
+  "noise": [],
+  "shipment": "SHP-019",
+  "type": "delivery_order"
+ },
+ "DOC-0141": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "CMVE48398601",
+   "containers": [
+    "WKLU9218957"
+   ],
+   "do_number": "DO4898601",
+   "pickup_reference": "LLVQ2Z",
+   "terminal": "Zeebrugge Terminal B",
+   "valid_until": "2026-09-08"
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": "SHP-016",
+  "type": "delivery_order"
+ },
+ "DOC-0142": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "OSTL80407410",
+   "containers": [
+    "WKLU6718856"
+   ],
+   "do_number": "DO6084677",
+   "pickup_reference": "MA2KEY",
+   "terminal": "Zeebrugge Terminal B",
+   "valid_until": "2026-10-03"
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": "SHP-022",
+  "type": "delivery_order"
+ },
+ "DOC-0143": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "OSTL00595732",
+   "containers": [
+    "CMVU5610688"
+   ],
+   "do_number": "DO6733347",
+   "pickup_reference": "GMQF42",
+   "terminal": "Zeebrugge Terminal A",
+   "valid_until": "2026-09-16"
+  },
+  "lang": "en",
+  "noise": [
+   "label_ocr"
+  ],
+  "shipment": "SHP-021",
+  "type": "delivery_order"
+ },
+ "DOC-0144": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "NSLU66289470",
+   "containers": [
+    "BRTU6648324"
+   ],
+   "do_number": "DO7286014",
+   "pickup_reference": "RPEZMK",
+   "terminal": "Zeebrugge Terminal A",
+   "valid_until": "2026-09-21"
+  },
+  "lang": "nl",
+  "noise": [],
+  "shipment": "SHP-017",
+  "type": "delivery_order"
+ },
+ "DOC-0145": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "OSTL83559471",
+   "containers": [
+    "CMVU3586094"
+   ],
+   "do_number": "DO1815292",
+   "pickup_reference": "UVSFBV",
+   "terminal": "Zeebrugge Ro-Ro Quay 2",
+   "valid_until": "2026-09-28"
+  },
+  "lang": "en",
+  "noise": [
+   "illegible"
+  ],
+  "shipment": "SHP-032",
+  "type": "delivery_order"
+ },
+ "DOC-0146": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "OSTL60167232",
+   "containers": [
+    "WKLU0229082"
+   ],
+   "do_number": "DO4994932",
+   "pickup_reference": "P9GTXA",
+   "terminal": "Zeebrugge Ro-Ro Quay 2",
+   "valid_until": "2026-09-27"
+  },
+  "lang": "nl",
+  "noise": [],
+  "shipment": "SHP-036",
+  "type": "delivery_order"
+ },
+ "DOC-0147": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "OSTL00595732",
+   "containers": [
+    "CMVU5610688"
+   ],
+   "do_number": "DO8775151",
+   "pickup_reference": "8SCUBJ",
+   "terminal": "Zeebrugge Ro-Ro Quay 2",
+   "valid_until": "2026-09-18"
+  },
+  "lang": "en",
+  "noise": [
+   "ocr_container"
+  ],
+  "shipment": "SHP-021",
+  "type": "delivery_order"
+ },
+ "DOC-0148": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "CMVE10691696",
+   "containers": [
+    "OSTU8848265",
+    "WKLU4725727"
+   ],
+   "do_number": "DO7401951",
+   "pickup_reference": "DB3VVU",
+   "terminal": "Zeebrugge Terminal B",
+   "valid_until": "2026-09-13"
+  },
+  "lang": "en",
+  "noise": [
+   "ocr_container"
+  ],
+  "shipment": "SHP-020",
+  "type": "delivery_order"
+ },
+ "DOC-0149": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "CMVE48398601",
+   "containers": [
+    "WKLU9218957"
+   ],
+   "do_number": "DO8830653",
+   "pickup_reference": "N79E3Y",
+   "terminal": "Zeebrugge Ro-Ro Quay 2",
+   "valid_until": "2026-09-18"
+  },
+  "lang": "de",
+  "noise": [
+   "ocr_container"
+  ],
+  "shipment": "SHP-016",
+  "type": "delivery_order"
+ },
+ "DOC-0150": {
+  "exceptions": [],
+  "fields": {
+   "bl_reference": "NSLU86690170",
+   "containers": [
+    "CMVU8449520",
+    "TGHU6541550"
+   ],
+   "do_number": "DO9857437",
+   "pickup_reference": "KDUN3V",
+   "terminal": "Zeebrugge Terminal B",
+   "valid_until": "2026-09-15"
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": "SHP-001",
+  "type": "delivery_order"
+ },
+ "DOC-0151": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR99300136",
+   "consignee": "Grevenor Plastics GmbH",
+   "date_of_taking_over": "2026-09-07",
+   "gross_weight_kg": 5192.7,
+   "packages": 51,
+   "place_of_delivery": "Roubaix, FR",
+   "place_of_taking_over": "Brugge, BE",
+   "sender": "Vlaskamp Bakeries NV",
+   "vehicle_plate": "DU-AB 3947"
+  },
+  "lang": "de",
+  "noise": [
+   "label_ocr"
+  ],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0152": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR72693058",
+   "consignee": "Huaxin Components Co Ltd",
+   "date_of_taking_over": "2026-09-15",
+   "gross_weight_kg": 13561.2,
+   "packages": 57,
+   "place_of_delivery": "Tilburg, NL",
+   "place_of_taking_over": "Zeebrugge, BE",
+   "sender": "Lanterra Ceramics SpA",
+   "vehicle_plate": "1-DTT-474"
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0153": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR25412071",
+   "consignee": "Calderwick Paper Ltd",
+   "date_of_taking_over": "2026-09-13",
+   "gross_weight_kg": 2700.2,
+   "packages": 36,
+   "place_of_delivery": "Roubaix, FR",
+   "place_of_taking_over": "Lyon, FR",
+   "sender": "Nordhavn Steel AB",
+   "vehicle_plate": "WZ 42315"
+  },
+  "lang": "nl",
+  "noise": [
+   "illegible",
+   "label_ocr"
+  ],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0154": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR62700870",
+   "consignee": "Huaxin Components Co Ltd",
+   "date_of_taking_over": "2026-09-16",
+   "gross_weight_kg": 4687.3,
+   "packages": 18,
+   "place_of_delivery": "Poznań, PL",
+   "place_of_taking_over": "Köln, DE",
+   "sender": "Brugland Foods BV",
+   "vehicle_plate": "1-RHA-172"
+  },
+  "lang": "en",
+  "noise": [
+   "label_ocr"
+  ],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0155": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR33845670",
+   "consignee": "Lanterra Ceramics SpA",
+   "date_of_taking_over": "2026-09-15",
+   "gross_weight_kg": 3490.4,
+   "packages": 26,
+   "place_of_delivery": "Lille, FR",
+   "place_of_taking_over": "Zeebrugge, BE",
+   "sender": "Grevenor Plastics GmbH",
+   "vehicle_plate": "1-YFB-776"
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0156": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR90561353",
+   "consignee": "Huaxin Components Co Ltd",
+   "date_of_taking_over": "2026-09-28",
+   "gross_weight_kg": 17713.3,
+   "packages": 62,
+   "place_of_delivery": "Poznań, PL",
+   "place_of_taking_over": "Duisburg, DE",
+   "sender": "Lanterra Ceramics SpA",
+   "vehicle_plate": "AB-215-XY"
+  },
+  "lang": "nl",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0157": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR45342692",
+   "consignee": "Haldor Timber Oy",
+   "date_of_taking_over": "2026-09-08",
+   "gross_weight_kg": 22953.3,
+   "packages": 5,
+   "place_of_delivery": "Lyon, FR",
+   "place_of_taking_over": "Gent, BE",
+   "sender": "Peloria Chemicals SA",
+   "vehicle_plate": "DU-KR 2666"
+  },
+  "lang": "de",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0158": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR75805687",
+   "consignee": "Thistlebank Distillers Ltd",
+   "date_of_taking_over": "2026-09-13",
+   "gross_weight_kg": 1901.5,
+   "packages": 66,
+   "place_of_delivery": "Lille, FR",
+   "place_of_taking_over": "Liège, BE",
+   "sender": "Wexmoor Retail Ltd",
+   "vehicle_plate": "WZ 51393"
+  },
+  "lang": "en",
+  "noise": [
+   "silent_digit"
+  ],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0159": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR44149332",
+   "consignee": "Calderwick Paper Ltd",
+   "date_of_taking_over": "2026-09-08",
+   "gross_weight_kg": 19007.4,
+   "packages": 55,
+   "place_of_delivery": "Lille, FR",
+   "place_of_taking_over": "Duisburg, DE",
+   "sender": "Grevenor Plastics GmbH",
+   "vehicle_plate": "1-MCW-524"
+  },
+  "lang": "de",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0160": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR90764562",
+   "consignee": "Peloria Chemicals SA",
+   "date_of_taking_over": "2026-08-29",
+   "gross_weight_kg": 19454.8,
+   "packages": 45,
+   "place_of_delivery": "Lyon, FR",
+   "place_of_taking_over": "Köln, DE",
+   "sender": "Oostveld Machinery NV",
+   "vehicle_plate": "LM-994-TR"
+  },
+  "lang": "nl",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0161": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR39819505",
+   "consignee": "Bayline Industrial LLC",
+   "date_of_taking_over": "2026-09-19",
+   "gross_weight_kg": 15079.4,
+   "packages": 46,
+   "place_of_delivery": "Köln, DE",
+   "place_of_taking_over": "Venlo, NL",
+   "sender": "Maison Vérane SAS",
+   "vehicle_plate": "DU-AB 2679"
+  },
+  "lang": "de",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0162": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR54961515",
+   "consignee": "Vlaskamp Bakeries NV",
+   "date_of_taking_over": "2026-09-09",
+   "gross_weight_kg": 15767.2,
+   "packages": 35,
+   "place_of_delivery": "Lille, FR",
+   "place_of_taking_over": "Lyon, FR",
+   "sender": "Haldor Timber Oy",
+   "vehicle_plate": "WZ 37929"
+  },
+  "lang": "en",
+  "noise": [
+   "illegible"
+  ],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0163": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR12670505",
+   "consignee": "Lanterra Ceramics SpA",
+   "date_of_taking_over": "2026-09-03",
+   "gross_weight_kg": 12987.3,
+   "packages": 35,
+   "place_of_delivery": "Tilburg, NL",
+   "place_of_taking_over": "Venlo, NL",
+   "sender": "Wexmoor Retail Ltd",
+   "vehicle_plate": "WZ 20141"
+  },
+  "lang": "fr",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0164": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR84580794",
+   "consignee": "Thistlebank Distillers Ltd",
+   "date_of_taking_over": "2026-09-03",
+   "gross_weight_kg": 5732.9,
+   "packages": 49,
+   "place_of_delivery": "Liège, BE",
+   "place_of_taking_over": "Köln, DE",
+   "sender": "Calderwick Paper Ltd",
+   "vehicle_plate": "LM-724-TR"
+  },
+  "lang": "en",
+  "noise": [
+   "illegible"
+  ],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0165": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR73153739",
+   "consignee": "Lanterra Ceramics SpA",
+   "date_of_taking_over": "2026-09-02",
+   "gross_weight_kg": 4606.7,
+   "packages": 6,
+   "place_of_delivery": "Tilburg, NL",
+   "place_of_taking_over": "Liège, BE",
+   "sender": "Haldor Timber Oy",
+   "vehicle_plate": "GH-132-CD"
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0166": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR47145456",
+   "consignee": "Grevenor Plastics GmbH",
+   "date_of_taking_over": "2026-08-30",
+   "gross_weight_kg": 4503.6,
+   "packages": 38,
+   "place_of_delivery": "Duisburg, DE",
+   "place_of_taking_over": "Liège, BE",
+   "sender": "Oostveld Machinery NV",
+   "vehicle_plate": "WZ 52848"
+  },
+  "lang": "nl",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0167": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR42731350",
+   "consignee": "Vlaskamp Bakeries NV",
+   "date_of_taking_over": "2026-09-18",
+   "gross_weight_kg": 23512.0,
+   "packages": 16,
+   "place_of_delivery": "Gent, BE",
+   "place_of_taking_over": "Lyon, FR",
+   "sender": "Grevenor Plastics GmbH",
+   "vehicle_plate": "1-BCK-113"
+  },
+  "lang": "nl",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0168": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR41418855",
+   "consignee": "Maison Vérane SAS",
+   "date_of_taking_over": "2026-09-24",
+   "gross_weight_kg": 5505.4,
+   "packages": 24,
+   "place_of_delivery": "Brugge, BE",
+   "place_of_taking_over": "Köln, DE",
+   "sender": "Vlaskamp Bakeries NV",
+   "vehicle_plate": "1-XEV-787"
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0169": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR42168424",
+   "consignee": "Lanterra Ceramics SpA",
+   "date_of_taking_over": "2026-09-02",
+   "gross_weight_kg": 15746.1,
+   "packages": 21,
+   "place_of_delivery": "Brugge, BE",
+   "place_of_taking_over": "Liège, BE",
+   "sender": "Brugland Foods BV",
+   "vehicle_plate": "WZ 51621"
+  },
+  "lang": "nl",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0170": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR56069225",
+   "consignee": "Haldor Timber Oy",
+   "date_of_taking_over": "2026-09-15",
+   "gross_weight_kg": 6629.8,
+   "packages": 48,
+   "place_of_delivery": "Lille, FR",
+   "place_of_taking_over": "Köln, DE",
+   "sender": "Brugland Foods BV",
+   "vehicle_plate": "1-MHK-724"
+  },
+  "lang": "de",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0171": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR40446300",
+   "consignee": "Vlaskamp Bakeries NV",
+   "date_of_taking_over": "2026-09-11",
+   "gross_weight_kg": 12735.4,
+   "packages": 33,
+   "place_of_delivery": "Lille, FR",
+   "place_of_taking_over": "Zeebrugge, BE",
+   "sender": "Brugland Foods BV",
+   "vehicle_plate": "WZ 42962"
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0172": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR76924988",
+   "consignee": "Brugland Foods BV",
+   "date_of_taking_over": "2026-09-09",
+   "gross_weight_kg": 9346.5,
+   "packages": 11,
+   "place_of_delivery": "Köln, DE",
+   "place_of_taking_over": "Liège, BE",
+   "sender": "Peloria Chemicals SA",
+   "vehicle_plate": "WZ 79932"
+  },
+  "lang": "de",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0173": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR96284523",
+   "consignee": "Grevenor Plastics GmbH",
+   "date_of_taking_over": "2026-09-18",
+   "gross_weight_kg": 13450.4,
+   "packages": 8,
+   "place_of_delivery": "Köln, DE",
+   "place_of_taking_over": "Liège, BE",
+   "sender": "Brugland Foods BV",
+   "vehicle_plate": "DU-KR 1480"
+  },
+  "lang": "nl",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0174": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR14924956",
+   "consignee": "Bayline Industrial LLC",
+   "date_of_taking_over": "2026-09-05",
+   "gross_weight_kg": 20657.3,
+   "packages": 34,
+   "place_of_delivery": "Zeebrugge, BE",
+   "place_of_taking_over": "Venlo, NL",
+   "sender": "Brugland Foods BV",
+   "vehicle_plate": "1-JMV-504"
+  },
+  "lang": "fr",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0175": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR41964975",
+   "consignee": "Nordhavn Steel AB",
+   "date_of_taking_over": "2026-09-01",
+   "gross_weight_kg": 2687.8,
+   "packages": 18,
+   "place_of_delivery": "Venlo, NL",
+   "place_of_taking_over": "Liège, BE",
+   "sender": "Haldor Timber Oy",
+   "vehicle_plate": "1-WBN-117"
+  },
+  "lang": "nl",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0176": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR53701238",
+   "consignee": "Oostveld Machinery NV",
+   "date_of_taking_over": "2026-09-26",
+   "gross_weight_kg": 18228.2,
+   "packages": 45,
+   "place_of_delivery": "Brugge, BE",
+   "place_of_taking_over": "Lille, FR",
+   "sender": "Haldor Timber Oy",
+   "vehicle_plate": "WZ 57968"
+  },
+  "lang": "nl",
+  "noise": [
+   "label_ocr"
+  ],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0177": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR82553311",
+   "consignee": "Huaxin Components Co Ltd",
+   "date_of_taking_over": "2026-09-09",
+   "gross_weight_kg": 21118.0,
+   "packages": 36,
+   "place_of_delivery": "Poznań, PL",
+   "place_of_taking_over": "Lille, FR",
+   "sender": "Maison Vérane SAS",
+   "vehicle_plate": "GH-830-XY"
+  },
+  "lang": "de",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0178": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR07045475",
+   "consignee": "Oostveld Machinery NV",
+   "date_of_taking_over": "2026-09-17",
+   "gross_weight_kg": 13402.4,
+   "packages": 10,
+   "place_of_delivery": "Gent, BE",
+   "place_of_taking_over": "Duisburg, DE",
+   "sender": "Thistlebank Distillers Ltd",
+   "vehicle_plate": "WZ 25107"
+  },
+  "lang": "nl",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0179": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR69375708",
+   "consignee": "Riverside Agri Inc",
+   "date_of_taking_over": "2026-09-08",
+   "gross_weight_kg": 18500.2,
+   "packages": 22,
+   "place_of_delivery": "Liège, BE",
+   "place_of_taking_over": "Roubaix, FR",
+   "sender": "Haldor Timber Oy",
+   "vehicle_plate": "DU-AB 8089"
+  },
+  "lang": "nl",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0180": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR59012122",
+   "consignee": "Thistlebank Distillers Ltd",
+   "date_of_taking_over": "2026-08-31",
+   "gross_weight_kg": 15272.8,
+   "packages": 31,
+   "place_of_delivery": "Liège, BE",
+   "place_of_taking_over": "Lyon, FR",
+   "sender": "Nordhavn Steel AB",
+   "vehicle_plate": "DU-KR 6492"
+  },
+  "lang": "de",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0181": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR96906558",
+   "consignee": "Oostveld Machinery NV",
+   "date_of_taking_over": "2026-09-09",
+   "gross_weight_kg": 9662.3,
+   "packages": 46,
+   "place_of_delivery": "Duisburg, DE",
+   "place_of_taking_over": "Liège, BE",
+   "sender": "Vlaskamp Bakeries NV",
+   "vehicle_plate": "GH-896-XY"
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0182": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR51049650",
+   "consignee": "Thistlebank Distillers Ltd",
+   "date_of_taking_over": "2026-09-15",
+   "gross_weight_kg": 4636.7,
+   "packages": 32,
+   "place_of_delivery": "Liège, BE",
+   "place_of_taking_over": "Köln, DE",
+   "sender": "Maison Vérane SAS",
+   "vehicle_plate": "AB-850-TR"
+  },
+  "lang": "de",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0183": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR10743255",
+   "consignee": "Grevenor Plastics GmbH",
+   "date_of_taking_over": "2026-09-07",
+   "gross_weight_kg": 2870.0,
+   "packages": 35,
+   "place_of_delivery": "Duisburg, DE",
+   "place_of_taking_over": "Tilburg, NL",
+   "sender": "Peloria Chemicals SA",
+   "vehicle_plate": "WZ 49349"
+  },
+  "lang": "fr",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0184": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR13958918",
+   "consignee": "Bayline Industrial LLC",
+   "date_of_taking_over": "2026-09-12",
+   "gross_weight_kg": 16242.4,
+   "packages": 48,
+   "place_of_delivery": "Gent, BE",
+   "place_of_taking_over": "Köln, DE",
+   "sender": "Nordhavn Steel AB",
+   "vehicle_plate": "GH-940-XY"
+  },
+  "lang": "de",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0185": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR53297293",
+   "consignee": "Kestrel Pharma GmbH",
+   "date_of_taking_over": "2026-09-20",
+   "gross_weight_kg": 18636.5,
+   "packages": 24,
+   "place_of_delivery": "Liège, BE",
+   "place_of_taking_over": "Tilburg, NL",
+   "sender": "Vlaskamp Bakeries NV",
+   "vehicle_plate": "GH-755-XY"
+  },
+  "lang": "en",
+  "noise": [
+   "illegible",
+   "label_ocr"
+  ],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0186": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR11655466",
+   "consignee": "Brugland Foods BV",
+   "date_of_taking_over": "2026-09-17",
+   "gross_weight_kg": 8259.3,
+   "packages": 57,
+   "place_of_delivery": "Lille, FR",
+   "place_of_taking_over": "Lyon, FR",
+   "sender": "Vlaskamp Bakeries NV",
+   "vehicle_plate": "DU-AB 6882"
+  },
+  "lang": "de",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0187": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR64830122",
+   "consignee": "Thistlebank Distillers Ltd",
+   "date_of_taking_over": "2026-09-17",
+   "gross_weight_kg": 9094.9,
+   "packages": 11,
+   "place_of_delivery": "Roubaix, FR",
+   "place_of_taking_over": "Venlo, NL",
+   "sender": "Haldor Timber Oy",
+   "vehicle_plate": "GH-226-XY"
+  },
+  "lang": "nl",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0188": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR84412747",
+   "consignee": "Huaxin Components Co Ltd",
+   "date_of_taking_over": "2026-09-22",
+   "gross_weight_kg": 16935.5,
+   "packages": 25,
+   "place_of_delivery": "Venlo, NL",
+   "place_of_taking_over": "Köln, DE",
+   "sender": "Haldor Timber Oy",
+   "vehicle_plate": "AB-719-XY"
+  },
+  "lang": "fr",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0189": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR47301802",
+   "consignee": "Maison Vérane SAS",
+   "date_of_taking_over": "2026-08-29",
+   "gross_weight_kg": 14604.1,
+   "packages": 27,
+   "place_of_delivery": "Brugge, BE",
+   "place_of_taking_over": "Lille, FR",
+   "sender": "Haldor Timber Oy",
+   "vehicle_plate": "LM-650-TR"
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0190": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR50099872",
+   "consignee": "Peloria Chemicals SA",
+   "date_of_taking_over": "2026-09-04",
+   "gross_weight_kg": 9138.5,
+   "packages": 45,
+   "place_of_delivery": "Brugge, BE",
+   "place_of_taking_over": "Poznań, PL",
+   "sender": "Haldor Timber Oy",
+   "vehicle_plate": "GH-716-CD"
+  },
+  "lang": "de",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0191": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR97291632",
+   "consignee": "Thistlebank Distillers Ltd",
+   "date_of_taking_over": "2026-09-18",
+   "gross_weight_kg": 23884.2,
+   "packages": 34,
+   "place_of_delivery": "Brugge, BE",
+   "place_of_taking_over": "Tilburg, NL",
+   "sender": "Vlaskamp Bakeries NV",
+   "vehicle_plate": "DU-KR 4808"
+  },
+  "lang": "nl",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0192": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR33716383",
+   "consignee": "Lanterra Ceramics SpA",
+   "date_of_taking_over": "2026-09-15",
+   "gross_weight_kg": 4610.1,
+   "packages": 10,
+   "place_of_delivery": "Liège, BE",
+   "place_of_taking_over": "Brugge, BE",
+   "sender": "Thistlebank Distillers Ltd",
+   "vehicle_plate": "DU-AB 8354"
+  },
+  "lang": "fr",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0193": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR84487937",
+   "consignee": "Lanterra Ceramics SpA",
+   "date_of_taking_over": "2026-09-01",
+   "gross_weight_kg": 16053.4,
+   "packages": 58,
+   "place_of_delivery": "Zeebrugge, BE",
+   "place_of_taking_over": "Gent, BE",
+   "sender": "Oostveld Machinery NV",
+   "vehicle_plate": "1-HCL-628"
+  },
+  "lang": "fr",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0194": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR66905422",
+   "consignee": "Maison Vérane SAS",
+   "date_of_taking_over": "2026-09-17",
+   "gross_weight_kg": 2099.3,
+   "packages": 51,
+   "place_of_delivery": "Roubaix, FR",
+   "place_of_taking_over": "Lille, FR",
+   "sender": "Brugland Foods BV",
+   "vehicle_plate": "1-NZP-531"
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0195": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR90364255",
+   "consignee": "Grevenor Plastics GmbH",
+   "date_of_taking_over": "2026-08-30",
+   "gross_weight_kg": 23517.3,
+   "packages": 18,
+   "place_of_delivery": "Roubaix, FR",
+   "place_of_taking_over": "Lyon, FR",
+   "sender": "Lanterra Ceramics SpA",
+   "vehicle_plate": "WZ 76163"
+  },
+  "lang": "nl",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0196": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR20201098",
+   "consignee": "Nordhavn Steel AB",
+   "date_of_taking_over": "2026-09-16",
+   "gross_weight_kg": 17290.3,
+   "packages": 34,
+   "place_of_delivery": "Köln, DE",
+   "place_of_taking_over": "Roubaix, FR",
+   "sender": "Kestrel Pharma GmbH",
+   "vehicle_plate": "DU-KR 7075"
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0197": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR52915142",
+   "consignee": "Kestrel Pharma GmbH",
+   "date_of_taking_over": "2026-09-17",
+   "gross_weight_kg": 20793.8,
+   "packages": 11,
+   "place_of_delivery": "Liège, BE",
+   "place_of_taking_over": "Lyon, FR",
+   "sender": "Thistlebank Distillers Ltd",
+   "vehicle_plate": "AB-680-TR"
+  },
+  "lang": "nl",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0198": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR30346344",
+   "consignee": "Calderwick Paper Ltd",
+   "date_of_taking_over": "2026-09-03",
+   "gross_weight_kg": 21263.7,
+   "packages": 22,
+   "place_of_delivery": "Lyon, FR",
+   "place_of_taking_over": "Köln, DE",
+   "sender": "Haldor Timber Oy",
+   "vehicle_plate": "1-SBE-640"
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0199": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR82209508",
+   "consignee": "Nordhavn Steel AB",
+   "date_of_taking_over": "2026-08-29",
+   "gross_weight_kg": 2186.0,
+   "packages": 7,
+   "place_of_delivery": "Poznań, PL",
+   "place_of_taking_over": "Tilburg, NL",
+   "sender": "Peloria Chemicals SA",
+   "vehicle_plate": "WZ 77293"
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0200": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR63041544",
+   "consignee": "Brugland Foods BV",
+   "date_of_taking_over": "2026-09-13",
+   "gross_weight_kg": 10808.3,
+   "packages": 42,
+   "place_of_delivery": "Roubaix, FR",
+   "place_of_taking_over": "Venlo, NL",
+   "sender": "Calderwick Paper Ltd",
+   "vehicle_plate": "1-LFN-368"
+  },
+  "lang": "de",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0201": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR04804640",
+   "consignee": "Kestrel Pharma GmbH",
+   "date_of_taking_over": "2026-09-13",
+   "gross_weight_kg": 6267.3,
+   "packages": 14,
+   "place_of_delivery": "Lyon, FR",
+   "place_of_taking_over": "Zeebrugge, BE",
+   "sender": "Haldor Timber Oy",
+   "vehicle_plate": "LM-615-CD"
+  },
+  "lang": "nl",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0202": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR74809754",
+   "consignee": "Bayline Industrial LLC",
+   "date_of_taking_over": "2026-09-07",
+   "gross_weight_kg": 13463.5,
+   "packages": 16,
+   "place_of_delivery": "Venlo, NL",
+   "place_of_taking_over": "Köln, DE",
+   "sender": "Lanterra Ceramics SpA",
+   "vehicle_plate": "1-JXC-755"
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0203": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR34356204",
+   "consignee": "Peloria Chemicals SA",
+   "date_of_taking_over": "2026-09-22",
+   "gross_weight_kg": 10650.2,
+   "packages": 47,
+   "place_of_delivery": "Gent, BE",
+   "place_of_taking_over": "Zeebrugge, BE",
+   "sender": "Thistlebank Distillers Ltd",
+   "vehicle_plate": "WZ 18329"
+  },
+  "lang": "en",
+  "noise": [
+   "illegible"
+  ],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0204": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR94544665",
+   "consignee": "Brugland Foods BV",
+   "date_of_taking_over": "2026-09-16",
+   "gross_weight_kg": 11251.1,
+   "packages": 47,
+   "place_of_delivery": "Roubaix, FR",
+   "place_of_taking_over": "Venlo, NL",
+   "sender": "Vlaskamp Bakeries NV",
+   "vehicle_plate": "WZ 10060"
+  },
+  "lang": "en",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0205": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR84884588",
+   "consignee": "Lanterra Ceramics SpA",
+   "date_of_taking_over": "2026-09-10",
+   "gross_weight_kg": 13721.5,
+   "packages": 55,
+   "place_of_delivery": "Liège, BE",
+   "place_of_taking_over": "Duisburg, DE",
+   "sender": "Grevenor Plastics GmbH",
+   "vehicle_plate": "LM-429-XY"
+  },
+  "lang": "nl",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0206": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR63841117",
+   "consignee": "Maison Vérane SAS",
+   "date_of_taking_over": "2026-09-02",
+   "gross_weight_kg": 15252.3,
+   "packages": 21,
+   "place_of_delivery": "Köln, DE",
+   "place_of_taking_over": "Tilburg, NL",
+   "sender": "Haldor Timber Oy",
+   "vehicle_plate": "WZ 75361"
+  },
+  "lang": "nl",
+  "noise": [
+   "silent_digit"
+  ],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0207": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR87991680",
+   "consignee": "Bayline Industrial LLC",
+   "date_of_taking_over": "2026-09-20",
+   "gross_weight_kg": 16564.7,
+   "packages": 5,
+   "place_of_delivery": "Lille, FR",
+   "place_of_taking_over": "Poznań, PL",
+   "sender": "Maison Vérane SAS",
+   "vehicle_plate": "WZ 13916"
+  },
+  "lang": "nl",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0208": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR29867240",
+   "consignee": "Grevenor Plastics GmbH",
+   "date_of_taking_over": "2026-08-31",
+   "gross_weight_kg": 23877.2,
+   "packages": 32,
+   "place_of_delivery": "Tilburg, NL",
+   "place_of_taking_over": "Gent, BE",
+   "sender": "Lanterra Ceramics SpA",
+   "vehicle_plate": "1-YYD-566"
+  },
+  "lang": "nl",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0209": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR45375309",
+   "consignee": "Maison Vérane SAS",
+   "date_of_taking_over": "2026-09-11",
+   "gross_weight_kg": 12193.5,
+   "packages": 21,
+   "place_of_delivery": "Lyon, FR",
+   "place_of_taking_over": "Roubaix, FR",
+   "sender": "Oostveld Machinery NV",
+   "vehicle_plate": "WZ 24808"
+  },
+  "lang": "nl",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0210": {
+  "exceptions": [],
+  "fields": {
+   "cmr_number": "CMR49049111",
+   "consignee": "Maison Vérane SAS",
+   "date_of_taking_over": "2026-08-29",
+   "gross_weight_kg": 20311.0,
+   "packages": 60,
+   "place_of_delivery": "Tilburg, NL",
+   "place_of_taking_over": "Duisburg, DE",
+   "sender": "Lanterra Ceramics SpA",
+   "vehicle_plate": "WZ 86031"
+  },
+  "lang": "de",
+  "noise": [],
+  "shipment": null,
+  "type": "cmr"
+ },
+ "DOC-0211": {
+  "exceptions": [],
+  "fields": {},
+  "lang": "en",
+  "noise": [],
+  "shipment": null,
+  "type": "other"
+ },
+ "DOC-0212": {
+  "exceptions": [],
+  "fields": {},
+  "lang": "en",
+  "noise": [],
+  "shipment": null,
+  "type": "other"
+ },
+ "DOC-0213": {
+  "exceptions": [],
+  "fields": {},
+  "lang": "en",
+  "noise": [],
+  "shipment": null,
+  "type": "other"
+ },
+ "DOC-0214": {
+  "exceptions": [],
+  "fields": {},
+  "lang": "en",
+  "noise": [],
+  "shipment": null,
+  "type": "other"
+ },
+ "DOC-0215": {
+  "exceptions": [],
+  "fields": {},
+  "lang": "en",
+  "noise": [],
+  "shipment": null,
+  "type": "other"
+ },
+ "DOC-0216": {
+  "exceptions": [],
+  "fields": {},
+  "lang": "en",
+  "noise": [],
+  "shipment": null,
+  "type": "other"
+ },
+ "DOC-0217": {
+  "exceptions": [],
+  "fields": {},
+  "lang": "en",
+  "noise": [],
+  "shipment": null,
+  "type": "other"
+ },
+ "DOC-0218": {
+  "exceptions": [],
+  "fields": {},
+  "lang": "en",
+  "noise": [],
+  "shipment": null,
+  "type": "other"
+ },
+ "DOC-0219": {
+  "exceptions": [],
+  "fields": {},
+  "lang": "en",
+  "noise": [],
+  "shipment": null,
+  "type": "other"
+ },
+ "DOC-0220": {
+  "exceptions": [],
+  "fields": {},
+  "lang": "en",
+  "noise": [],
+  "shipment": null,
+  "type": "other"
+ }
+}

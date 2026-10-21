@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wendelkaai AI Transformation</title>
+<meta name="description" content="An end-to-end AI transformation case: readiness, use-case portfolio, business case, roadmap, a working document-AI pilot with a release gate, and governance under the EU AI Act.">
+<meta property="og:title" content="From AI readiness to measurable business impact">
+<meta property="og:description" content="A fictional Zeebrugge logistics company taken from 'we need an AI plan' to a measured pilot and a board decision.">
+<meta property="og:image" content="media/social-card.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="icon" href="./favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600&family=JetBrains+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body data-root="." data-page="">
+<main class="wrap">
+  <div class="eyebrow">AI transformation case study · strategy, consulting, applied AI</div>
+  <h1>From AI readiness to measurable business impact</h1>
+  <p class="lede">A 250-person logistics company in Zeebrugge asked: <em>"Where do we start with AI, what is it worth, and how do we do it without getting into trouble?"</em> This is the whole answer: discovery, readiness, a ranked use-case portfolio, a business case, a 12-month roadmap, a working pilot measured against a release gate, governance under the EU AI Act, and the board pitch.</p>
+  <div class="btns">
+    <a class="btn primary" href="pilot/?tour">Take the 2-minute pilot tour →</a>
+    <a class="btn" href="deck/">Board deck</a>
+    <a class="btn" href="https://github.com/phlppgdfry/enterprise-ai-transformation">Repository</a>
+  </div>
+  <p class="disclaimer">Wendelkaai Logistics NV, its people, documents and figures are fictional. The regulations, standards and methods are real. Every number on this site is computed from the model files and the pilot's evaluation; CI fails if a number in the text drifts from the model.</p>
+
+  <section>
+    <div class="grid g4">
+      <div class="card stat"><span class="l">AI readiness today</span><span class="v"><!--n:rd.overall-->1.9<!--/n--> / 5</span><span class="s"><!--n:rd.level-->Experimenting<!--/n-->; target <!--n:rd.target-->3.5<!--/n--> in 12 months</span></div>
+      <div class="card stat"><span class="l">Pilot use case ranks first</span><span class="v"><!--n:pf.UC-01.top1-->100%<!--/n--></span><span class="s">of 2,000 re-weightings of the criteria</span></div>
+      <div class="card stat"><span class="l">Pilot on 220 held-out documents</span><span class="v"><!--n:pilot.stp-->70.0%<!--/n--></span><span class="s">straight-through, <!--n:pilot.escapes-->0<!--/n--> unflagged errors, gate <!--n:pilot.gate-->PASS<!--/n--></span></div>
+      <div class="card stat"><span class="l">3-year NPV, cash view</span><span class="v"><!--n:bc.cash.npv-->€189k<!--/n--></span><span class="s">payback <!--n:bc.cash.payback-->15 months<!--/n-->; one-off <!--n:bc.one_off-->€85k<!--/n--></span></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Three findings a board can act on</h2>
+    <div class="grid g3">
+      <div class="card"><h3>Reading documents is the easy part</h3><p class="muted">Extraction alone would have sent <!--n:pilot.A.escapes-->36<!--/n--> of 220 documents into the TMS with an error. The clerks' own checks, written down as 14 rules (three compare documents of one shipment), took that to <!--n:pilot.D.escapes-->0<!--/n-->.</p><a href="pilot/">See it in the review queue →</a></div>
+      <div class="card"><h3>The biggest lever is a people decision</h3><p class="muted">The business case moves more with <em>whether leavers are replaced</em> and <em>what an error really costs</em> than with the model's straight-through rate. Freed hours are not saved euros until someone decides what they are for.</p><a href="business-case/">Play with the drivers →</a></div>
+      <div class="card"><h3>Ready to use AI, not to govern it</h3><p class="muted">Digital documents and a certified ISMS, but no AI policy, no inventory and 38% shadow AI. Governance items come first in the roadmap, and performance scoring of workers is parked as high-risk under the EU AI Act.</p><a href="readiness/">See the readiness scores →</a></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>The engagement in nine deliverables</h2>
+    <p class="muted">Each links to the document in the repository.</p>
+    <div class="grid g3" id="phases"></div>
+  </section>
+</main>
+<script src="assets/app.js"></script>
+<script>
+const GH = "https://github.com/phlppgdfry/enterprise-ai-transformation/blob/main/";
+const phases = [
+  ["01", "Discovery", "Stakeholder map, 14 interviews, time study, mailbox sample, four workshops, BPMN as-is and to-be", "01-discovery/interview-synthesis.md"],
+  ["02", "AI readiness", "30 items in 6 dimensions scored on evidence; gaps ranked by what they block", "02-ai-readiness/maturity-assessment.md"],
+  ["03", "Opportunity mapping", "10 use cases scored with the leadership team; robustness under 2,000 re-weightings", "03-opportunity-discovery/prioritization.md"],
+  ["04", "Business case", "Cash view vs capacity view, scenarios, tornado, Excel ROI calculator", "04-business-case/cost-benefit-analysis.md"],
+  ["05", "Roadmap", "90-day plan, 12 months, 5 streams, 5 gates, RACI, operating model", "05-transformation-roadmap/12-month-roadmap.md"],
+  ["06", "Applied AI pilot", "Document pipeline with 14 rules, ablation, threshold sweep and a release gate", "06-applied-ai/pilot-results.md"],
+  ["07", "Governance", "EU AI Act per use case, risk register, AI policy, human oversight, ISO/IEC 27001 and 42001", "07-governance/eu-ai-act-assessment.md"],
+  ["08", "Executive pitch", "Board deck, proposal and a 5-minute CEO walkthrough script", "08-executive-presentation/proposal.md"],
+  ["09", "Playbook", "The reusable method, templates and an article", "09-playbook/README.md"],
+];
+document.getElementById("phases").innerHTML = phases.map(([n, t, d, href]) =>
+  `<a class="card phase" href="${GH}${href}"><span class="n">${n}</span><span class="t">${t}</span><span class="d">${d}</span></a>`).join("");
+</script>
+</body>
+</html>

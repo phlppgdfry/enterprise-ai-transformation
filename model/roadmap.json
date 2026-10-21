@@ -1,0 +1,51 @@
+{
+ "start": "Week 1 = first week after the board decision",
+ "streams": [
+  {"id": "pilot", "name": "UC-01 to production"},
+  {"id": "waves", "name": "Next use cases"},
+  {"id": "platform", "name": "Platform & data"},
+  {"id": "governance", "name": "Governance & compliance"},
+  {"id": "people", "name": "People & change"}
+ ],
+ "gates": [
+  {"id": "G1", "week": 4, "name": "Build ready", "criteria": ["Integration design signed by IT and the TMS vendor", "KPI dashboard live with the pre-AI baseline", "AI policy approved"]},
+  {"id": "G2", "week": 13, "name": "First go-live", "criteria": ["Shadow mode on real documents: straight-through rate at least 60%", "Error escape rate at most 1% on the audited sample", "Clerks trained; review queue in daily use"]},
+  {"id": "G3", "week": 26, "name": "UC-01 complete, wave 2 decision", "criteria": ["All five document types live", "Value realised tracked monthly against the business case", "UC-09 pilot measured; UC-02 go/no-go"]},
+  {"id": "G4", "week": 39, "name": "Wave 2 live", "criteria": ["UC-09 and UC-02 in production", "Business cases for UC-03 and UC-07 reviewed"]},
+  {"id": "G5", "week": 52, "name": "Annual review", "criteria": ["Readiness re-assessed", "Portfolio refreshed", "Year-2 budget proposed"]}
+ ],
+ "items": [
+  {"id": "R01", "stream": "pilot", "title": "Production build and TMS integration", "start": 1, "end": 8, "owner": "IT manager", "deliverable": "Pipeline posting to the TMS import API, with retries and an audit log"},
+  {"id": "R02", "stream": "pilot", "title": "Review queue in the doc desk's tooling", "start": 3, "end": 10, "owner": "Doc desk team lead", "deliverable": "Queue that shows flagged fields, reasons and the source document side by side"},
+  {"id": "R03", "stream": "pilot", "title": "Shadow mode on real documents", "start": 7, "end": 11, "owner": "Doc desk team lead", "deliverable": "Pipeline runs next to the clerks; differences labelled; first real evaluation set"},
+  {"id": "R04", "stream": "pilot", "title": "Go-live: bills of lading and packing lists", "start": 12, "end": 13, "owner": "COO", "deliverable": "Two document types straight-through within the error budget"},
+  {"id": "R05", "stream": "pilot", "title": "Go-live: invoices, CMRs, delivery orders", "start": 14, "end": 20, "owner": "COO", "deliverable": "All five document types live"},
+  {"id": "R06", "stream": "pilot", "title": "Business KPI dashboard", "start": 2, "end": 5, "owner": "CFO", "deliverable": "Straight-through rate, escapes from the audit sample, review time, value realised"},
+  {"id": "R07", "stream": "waves", "title": "UC-09 carrier invoice audit: pilot", "start": 15, "end": 24, "owner": "CFO", "deliverable": "Reuses the document pipeline; measured on 3 months of carrier invoices"},
+  {"id": "R08", "stream": "waves", "title": "UC-02 customer e-mail triage: pilot", "start": 18, "end": 30, "owner": "Customer service lead", "deliverable": "Drafts for status questions, agent sends; measured on handling time and quality"},
+  {"id": "R09", "stream": "waves", "title": "UC-09 and UC-02 to production", "start": 27, "end": 39, "owner": "COO", "deliverable": "Both live, monitored on the same platform"},
+  {"id": "R10", "stream": "waves", "title": "UC-03 customs classification: discovery and pilot", "start": 30, "end": 46, "owner": "Customs lead", "deliverable": "Pilot on 300 past classifications, declarant in the loop"},
+  {"id": "R11", "stream": "waves", "title": "UC-07 route optimisation: data clean-up and vendor selection", "start": 32, "end": 48, "owner": "Transport manager", "deliverable": "Clean location data; buy decision between 3 planning tools"},
+  {"id": "R12", "stream": "platform", "title": "AI orchestration layer v1", "start": 1, "end": 12, "owner": "IT manager", "deliverable": "Model gateway, prompt registry, logging, evaluation harness, cost tracking"},
+  {"id": "R13", "stream": "platform", "title": "TMS document API agreed with the vendor", "start": 1, "end": 6, "owner": "IT manager", "deliverable": "Documented endpoint for document records; file-drop fallback"},
+  {"id": "R14", "stream": "platform", "title": "Data owners for customer, location and document data", "start": 2, "end": 8, "owner": "COO", "deliverable": "Named owners, change process, monthly quality report"},
+  {"id": "R15", "stream": "platform", "title": "Labelled evaluation sets per use case", "start": 8, "end": 40, "owner": "Doc desk team lead", "deliverable": "Real documents, labelled during review, refreshed quarterly"},
+  {"id": "R16", "stream": "governance", "title": "AI policy and acceptable use", "start": 1, "end": 4, "owner": "CEO", "deliverable": "One-page policy, approved tools list, rules for customer data"},
+  {"id": "R17", "stream": "governance", "title": "AI inventory and EU AI Act classification", "start": 2, "end": 6, "owner": "DPO", "deliverable": "Register of AI systems with risk tier, owner and review date; quarterly refresh"},
+  {"id": "R18", "stream": "governance", "title": "AI in the ISO/IEC 27001 ISMS", "start": 4, "end": 16, "owner": "IT manager", "deliverable": "AI suppliers assessed, risk register and Statement of Applicability updated"},
+  {"id": "R19", "stream": "governance", "title": "DPIA for customer e-mail triage", "start": 14, "end": 20, "owner": "DPO", "deliverable": "DPIA signed before the UC-02 pilot touches real e-mails"},
+  {"id": "R20", "stream": "people", "title": "AI literacy programme (three tiers)", "start": 3, "end": 20, "owner": "HR", "deliverable": "All staff 90 minutes; users half a day; builders two days"},
+  {"id": "R21", "stream": "people", "title": "Works council information and consultation", "start": 1, "end": 4, "owner": "HR", "deliverable": "Plan presented before go-live; agreement on no redundancies and attrition"},
+  {"id": "R22", "stream": "people", "title": "Sanctioned AI assistant for all office staff", "start": 8, "end": 24, "owner": "IT manager", "deliverable": "One approved assistant inside Microsoft 365; covers drafting and knowledge needs (UC-04, UC-10) without custom builds"},
+  {"id": "R23", "stream": "people", "title": "AI champions network", "start": 6, "end": 52, "owner": "COO", "deliverable": "Eight champions, two hours a week, monthly show-and-tell"},
+  {"id": "R24", "stream": "governance", "title": "Readiness re-assessment and portfolio refresh", "start": 48, "end": 52, "owner": "CEO", "deliverable": "Updated scorecard, ranked portfolio, year-2 plan"}
+ ],
+ "waves": {
+  "Wave 1 (weeks 1-20)": ["UC-01"],
+  "Wave 2 (weeks 15-39)": ["UC-09", "UC-02"],
+  "Wave 3 (weeks 30-52)": ["UC-03", "UC-07"],
+  "Covered by the sanctioned assistant": ["UC-04", "UC-10"],
+  "After data foundations": ["UC-05", "UC-06"],
+  "Parked": ["UC-08"]
+ }
+}

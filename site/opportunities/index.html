@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Use-Case Portfolio</title>
+<meta name="description" content="Ten AI use cases scored on value, feasibility and risk. Change the weights and see whether the ranking holds.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600&family=JetBrains+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  .layout { display: grid; grid-template-columns: 300px 1fr; gap: 16px; }
+  @media (max-width: 860px) { .layout { grid-template-columns: 1fr; } }
+  tr.sel td { background: var(--accent-soft); }
+  tbody tr { cursor: pointer; }
+  .rb { height: 8px; border-radius: 4px; background: var(--s1); }
+  #detail h3 { margin-top: 0; }
+</style>
+</head>
+<body data-root=".." data-page="opportunities/">
+<main class="wrap">
+  <div class="eyebrow">Phase 3 · Opportunity mapping</div>
+  <h1>Ten use cases, one clear first choice</h1>
+  <p class="lede">Scored with the leadership team in workshop 2. Move the weights: freight document intelligence stays first in <!--n:pf.UC-01.top1-->100%<!--/n--> of 2,000 random re-weightings. Places two to five are close, so dependencies and readiness decide their order.</p>
+  <section class="layout">
+    <div class="card" id="weights">
+      <h3>Criteria weights</h3>
+      <p class="muted" style="font-size:13px">Agreed in workshop 2: 45 / 35 / 20.</p>
+      <div class="slider"><label for="w-value">Value</label><output id="o-value"></output><input id="w-value" type="range" min="0" max="100" value="45"></div>
+      <div class="slider"><label for="w-feasibility">Feasibility</label><output id="o-feasibility"></output><input id="w-feasibility" type="range" min="0" max="100" value="35"></div>
+      <div class="slider"><label for="w-risk">Risk (low risk scores high)</label><output id="o-risk"></output><input id="w-risk" type="range" min="0" max="100" value="20"></div>
+      <button class="btn" id="reset" type="button">Reset to agreed weights</button>
+    </div>
+    <div class="card">
+      <div class="legend"><span><i class="dot" style="background:var(--s1)"></i>Ranked use case (bubble size: lower risk)</span><span><i class="dot" style="background:var(--ink-3)"></i>Parked (high-risk)</span></div>
+      <svg id="matrix" class="chart" viewBox="0 0 640 420" role="img" aria-label="Impact-feasibility matrix"></svg>
+    </div>
+  </section>
+  <section class="grid g2">
+    <div class="card table-wrap"><h3>Ranking at these weights</h3><table id="rank"></table></div>
+    <div class="card" id="detail"><p class="muted">Click a use case for the detail.</p></div>
+  </section>
+  <section>
+    <h2>How robust is the ranking?</h2>
+    <p class="muted">Share of 2,000 random re-weightings (each weight between 0.5× and 1.5× the agreed value) in which the use case lands in the top three.</p>
+    <div class="card table-wrap"><table id="robust"></table></div>
+  </section>
+</main>
+<script src="../assets/model.js"></script>
+<script src="../assets/app.js"></script>
+<script>
+loadJSON("model").then(({ portfolio }) => {
+  const byId = Object.fromEntries(portfolio.use_cases.map((u) => [u.id, u]));
+  const robust = Object.fromEntries(portfolio.ranking.map((r) => [r.id, r]));
+  let selected = "UC-01";
+  const keys = ["value", "feasibility", "risk"];
+  const weights = () => Object.fromEntries(keys.map((k) => [k, +document.getElementById("w-" + k).value || 0.0001]));
+
+  function draw() {
+    const w = weights(), sum = keys.reduce((a, k) => a + w[k], 0);
+    keys.forEach((k) => (document.getElementById("o-" + k).textContent = Math.round(100 * w[k] / sum) + "%"));
+    const rows = rankPortfolio(portfolio, w);
+    const el = document.getElementById("matrix");
+    el.innerHTML = "";
+    const x0 = 56, y0 = 16, pw = 560, ph = 360, px = (v) => x0 + (v - 1) / 4 * pw, py = (v) => y0 + ph - (v - 1) / 4 * ph;
+    svg("rect", { x: px(3), y: y0, width: px(5) - px(3), height: py(3) - y0, fill: "var(--accent-soft)" }, el);
+    for (let v = 1; v <= 5; v++) {
+      svg("line", { x1: px(v), x2: px(v), y1: y0, y2: y0 + ph, stroke: "var(--line)" }, el);
+      svg("line", { x1: x0, x2: x0 + pw, y1: py(v), y2: py(v), stroke: "var(--line)" }, el);
+      svg("text", { x: px(v), y: y0 + ph + 16, "text-anchor": "middle", "font-size": 11 }, el).textContent = v;
+      svg("text", { x: x0 - 8, y: py(v) + 4, "text-anchor": "end", "font-size": 11 }, el).textContent = v;
+    }
+    svg("text", { x: x0 + pw / 2, y: y0 + ph + 36, "text-anchor": "middle", "font-size": 12, "font-weight": 600, class: "ink" }, el).textContent = "Feasibility";
+    const yl = svg("text", { x: 16, y: y0 + ph / 2, "text-anchor": "middle", "font-size": 12, "font-weight": 600, class: "ink", transform: `rotate(-90 16 ${y0 + ph / 2})` }, el);
+    yl.textContent = "Value";
+    svg("text", { x: px(5) - 6, y: y0 + 16, "text-anchor": "end", "font-size": 11, "font-weight": 600 }, el).textContent = "Do now";
+    for (const r of rows) {
+      const g = svg("g", { style: "cursor:pointer" }, el);
+      const rad = 6 + 6 * (r.risk - 1) / 4;
+      svg("circle", { cx: px(r.feasibility), cy: py(r.value), r: rad + 6, fill: "transparent" }, g);
+      svg("circle", { cx: px(r.feasibility), cy: py(r.value), r: rad, fill: r.parked ? "var(--ink-3)" : "var(--s1)", stroke: r.id === selected ? "var(--ink)" : "var(--surface)", "stroke-width": 2 }, g);
+      svg("text", { x: px(r.feasibility) + rad + 4, y: py(r.value) + 4, "font-size": 11, class: "ink" }, g).textContent = r.id;
+      g.addEventListener("mousemove", (e) => tip.show(e, `<b>${esc(r.id)} ${esc(r.name)}</b><br>Value ${r.value.toFixed(2)} · feasibility ${r.feasibility.toFixed(2)} · risk ${r.risk.toFixed(2)}<br>${r.parked ? "Parked" : "Rank " + r.rank + ", score " + r.score.toFixed(2)}`));
+      g.addEventListener("mouseleave", tip.hide);
+      g.addEventListener("click", () => { selected = r.id; draw(); });
+    }
+    document.getElementById("rank").innerHTML = `<thead><tr><th>#</th><th>Use case</th><th class="num">Score</th></tr></thead><tbody>` +
+      rows.map((r) => `<tr data-id="${r.id}" class="${r.id === selected ? "sel" : ""}"><td>${r.rank ?? "–"}</td><td>${esc(r.id)} ${esc(r.name)}${r.parked ? ' <span class="pill">parked</span>' : ""}</td><td class="num">${r.score.toFixed(2)}</td></tr>`).join("") + "</tbody>";
+    document.querySelectorAll("#rank tbody tr").forEach((tr) => tr.addEventListener("click", () => { selected = tr.dataset.id; draw(); }));
+    const u = byId[selected];
+    document.getElementById("detail").innerHTML = `<h3>${esc(u.id)} ${esc(u.name)}</h3><p>${esc(u.summary)}</p>
+      <p class="muted"><b>Problem.</b> ${esc(u.problem)}</p>
+      <table><tr><th>Kind of AI</th><td>${esc(u.ai_type)}</td></tr><tr><th>Owner</th><td>${esc(u.owner)}</td></tr>
+      <tr><th>Value / year</th><td>${fmt.keur(u.annual_value_eur)} <span class="muted">(${esc(u.value_basis)})</span></td></tr>
+      <tr><th>EU AI Act</th><td><span class="pill">${esc(u.ai_act.tier)}</span> ${esc(u.ai_act.basis)}</td></tr>
+      <tr><th>Depends on</th><td>${u.depends_on.join(", ") || "–"}; readiness ${u.readiness_dependencies.join(", ")}</td></tr></table>`;
+  }
+  keys.forEach((k) => document.getElementById("w-" + k).addEventListener("input", draw));
+  document.getElementById("reset").addEventListener("click", () => {
+    Object.entries({ value: 45, feasibility: 35, risk: 20 }).forEach(([k, v]) => (document.getElementById("w-" + k).value = v));
+    draw();
+  });
+  draw();
+  document.getElementById("robust").innerHTML = `<tr><th>Use case</th><th class="num">Top 3</th><th style="width:45%"></th><th class="num">First</th></tr>` +
+    portfolio.ranking.map((r) => `<tr><td>${esc(r.id)} ${esc(r.name)}</td><td class="num">${fmt.pct(r.top3, 0)}</td><td><div class="rb" style="width:${r.top3 * 100}%"></div></td><td class="num">${fmt.pct(r.top1, 0)}</td></tr>`).join("");
+});
+</script>
+</body>
+</html>

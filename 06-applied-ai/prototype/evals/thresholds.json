@@ -1,0 +1,14 @@
+{
+ "error_budget": 0.01,
+ "min_threshold": 0.75,
+ "human_error_rate": 0.021,
+ "min_classification_accuracy": 0.97,
+ "min_stp_rate": 0.5,
+ "min_exception_catch_rate": 0.95,
+ "_sources": {
+  "min_threshold": "Workshop 3 decision: the system may not guess silently. Fields read with an assumption (no unit, assumed kg = 0.60; ambiguous date, assumed day-first = 0.70) always go to a person, so the threshold can never sit at or below 0.70.",
+  "error_budget": "Agreed with the COO in workshop 3: at most 1 in 100 documents may reach the TMS with an error the pilot did not flag.",
+  "human_error_rate": "Discovery time study: 60 documents keyed by the doc desk, double-checked; 2.1% had at least one keying error (see 01-discovery/interview-synthesis.md).",
+  "min_stp_rate": "Below 50% straight-through the business case does not pay back within 24 months (04-business-case/cost-benefit-analysis.md)."
+ }
+}

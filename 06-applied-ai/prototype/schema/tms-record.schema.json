@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://wendelkaai.example/schemas/tms-record.schema.json",
+  "title": "TMS document record",
+  "description": "What the pilot posts to the TMS import endpoint for a document that went straight through.",
+  "type": "object",
+  "required": ["documentType", "reference", "shipmentKey", "fields", "source"],
+  "additionalProperties": false,
+  "properties": {
+    "documentType": {"enum": ["bill_of_lading", "cmr", "commercial_invoice", "packing_list", "delivery_order"]},
+    "reference": {"type": ["string", "null"], "description": "The document's own number (B/L, CMR, invoice, packing list or DO number)."},
+    "shipmentKey": {"type": ["string", "null"], "description": "B/L number that links the documents of one shipment."},
+    "fields": {"type": "object", "description": "Normalised field values: dates ISO 8601, weights in kg, amounts as numbers."},
+    "source": {
+      "type": "object",
+      "required": ["documentId", "receivedOn", "pipelineVersion", "minFieldConfidence"],
+      "additionalProperties": false,
+      "properties": {
+        "documentId": {"type": "string"},
+        "receivedOn": {"type": "string", "format": "date"},
+        "pipelineVersion": {"type": "string"},
+        "minFieldConfidence": {"type": "number", "minimum": 0, "maximum": 1}
+      }
+    }
+  }
+}

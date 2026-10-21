@@ -1,0 +1,32 @@
+{
+ "use_case": "UC-01",
+ "horizon_years": 3,
+ "note": "Base values drive the business case; low and high drive the scenarios and the tornado chart. Values marked 'pilot' are read from the evaluation report, so the business case moves when the pilot results move.",
+ "assumptions": [
+  {"id": "A01", "key": "documents_per_month", "name": "Documents keyed per month", "unit": "documents", "base": 4000, "low": 3600, "high": 4400, "source": "measured", "basis": "Two-week mailbox count, September 2026, extrapolated."},
+  {"id": "A02", "key": "volume_growth", "name": "Annual volume growth", "unit": "%", "base": 0.04, "low": 0.02, "high": 0.06, "source": "client plan", "basis": "CFO's 2027-2029 plan."},
+  {"id": "A03", "key": "manual_minutes", "name": "Minutes to key one document today", "unit": "minutes", "base": 5.5, "low": 4.5, "high": 6.5, "source": "measured", "basis": "Discovery time study, 60 documents, two clerks."},
+  {"id": "A04", "key": "review_minutes", "name": "Minutes to review a flagged document", "unit": "minutes", "base": 2.5, "low": 2.0, "high": 3.5, "source": "estimate", "basis": "Clerk checks only the flagged fields; to be measured in the first production month."},
+  {"id": "A05", "key": "stp_minutes", "name": "Minutes per straight-through document (sample audit)", "unit": "minutes", "base": 0.3, "low": 0.2, "high": 0.5, "source": "design", "basis": "5% random audit of straight-through documents at 6 minutes each."},
+  {"id": "A06", "key": "stp_rate", "name": "Straight-through rate", "unit": "%", "base": "pilot:test.stp_rate", "low": "pilot:test.stp_ci95.0", "high": "pilot:test.stp_ci95.1", "source": "pilot", "basis": "Test set result; low and high are the 95% confidence interval."},
+  {"id": "A07", "key": "manual_rate", "name": "Share of documents handled fully by hand", "unit": "%", "base": "pilot:test.manual_rate", "low": "pilot:test.manual_rate", "high": "pilot:test.manual_rate", "source": "pilot", "basis": "Not freight documents or type unsure."},
+  {"id": "A08", "key": "hourly_cost", "name": "Loaded cost per clerk hour", "unit": "EUR", "base": 34, "low": 31, "high": 37, "source": "client finance", "basis": "EUR 52,000 loaded cost per clerk / 1,530 productive hours."},
+  {"id": "A09", "key": "fte_cost", "name": "Loaded cost per clerk per year", "unit": "EUR", "base": 52000, "low": 52000, "high": 52000, "source": "client finance", "basis": "HR, 2026 salary scales plus employer costs."},
+  {"id": "A10", "key": "fte_hours", "name": "Productive hours per FTE per year", "unit": "hours", "base": 1530, "low": 1530, "high": 1530, "source": "client finance", "basis": "HR."},
+  {"id": "A11", "key": "human_error_rate", "name": "Documents with a keying error today", "unit": "%", "base": 0.021, "low": 0.015, "high": 0.028, "source": "measured", "basis": "Time study: 60 documents double-checked."},
+  {"id": "A12", "key": "error_cost", "name": "Cost of one error that reaches operations", "unit": "EUR", "base": 60, "low": 35, "high": 110, "source": "estimate", "basis": "Operations and customs leads: rework, customs amendment, share of demurrage. Wide range on purpose."},
+  {"id": "A13", "key": "pilot_escape_rate", "name": "Documents posted with an unflagged error (pilot)", "unit": "%", "base": "pilot:pooled_escape_rate", "low": "pilot:pooled_escape_rate", "high": "pilot:pooled_escape_ci95.1", "source": "pilot", "basis": "Dev and test sets pooled (440 documents); high is the upper 95% bound."},
+  {"id": "A14", "key": "review_error_factor", "name": "Error rate on reviewed documents, relative to keying", "unit": "x", "base": 0.3, "low": 0.2, "high": 0.5, "source": "estimate", "basis": "Clerks check a few flagged fields instead of keying all; fewer chances to slip."},
+  {"id": "A15", "key": "one_off_cost", "name": "One-off cost: production build, TMS integration, change and training", "unit": "EUR", "base": 85000, "low": 70000, "high": 115000, "source": "estimate", "basis": "Partner quote range for 10 weeks build and integration plus internal time; pilot cost (EUR 38,000) is sunk and excluded."},
+  {"id": "A16", "key": "run_cost", "name": "Run cost per year excluding model usage", "unit": "EUR", "base": 19000, "low": 15000, "high": 26000, "source": "estimate", "basis": "Hosting and monitoring EUR 7,000; support and model upkeep (0.1 FTE engineer) EUR 12,000."},
+  {"id": "A17", "key": "tokens_in", "name": "Input tokens per document", "unit": "tokens", "base": 2500, "low": 2000, "high": 4000, "source": "estimate", "basis": "Prompt plus OCR text of a one-page document."},
+  {"id": "A18", "key": "tokens_out", "name": "Output tokens per document", "unit": "tokens", "base": 600, "low": 400, "high": 1000, "source": "estimate", "basis": "Structured JSON with 6-11 fields."},
+  {"id": "A19", "key": "price_in_usd_per_mtok", "name": "Model price, input (claude-opus-5-5)", "unit": "USD per million tokens", "base": 4.0, "low": 4.0, "high": 4.0, "source": "vendor price list", "basis": "Anthropic list price, October 2026."},
+  {"id": "A20", "key": "price_out_usd_per_mtok", "name": "Model price, output (claude-opus-5-5)", "unit": "USD per million tokens", "base": 20.0, "low": 20.0, "high": 20.0, "source": "vendor price list", "basis": "Anthropic list price, October 2026."},
+  {"id": "A21", "key": "eur_per_usd", "name": "Exchange rate", "unit": "EUR per USD", "base": 0.9, "low": 0.85, "high": 0.95, "source": "assumption", "basis": "Rounded."},
+  {"id": "A22", "key": "ramp_year1", "name": "Share of steady-state benefit reached in year 1", "unit": "%", "base": 0.6, "low": 0.4, "high": 0.75, "source": "assumption", "basis": "Go-live in month 5 of the roadmap, document types switched on one by one."},
+  {"id": "A23", "key": "attrition_fte", "name": "Doc desk leavers per year not replaced", "unit": "FTE", "base": 0.5, "low": 0.0, "high": 1.0, "source": "client HR", "basis": "Average 1.4 leavers a year over 2023-2025. Agreed with HR and the works council: no redundancies; every second leaver is not replaced while the pilot scales."},
+  {"id": "A24", "key": "discount_rate", "name": "Discount rate", "unit": "%", "base": 0.08, "low": 0.08, "high": 0.08, "source": "client finance", "basis": "CFO's hurdle rate."}
+ ],
+ "tornado_drivers": ["documents_per_month", "manual_minutes", "review_minutes", "stp_rate", "human_error_rate", "error_cost", "one_off_cost", "run_cost", "ramp_year1", "attrition_fte"]
+}

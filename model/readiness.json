@@ -1,0 +1,53 @@
+{
+ "scale": {
+  "1": "Exploring: no structure, individual initiatives",
+  "2": "Experimenting: some pilots and awareness, no common approach",
+  "3": "Formalising: policy, ownership and repeatable practice in place",
+  "4": "Scaling: several AI solutions in production, measured and governed",
+  "5": "Transforming: AI is part of how the company plans, works and competes"
+ },
+ "dimensions": [
+  {"id": "S", "name": "Strategy & leadership", "items": [
+   {"id": "S1", "question": "AI ambition is linked to named business goals", "score": 2, "target": 4, "evidence": "The board asked for 'an AI plan'; no goals or KPIs attached. The 2027 business plan names margin pressure and doc desk hiring problems, not AI."},
+   {"id": "S2", "question": "An executive sponsor owns AI and has a budget", "score": 2, "target": 4, "evidence": "The CEO sponsors informally; no budget line. IT funds tool trials from its own budget."},
+   {"id": "S3", "question": "AI initiatives are managed as one portfolio", "score": 1, "target": 3, "evidence": "Three unconnected experiments found (sales ChatGPT prompts, a customs Excel macro with an AI add-in, a warehouse vendor demo). Nobody had an overview."},
+   {"id": "S4", "question": "Value is measured against a baseline", "score": 2, "target": 4, "evidence": "Doc desk volumes are counted per month; handling time and error rates were never measured before the discovery time study."},
+   {"id": "S5", "question": "There is a view on partners and buy versus build", "score": 2, "target": 3, "evidence": "IT prefers the TMS vendor's roadmap; operations wants faster results. No criteria to decide."}
+  ]},
+  {"id": "D", "name": "Data foundations", "items": [
+   {"id": "D1", "question": "Data domains have named owners", "score": 1, "target": 3, "evidence": "Customer and location master data are edited by whoever needs a change. No owner for document data."},
+   {"id": "D2", "question": "Core master data is of usable quality", "score": 2, "target": 3, "evidence": "Sample of 200 customer records: 14% duplicates, 9% missing VAT or EORI."},
+   {"id": "D3", "question": "Documents are available digitally", "score": 3, "target": 4, "evidence": "90% of documents arrive as PDF by e-mail; the rest is scanned at the desk. Archive in the TMS document store, 7 years."},
+   {"id": "D4", "question": "Labelled historical data exists to evaluate AI", "score": 1, "target": 3, "evidence": "None before the pilot. The pilot built the first labelled sets (2 x 220 documents)."},
+   {"id": "D5", "question": "Core systems can be reached through APIs", "score": 2, "target": 4, "evidence": "The TMS has an import API for bookings, undocumented for documents; the ERP only exports files overnight."}
+  ]},
+  {"id": "T", "name": "Technology & tooling", "items": [
+   {"id": "T1", "question": "Cloud platform and identity are in place", "score": 3, "target": 4, "evidence": "Microsoft 365 and Entra ID for all staff; one Azure subscription used for backups."},
+   {"id": "T2", "question": "Staff have sanctioned AI tools", "score": 2, "target": 4, "evidence": "No approved tool; the staff survey shows 38% use public chatbots for work, including with customer data."},
+   {"id": "T3", "question": "An AI orchestration layer exists (model access, prompts, logging, evaluation)", "score": 1, "target": 3, "evidence": "None. Each experiment calls its own tool directly."},
+   {"id": "T4", "question": "Systems are monitored in a way AI can plug into", "score": 2, "target": 3, "evidence": "Infrastructure monitoring exists; no application or business-level monitoring."},
+   {"id": "T5", "question": "Security baseline is mature", "score": 3, "target": 4, "evidence": "ISO/IEC 27001 certified for IT services and customs data since 2024; supplier assessments are done, but not for AI services."}
+  ]},
+  {"id": "G", "name": "Governance, risk & compliance", "items": [
+   {"id": "G1", "question": "An AI policy says what is allowed", "score": 1, "target": 4, "evidence": "No AI policy. The acceptable-use policy predates generative AI."},
+   {"id": "G2", "question": "AI systems are inventoried and classified (EU AI Act)", "score": 1, "target": 4, "evidence": "No inventory. The three experiments were found during interviews."},
+   {"id": "G3", "question": "Human oversight and accountability are designed in", "score": 2, "target": 4, "evidence": "Four-eyes checks exist for customs declarations; no rules for AI output."},
+   {"id": "G4", "question": "Privacy reviews (GDPR, DPIA) are routine", "score": 3, "target": 4, "evidence": "External DPO; DPIAs done for CCTV and telematics. Process exists, never applied to AI."},
+   {"id": "G5", "question": "Vendor and model risk is managed", "score": 2, "target": 3, "evidence": "Supplier register exists; no criteria for data use, retention or model changes at AI vendors."}
+  ]},
+  {"id": "P", "name": "People & skills", "items": [
+   {"id": "P1", "question": "Staff understand what AI can and cannot do (AI literacy)", "score": 1, "target": 3, "evidence": "No training. Survey: 61% expect AI to 'replace jobs at the desk', 22% feel confident using it."},
+   {"id": "P2", "question": "There are internal AI champions", "score": 1, "target": 3, "evidence": "Two enthusiasts (customs, sales) experimenting on their own time."},
+   {"id": "P3", "question": "Product ownership exists for digital solutions", "score": 2, "target": 3, "evidence": "IT acts as order-taker; no business product owners."},
+   {"id": "P4", "question": "Technical skills to run AI solutions are available", "score": 2, "target": 3, "evidence": "IT team of six: infrastructure and ERP support; one developer with Python and API experience."},
+   {"id": "P5", "question": "The works council is involved early", "score": 2, "target": 4, "evidence": "Good relationship; informed about telematics after the fact in 2023, which still causes friction."}
+  ]},
+  {"id": "O", "name": "Process & operations", "items": [
+   {"id": "O1", "question": "Core processes are documented", "score": 2, "target": 3, "evidence": "Work instructions per customer in Word files on a shared drive, 340 files, a third older than 3 years."},
+   {"id": "O2", "question": "Process KPIs are measured", "score": 2, "target": 4, "evidence": "Volumes and on-time delivery measured; handling time, rework and error cost not."},
+   {"id": "O3", "question": "Exceptions are handled in a defined way", "score": 2, "target": 3, "evidence": "Exceptions go to whoever is free; no categories, no log."},
+   {"id": "O4", "question": "There is a change management practice", "score": 2, "target": 3, "evidence": "TMS go-live in 2014 remembered as painful; no change approach since."},
+   {"id": "O5", "question": "Teams improve their own work", "score": 3, "target": 4, "evidence": "Monthly operations meeting with improvement actions; strong pragmatism on the floor."}
+  ]}
+ ]
+}

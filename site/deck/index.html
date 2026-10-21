@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Board Presentation</title>
+<meta name="description" content="Ten-slide board presentation: AI at Wendelkaai, where to start, what it is worth and how to do it safely.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600&family=JetBrains+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  body.deck { overflow: hidden; }
+  .stage { position: fixed; inset: 56px 0 64px 0; display: grid; place-items: center; background: var(--bg); }
+  .slide { margin: 0; display: none; width: min(96vw, calc((100vh - 150px) * 16 / 9)); aspect-ratio: 16 / 9; background: var(--surface); border: 1px solid var(--line);
+    border-radius: 12px; box-shadow: var(--shadow); padding: 3.2% 4%; position: relative; overflow: hidden; container-type: inline-size; }
+  .slide.on { display: flex; flex-direction: column; }
+  .slide h2 { font-size: 3.4cqw; margin-bottom: 1.2cqw; }
+  .slide .kick { font: 600 1.15cqw var(--mono); color: var(--accent); letter-spacing: .06em; text-transform: uppercase; margin-bottom: .8cqw; }
+  .slide p, .slide li, .slide td, .slide th { font-size: 1.55cqw; }
+  .slide .big { font: 600 5.6cqw/1 var(--serif); }
+  .slide .cols { display: grid; grid-template-columns: 1fr 1fr; gap: 3cqw; flex: 1; min-height: 0; }
+  .slide .cols3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2cqw; }
+  .slide img { max-width: 100%; max-height: 100%; object-fit: contain; display: block; margin: 0 auto; }
+  .slide .fig { flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center; }
+  .slide .tile { background: var(--surface-2); border-radius: 10px; padding: 1.6cqw; }
+  .slide .tile .v { font: 600 3.6cqw/1.05 var(--serif); }
+  .slide .tile .l { font-size: 1.3cqw; color: var(--ink-2); }
+  .slide .foot { position: absolute; left: 4%; right: 4%; bottom: 2.4%; display: flex; justify-content: space-between; font-size: 1.05cqw; color: var(--ink-3); }
+  .slide ul { margin: 0; padding-left: 1.4em; } .slide li { margin: .5cqw 0; }
+  .slide table td, .slide table th { padding: .6cqw .8cqw; }
+  .slide .cols > table { align-self: start; height: auto; }
+  .title-slide { justify-content: center; }
+  .title-slide h1 { font-size: 5cqw; max-width: 80%; }
+  .nav { position: fixed; bottom: 14px; right: 16px; display: flex; gap: 8px; align-items: center; z-index: 5; font-size: 13px; color: var(--ink-2); }
+  @media print {
+    @page { size: 1280px 720px; margin: 0; }
+    header.top, footer, .nav, .tip { display: none !important; }
+    body.deck { overflow: visible; background: #fff; }
+    .stage { position: static; display: block; }
+    .slide { display: flex !important; flex-direction: column; width: 1280px; height: 720px; aspect-ratio: auto; border: 0; border-radius: 0; box-shadow: none; page-break-after: always; break-after: page; }
+  }
+</style>
+</head>
+<body data-root=".." data-page="deck/" class="deck">
+<div class="stage" id="stage">
+
+<section class="slide title-slide">
+  <div class="kick">Board of directors · 21 October 2026</div>
+  <h1>AI at Wendelkaai: where to start, what it is worth, how to do it safely</h1>
+  <p class="muted">Findings of the 12-week discovery and pilot, and one decision.</p>
+  <div class="foot"><span>Wendelkaai Logistics NV is fictional; regulations, standards and methods are real.</span><span>1</span></div>
+</section>
+
+<section class="slide">
+  <div class="kick">The problem, measured</div>
+  <h2>Skilled people retype documents, and 2 in 100 go wrong</h2>
+  <div class="cols3" style="margin-top:1cqw">
+    <div class="tile"><div class="v">4,000</div><div class="l">freight documents keyed by hand every month, by 11 clerks</div></div>
+    <div class="tile"><div class="v">5.5 min</div><div class="l">per document (time study, 60 documents)</div></div>
+    <div class="tile"><div class="v"><!--n:pilot.human_error-->2.1%<!--/n--></div><div class="l">of documents carry a keying error that costs money later (480 double-checked)</div></div>
+    <div class="tile"><div class="v">8 months</div><div class="l">that two doc desk vacancies have been open, while volume grows 4% a year</div></div>
+    <div class="tile"><div class="v">38%</div><div class="l">of staff use public chatbots for work; some paste customer data</div></div>
+    <div class="tile"><div class="v">2</div><div class="l">pharma customers asked how we govern AI in their 2026 audits</div></div>
+  </div>
+  <div class="foot"><span>Source: discovery weeks 1-2 (interviews, time study, mailbox sample, staff survey)</span><span>2</span></div>
+</section>
+
+<section class="slide">
+  <div class="kick">Readiness</div>
+  <h2>Ready to use AI, not yet to govern it: <!--n:rd.overall-->1.9<!--/n--> of 5</h2>
+  <div class="cols">
+    <div class="fig"><img src="../media/readiness-radar.svg" alt="Readiness radar"></div>
+    <div><ul>
+      <li><b>Strong enough:</b> documents are digital, Microsoft 365 and Entra ID in place, ISO/IEC 27001 certified.</li>
+      <li><b>Missing:</b> AI policy, AI inventory, an owner for AI, a platform to run it on, labelled data to test it.</li>
+      <li><b>Lowest:</b> <!--n:rd.lowest-->People & skills (1.6)<!--/n-->. 61% of staff expect AI to take jobs at the desk.</li>
+      <li><b>Target in 12 months:</b> <!--n:rd.target-->3.5<!--/n-->, paid for by roadmap items, not wishes.</li>
+    </ul></div>
+  </div>
+  <div class="foot"><span>30 items scored on evidence by the consultant and the COO</span><span>3</span></div>
+</section>
+
+<section class="slide">
+  <div class="kick">Where to start</div>
+  <h2>Ten use cases scored; documents come first under every weighting</h2>
+  <div class="cols">
+    <div class="fig"><img src="../media/impact-feasibility-matrix.svg" alt="Impact-feasibility matrix"></div>
+    <div><ul>
+      <li><b>UC-01 Freight document intelligence</b> ranks first in <!--n:pf.UC-01.top1-->100%<!--/n--> of 2,000 re-weightings of the criteria.</li>
+      <li><b>Next:</b> carrier invoice audit and customer e-mail triage reuse what UC-01 builds.</li>
+      <li><b>Not generative AI:</b> route optimisation is a solver, and a buy decision.</li>
+      <li><b>Parked:</b> performance scoring of drivers and pickers: high-risk under the EU AI Act, no owner.</li>
+    </ul></div>
+  </div>
+  <div class="foot"><span>Criteria and weights agreed with the leadership team (45 / 35 / 20)</span><span>4</span></div>
+</section>
+
+<section class="slide">
+  <div class="kick">The pilot</div>
+  <h2>Reading documents is easy; the clerks' checks make it safe</h2>
+  <div class="cols">
+    <div class="fig"><img src="../media/ablation.svg" alt="Errors per safety layer"></div>
+    <div><ul>
+      <li>Extraction alone: <!--n:pilot.A.escapes-->36<!--/n--> of 220 documents into the TMS with an error.</li>
+      <li>The clerks' own checks, written as 14 rules, take that to <!--n:pilot.D.escapes-->0<!--/n-->.</li>
+      <li>Three rules compare documents of one shipment (weights, package counts, containers). They catch what a confident model gets wrong.</li>
+      <li>The first version failed its gate; the evaluation found the gap in the linking logic.</li>
+    </ul></div>
+  </div>
+  <div class="foot"><span>Held-out test set, 220 synthetic documents built from the mailbox sample</span><span>5</span></div>
+</section>
+
+<section class="slide">
+  <div class="kick">Result against the criteria set before the build</div>
+  <h2>Gate passed on the test set: <!--n:pilot.stp-->70.0%<!--/n--> straight-through, no unflagged errors</h2>
+  <div class="cols">
+    <table>
+      <tr><th>Criterion (workshop 3)</th><th>Target</th><th>Result</th></tr>
+      <tr><td>Errors reaching the TMS unseen</td><td>≤ 1%</td><td><b><!--n:pilot.escape_rate-->0.0%<!--/n--></b></td></tr>
+      <tr><td>Below today's human error rate</td><td>&lt; 2.1%</td><td><b>yes</b></td></tr>
+      <tr><td>Straight-through</td><td>≥ 50%</td><td><b><!--n:pilot.stp-->70.0%<!--/n--></b></td></tr>
+      <tr><td>Genuine problems sent to a person</td><td>≥ 95%</td><td><b><!--n:pilot.exceptions_caught-->100%<!--/n--></b></td></tr>
+      <tr><td>No silent guessing</td><td>always</td><td><b>threshold <!--n:pilot.threshold-->0.75<!--/n--></b></td></tr>
+    </table>
+    <div><ul>
+      <li><b>Residual risk:</b> on the tuning set <!--n:pilot.dev_escapes-->2<!--/n--> truck documents with a misread digit slipped through. The production build compares them with the booking.</li>
+      <li><b>Honest limit:</b> synthetic documents and an offline stand-in for the model. Go-live depends on the same gate on real documents in shadow mode.</li>
+    </ul></div>
+  </div>
+  <div class="foot"><span>Release gate runs in CI before any change to model, prompt, rule or threshold</span><span>6</span></div>
+</section>
+
+<section class="slide">
+  <div class="kick">What it is worth</div>
+  <h2><!--n:bc.cash.npv-->€189k<!--/n--> over three years on the cash view; payback <!--n:bc.cash.payback-->15 months<!--/n--></h2>
+  <div class="cols">
+    <div class="fig"><img src="../media/tornado.svg" alt="Tornado chart"></div>
+    <div><ul>
+      <li><b>One-off <!--n:bc.one_off-->€85k<!--/n-->, about <!--n:bc.run_cost_y1-->€20k<!--/n--> a year.</b> Model usage is about <!--n:bc.model_cost_doc-->€0.020<!--/n--> per document.</li>
+      <li><b>Cash view:</b> only hires avoided and leavers not replaced count. Capacity view: <!--n:bc.capacity.npv-->€232k<!--/n-->.</li>
+      <li><b>Biggest lever:</b> whether leavers are replaced, then what an error really costs. Not the model.</li>
+      <li><b>All leavers replaced?</b> Still pays back in <!--n:bc.noattr_payback-->22 months<!--/n-->.</li>
+      <li><b>Everything wrong at once:</b> NPV <!--n:bc.pessimistic.cash.npv-->-€142k<!--/n-->. The gates watch those drivers.</li>
+    </ul></div>
+  </div>
+  <div class="foot"><span>8% discount rate; pilot cost (€38k) excluded as sunk</span><span>7</span></div>
+</section>
+
+<section class="slide">
+  <div class="kick">How we get there</div>
+  <h2>Twelve months, five gates; only the first is asked today</h2>
+  <div class="fig"><img src="../media/roadmap.svg" alt="Roadmap"></div>
+  <div class="foot"><span>G2 week 13: ≥ 60% straight-through and ≤ 1% escapes on real documents, or we stop</span><span>8</span></div>
+</section>
+
+<section class="slide">
+  <div class="kick">People and governance</div>
+  <h2>Nobody surprised, nothing high-risk, governance before go-live</h2>
+  <div class="cols">
+    <div><h3 style="font-size:1.8cqw">Commitments to staff</h3><ul>
+      <li>No redundancies because of AI in this roadmap</li>
+      <li>Freed time goes to customs files and exceptions</li>
+      <li>Every second leaver not replaced while it scales</li>
+      <li>The review queue never evaluates individuals</li>
+      <li>Works council informed in week 1, consulted at weeks 14 and 30</li>
+    </ul></div>
+    <div><h3 style="font-size:1.8cqw">Governance in the first 90 days</h3><ul>
+      <li>One-page AI policy and one sanctioned assistant</li>
+      <li>AI inventory, every system classified under the EU AI Act</li>
+      <li>AI vendors assessed inside the ISO/IEC 27001 ISMS</li>
+      <li>AI literacy for all staff (AI Act Art. 4)</li>
+      <li>Human oversight designed in: a person sees every doubt</li>
+    </ul></div>
+  </div>
+  <div class="foot"><span>UC-08 (worker performance scoring) parked: Annex III 4(b) high-risk</span><span>9</span></div>
+</section>
+
+<section class="slide">
+  <div class="kick">The decision</div>
+  <h2>We ask the board for three things</h2>
+  <ol style="font-size:2cqw;line-height:1.5;margin-top:1cqw">
+    <li>Approve UC-01 production and the year-1 foundations: <b><!--n:bc.one_off-->€85k<!--/n--></b> one-off, about <b><!--n:bc.run_cost_y1-->€20k<!--/n--></b> a year, released at gate G2.</li>
+    <li>Endorse the people commitments.</li>
+    <li>Mandate the AI steering group (CEO, CFO, COO, IT manager) to take gates G1-G3 within this envelope.</li>
+  </ol>
+  <p class="muted" style="margin-top:auto">Wave 2 (carrier invoice audit, customer e-mail triage) comes back in week 26 with its own business case.</p>
+  <div class="foot"><span>Proposal, business case, roadmap and AI Act assessment in the repository</span><span>10</span></div>
+</section>
+
+</div>
+<div class="nav"><button class="btn" id="prev" type="button">←</button><span id="pos"></span><button class="btn" id="next" type="button">→</button></div>
+<script src="../assets/app.js"></script>
+<script>
+const slides = [...document.querySelectorAll(".slide")];
+let i = Math.max(0, Math.min(slides.length - 1, (parseInt(location.hash.slice(1), 10) || 1) - 1));
+function go(n) {
+  i = Math.max(0, Math.min(slides.length - 1, n));
+  slides.forEach((s, k) => s.classList.toggle("on", k === i));
+  document.getElementById("pos").textContent = `${i + 1} / ${slides.length}`;
+  history.replaceState(null, "", "#" + (i + 1));
+}
+document.getElementById("prev").onclick = () => go(i - 1);
+document.getElementById("next").onclick = () => go(i + 1);
+addEventListener("keydown", (e) => {
+  if (["ArrowRight", "PageDown", " "].includes(e.key)) { e.preventDefault(); go(i + 1); }
+  if (["ArrowLeft", "PageUp"].includes(e.key)) { e.preventDefault(); go(i - 1); }
+});
+let x0 = null;
+document.getElementById("stage").addEventListener("touchstart", (e) => (x0 = e.touches[0].clientX));
+document.getElementById("stage").addEventListener("touchend", (e) => { if (x0 == null) return; const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 40) go(i + (dx < 0 ? 1 : -1)); x0 = null; });
+go(i);
+</script>
+</body>
+</html>

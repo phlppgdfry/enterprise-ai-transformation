@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Freight Document Pilot</title>
+<meta name="description" content="The review queue of the freight document pilot on 220 held-out test documents, with the confidence threshold and safety layers adjustable.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600&family=JetBrains+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  .controls { display: grid; grid-template-columns: 1.2fr 1fr; gap: 16px; align-items: start; }
+  @media (max-width: 860px) { .controls { grid-template-columns: 1fr; } }
+  .toggles label { display: flex; gap: 8px; align-items: center; font-size: 13.5px; margin: 6px 0; cursor: pointer; }
+  .kpi .v { font-size: 26px; }
+  .kpi.bad .v { color: var(--critical); }
+  .queue { display: grid; grid-template-columns: 360px 1fr; gap: 16px; margin-top: 16px; align-items: start; }
+  @media (max-width: 900px) { .queue { grid-template-columns: 1fr; } }
+  .tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+  .tabs button { border: 1px solid var(--line); background: var(--surface); border-radius: 99px; padding: 4px 11px; font: inherit; font-size: 12.5px; cursor: pointer; color: var(--ink-2); }
+  .tabs button.on { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .list { max-height: 640px; overflow-y: auto; border-top: 1px solid var(--line); }
+  .doc { padding: 9px 4px; border-bottom: 1px solid var(--line); cursor: pointer; font-size: 13px; }
+  .doc:hover, .doc.sel { background: var(--surface-2); }
+  .doc .top { display: flex; justify-content: space-between; gap: 8px; }
+  .doc .why { color: var(--ink-2); font-size: 12px; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .escape { color: var(--critical); font-weight: 600; font-size: 12px; }
+  pre.src { background: var(--surface-2); border-radius: 8px; padding: 12px; font: 12.5px/1.5 var(--mono); white-space: pre-wrap; margin: 0; max-height: 300px; overflow: auto; }
+  .reasons li { margin: 3px 0; }
+  td.c { white-space: nowrap; }
+  .conf { display: inline-block; width: 46px; height: 6px; background: var(--surface-2); border-radius: 3px; vertical-align: middle; margin-right: 6px; position: relative; }
+  .conf i { position: absolute; inset: 0 auto 0 0; border-radius: 3px; background: var(--s1); }
+  .flag td { background: color-mix(in srgb, var(--s2) 10%, transparent); }
+  .ok { color: var(--good); font-weight: 600; } .no { color: var(--critical); font-weight: 600; }
+  details summary { cursor: pointer; font-weight: 600; margin-top: 12px; }
+  pre.json { font: 12px/1.45 var(--mono); background: var(--surface-2); padding: 10px; border-radius: 8px; overflow: auto; max-height: 260px; }
+</style>
+</head>
+<body data-root=".." data-page="pilot/">
+<main class="wrap">
+  <div class="eyebrow">Phase 6 · Applied AI pilot</div>
+  <h1>The review queue, on 220 documents it never saw</h1>
+  <p class="lede">The pipeline reads each document, checks it against 14 business rules and decides: straight into the TMS, to a clerk with reasons, or handled by hand. Change the threshold or switch safety layers off to see what "just let AI read the documents" would have done. <a href="?tour">Take the tour</a>.</p>
+
+  <section class="controls" style="margin-top:24px">
+    <div class="card" id="ctl">
+      <div class="slider"><label for="thr">Confidence threshold (fields below it go to a clerk)</label><output id="thr-o"></output>
+        <input id="thr" type="range" min="0.5" max="0.95" step="0.05" value="0.75"></div>
+      <p class="muted" style="font-size:12.5px;margin:0">Chosen on the dev set: <!--n:pilot.threshold-->0.75<!--/n-->, the "no silent guessing" floor agreed in workshop 3. Error budget: <!--n:pilot.error_budget-->1%<!--/n-->.</p>
+      <div class="toggles" id="layers" style="margin-top:10px">
+        <label><input type="checkbox" id="l-thr" checked> Confidence threshold</label>
+        <label><input type="checkbox" id="l-single" checked> Single-document rules (V01-V10, V14)</label>
+        <label><input type="checkbox" id="l-cross" checked> Cross-document rules (V11-V13)</label>
+      </div>
+    </div>
+    <div class="grid g2" id="kpis"></div>
+  </section>
+
+  <section class="queue">
+    <div class="card">
+      <div class="tabs" id="tabs"></div>
+      <div class="list" id="list"></div>
+    </div>
+    <div class="card" id="detail"></div>
+  </section>
+</main>
+<script src="../assets/app.js"></script>
+<script>
+loadJSON("pilot").then(({ documents, rules }) => {
+  let filter = "review", selected = null;
+  const state = () => ({ t: +document.getElementById("thr").value, thr: document.getElementById("l-thr").checked,
+    single: document.getElementById("l-single").checked, cross: document.getElementById("l-cross").checked });
+  function routeOf(d, s) {
+    if (d.route === "manual") return "manual";
+    if (s.thr && d.min_conf < s.t) return "review";
+    if (s.single && d.rule_fail_single) return "review";
+    if (s.cross && d.rule_fail_cross) return "review";
+    return "auto";
+  }
+  function reasonsOf(d, s) {
+    if (d.route === "manual") return d.reasons;
+    const out = [];
+    if (s.thr) for (const [k, f] of Object.entries(d.fields)) if (f.confidence < s.t) out.push(`${k}: ${f.note || "low confidence"} (${f.confidence.toFixed(2)})`);
+    for (const c of d.checks) {
+      if (c.ok) continue;
+      const cross = ["V11", "V12", "V13"].includes(c.rule);
+      if ((cross && s.cross) || (!cross && s.single)) out.push(`${c.rule}: ${c.message}`);
+    }
+    return out;
+  }
+  function render() {
+    const s = state();
+    document.getElementById("thr-o").textContent = s.t.toFixed(2);
+    const rows = documents.map((d) => ({ d, route: routeOf(d, s) }));
+    rows.forEach((r) => { r.escape = r.route === "auto" && !r.d.clean; });
+    const n = rows.length, count = (f) => rows.filter(f).length;
+    const auto = count((r) => r.route === "auto"), review = count((r) => r.route === "review"), escapes = count((r) => r.escape);
+    const exc = rows.filter((r) => r.d.exceptions.length), caught = exc.filter((r) => r.route !== "auto").length;
+    document.getElementById("kpis").innerHTML = [
+      ["Straight-through", fmt.pct(auto / n), `${auto} of ${n} documents`, false],
+      ["Sent to a clerk", fmt.pct(review / n), `${review} reviews, ${count((r) => r.route === "manual")} manual`, false],
+      ["Errors that reach the TMS unseen", String(escapes), `${fmt.pct(escapes / n)}; budget 1%`, escapes / n > 0.01],
+      ["Genuine problems caught", `${caught} / ${exc.length}`, "weight mismatch, bad check digit, missing seal, wrong total", caught < exc.length],
+    ].map(([l, v, sub, bad]) => `<div class="card stat kpi ${bad ? "bad" : ""}"><span class="l">${l}</span><span class="v">${v}</span><span class="s">${sub}</span></div>`).join("");
+    const tabs = [["review", "Review queue"], ["auto", "Straight-through"], ["manual", "Manual"], ["escape", "Escapes"], ["all", "All"]];
+    document.getElementById("tabs").innerHTML = tabs.map(([k, l]) => {
+      const c = k === "all" ? n : k === "escape" ? escapes : count((r) => r.route === k);
+      return `<button data-f="${k}" class="${k === filter ? "on" : ""}">${l} (${c})</button>`;
+    }).join("");
+    const shown = rows.filter((r) => filter === "all" || (filter === "escape" ? r.escape : r.route === filter));
+    if (!selected || !shown.find((r) => r.d.id === selected)) selected = shown[0]?.d.id || null;
+    document.getElementById("list").innerHTML = shown.map((r) => {
+      const why = reasonsOf(r.d, s)[0] || (r.escape ? "" : "passed all checks");
+      return `<div class="doc ${r.d.id === selected ? "sel" : ""}" data-id="${r.d.id}"><div class="top"><span><b class="mono">${r.d.id}</b> ${r.d.type.replace(/_/g, " ")}</span><span class="pill ${r.route}">${r.route}</span></div>
+        <div class="why">${r.escape ? '<span class="escape">reached the TMS with an error</span>' : esc(why)}</div></div>`;
+    }).join("") || `<p class="muted" style="padding:12px 4px">Nothing here at these settings.</p>`;
+    detail(rows.find((r) => r.d.id === selected), s);
+  }
+  function detail(r, s) {
+    const el = document.getElementById("detail");
+    if (!r) { el.innerHTML = `<p class="muted">Select a document.</p>`; return; }
+    const d = r.d, reasons = reasonsOf(d, s);
+    const flagged = new Set(reasons.map((x) => x.split(":")[0]));
+    el.innerHTML = `<div class="top" style="display:flex;justify-content:space-between;gap:8px;align-items:center"><h3 style="margin:0">${d.id} · ${d.type.replace(/_/g, " ")}</h3><span class="pill ${r.route}">${r.route}</span></div>
+      <p class="muted" style="font-size:12.5px">Received ${d.received}${d.noise.length ? ` · faults injected in this synthetic document: ${d.noise.join(", ")}` : ""}${d.exceptions.length ? ` · genuine problem: ${d.exceptions.join(", ")}` : ""}</p>
+      ${r.escape ? `<p class="no">This document reached the TMS with an error: ${[...d.wrong, ...d.missing_truth].join(", ") || d.exceptions.join(", ")}. Switch the layers back on.</p>` : ""}
+      <div id="why"><h3>Why a clerk sees this</h3>${reasons.length ? `<ul class="reasons">${reasons.map((x) => `<li>${esc(x)}</li>`).join("")}</ul>` : `<p class="muted">Nothing flagged: every field above the threshold and every active rule passed.</p>`}</div>
+      <div style="margin-top:12px">
+        <div><h3>Source document (OCR text)</h3><pre class="src">${esc(d.text)}</pre></div>
+        <div class="table-wrap" style="margin-top:14px"><h3>Fields read</h3><table><tr><th>Field</th><th>Read as</th><th>Confidence</th><th>vs truth</th></tr>
+          ${Object.entries(d.fields).map(([k, f]) => `<tr class="${flagged.has(k) ? "flag" : ""}"><td class="mono">${k}</td><td>${esc(Array.isArray(f.value) ? f.value.join(", ") : f.value ?? "—")}${f.note ? `<br><small>${esc(f.note)}</small>` : ""}</td>
+            <td class="c"><span class="conf"><i style="width:${f.confidence * 100}%"></i></span>${f.confidence.toFixed(2)}</td><td>${f.truth === undefined ? "–" : f.correct ? '<span class="ok">✓</span>' : `<span class="no">✗</span> <small>${esc(Array.isArray(f.truth) ? f.truth.join(", ") : f.truth)}</small>`}</td></tr>`).join("")}
+        </table></div>
+      </div>
+      <details><summary>Rule checks (${d.checks.filter((c) => !c.ok).length} failed of ${d.checks.length})</summary><table>${d.checks.map((c) => `<tr><td class="mono">${c.rule}</td><td>${esc(rules[c.rule])}</td><td>${c.ok ? '<span class="ok">pass</span>' : `<span class="no">fail</span> ${esc(c.message)}`}</td></tr>`).join("")}</table></details>
+      ${r.route === "auto" && d.tms_record ? `<details id="tms"><summary>Record posted to the TMS</summary><pre class="json">${esc(JSON.stringify(d.tms_record, null, 2))}</pre></details>` : ""}`;
+  }
+  document.getElementById("tabs").addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) { filter = b.dataset.f; selected = null; render(); } });
+  document.getElementById("list").addEventListener("click", (e) => { const x = e.target.closest(".doc"); if (x) { selected = x.dataset.id; render(); } });
+  document.querySelectorAll("#ctl input").forEach((i) => i.addEventListener("input", render));
+  render();
+
+  const set = (id, v) => { const el = document.getElementById(id); if (el.type === "checkbox") el.checked = v; else el.value = v; };
+  tour([
+    { sel: "#kpis", text: "The pilot on 220 test documents it never saw while it was being tuned: 70% go straight to the TMS, none of them with an error, and every genuine document problem reaches a clerk." },
+    { sel: "#layers", text: "Now switch the safety layers off, as if we had just plugged in a model to read the documents.", before: () => { set("l-thr", false); set("l-single", false); set("l-cross", false); render(); } },
+    { sel: "#kpis", text: "95% straight-through looks great, until you see the errors: 36 wrong documents in the TMS. A digit misread by a scanner looks perfectly normal, so a model is confident about it." },
+    { sel: "#layers", text: "Layers back on. The confidence threshold and single-document rules help, but the cross-document rules (packing list vs B/L, package counts) catch most of what is left.", before: () => { set("l-thr", true); set("l-single", true); set("l-cross", true); render(); } },
+    { sel: "#ctl .slider", text: "The threshold was chosen on a separate dev set: the highest straight-through rate within the 1% error budget, never below 0.75, so a weight without a unit or an ambiguous date is never guessed silently." },
+    { sel: "#list", text: "This is what a clerk sees: a queue of documents that need a person, each with the reason in plain words.", before: () => { filter = "review"; selected = "DOC-0084"; render(); } },
+    { sel: "#why", text: "DOC-0084: the packing list says 6,943 kg, its bill of lading 7,466 kg, and the container is not on the B/L. The clerk checks two fields, not the whole document." },
+    { sel: "#detail", text: "Clean documents go straight to the TMS as a JSON record, with the pipeline version and the lowest field confidence for the audit trail. A 5% random sample is audited by a clerk.", before: () => { filter = "auto"; selected = null; render(); document.getElementById("tms")?.setAttribute("open", ""); } },
+  ]);
+});
+</script>
+</body>
+</html>

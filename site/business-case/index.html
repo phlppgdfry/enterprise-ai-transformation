@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Business Case Calculator</title>
+<meta name="description" content="UC-01 business case: cash view versus capacity view, with every driver adjustable between its low and high value.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600&family=JetBrains+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  .layout { display: grid; grid-template-columns: 340px 1fr; gap: 16px; align-items: start; }
+  @media (max-width: 900px) { .layout { grid-template-columns: 1fr; } }
+  .src { font-size: 11px; color: var(--ink-3); grid-column: 1 / -1; margin-top: -2px; }
+</style>
+</head>
+<body data-root=".." data-page="business-case/">
+<main class="wrap">
+  <div class="eyebrow">Phase 4 · Business case</div>
+  <h1>Freed hours are not saved euros</h1>
+  <p class="lede">The cash view counts only cost that leaves the books: hires avoided as volume grows and leavers not replaced. The capacity view values every freed hour. Move the drivers between their low and high values; the board decided on the cash view at base values: NPV <!--n:bc.cash.npv-->€189k<!--/n-->, payback <!--n:bc.cash.payback-->15 months<!--/n-->.</p>
+  <section class="layout">
+    <div class="card" id="drivers"><h3>Drivers</h3><div id="sliders"></div><button class="btn" id="reset" type="button">Reset to base</button></div>
+    <div>
+      <div class="grid g4" id="kpis"></div>
+      <div class="card" style="margin-top:16px">
+        <h3>Cumulative net position</h3>
+        <div class="legend"><span><i class="dot" style="background:var(--s1)"></i>Cash view</span><span><i class="dot" style="background:var(--s3)"></i>Capacity view</span></div>
+        <svg id="curve" class="chart" viewBox="0 0 640 300" role="img" aria-label="Cumulative net position over 36 months"></svg>
+      </div>
+      <div class="card table-wrap" style="margin-top:16px"><table id="years"></table></div>
+    </div>
+  </section>
+  <section>
+    <h2>What moves the result most</h2>
+    <p class="muted">NPV on the cash view with one driver at its low or high value, everything else at base.</p>
+    <div class="card"><div class="legend"><span><i class="dot" style="background:var(--s2)"></i>Driver at its low value</span><span><i class="dot" style="background:var(--s1)"></i>Driver at its high value</span></div><svg id="tornado" class="chart" viewBox="0 0 760 360" role="img" aria-label="Tornado chart"></svg></div>
+  </section>
+</main>
+<script src="../assets/model.js"></script>
+<script src="../assets/app.js"></script>
+<script>
+loadJSON("model").then(({ business_case: bc }) => {
+  const base = Object.fromEntries(Object.entries(bc.values).map(([k, v]) => [k, v.base]));
+  const meta = Object.fromEntries(bc.assumptions.map((a) => [a.key, a]));
+  const editable = ["documents_per_month", "manual_minutes", "review_minutes", "stp_rate", "human_error_rate", "error_cost", "one_off_cost", "run_cost", "ramp_year1", "attrition_fte"];
+  const v = { ...base };
+  const show = (k, x) => meta[k].unit === "%" ? fmt.pct(x) : meta[k].unit === "EUR" ? fmt.eur(x) : (+x).toLocaleString("en-US", { maximumFractionDigits: 2 });
+  document.getElementById("sliders").innerHTML = editable.map((k) => {
+    const { low, high } = bc.values[k];
+    return `<div class="slider"><label for="s-${k}">${esc(meta[k].name)}</label><output id="o-${k}"></output>
+      <input id="s-${k}" type="range" min="0" max="100" step="1" value="50">
+      <span class="src">${esc(meta[k].source)} · range ${show(k, low)}–${show(k, high)}</span></div>`;
+  }).join("");
+
+  // Slider position 0-50 runs from low to base, 50-100 from base to high, so base sits exactly in the middle.
+  const valueAt = (k, pos) => { const { low, high } = bc.values[k]; const b = base[k];
+    return pos <= 50 ? low + (b - low) * pos / 50 : b + (high - b) * (pos - 50) / 50; };
+  function draw() {
+    editable.forEach((k) => { v[k] = valueAt(k, +document.getElementById("s-" + k).value); document.getElementById("o-" + k).textContent = show(k, v[k]); });
+    const r = computeCase(v, 3, bc.doc_desk_fte);
+    document.getElementById("kpis").innerHTML = [
+      ["NPV, cash view", fmt.keur(r.cash.npv)], ["Payback, cash view", fmt.months(r.cash.payback_months)],
+      ["NPV, capacity view", fmt.keur(r.capacity.npv)], ["Minutes saved per document", r.saved_minutes_per_document.toFixed(1)],
+    ].map(([l, x]) => `<div class="card stat"><span class="l">${l}</span><span class="v">${x}</span></div>`).join("");
+    const el = document.getElementById("curve"); el.innerHTML = "";
+    const series = ["cash", "capacity"].map((view) => {
+      const pts = [[0, -r.one_off]]; let cum = -r.one_off;
+      r[view].net_per_year.forEach((n, y) => { for (let m = 1; m <= 12; m++) { cum += n / 12; pts.push([y * 12 + m, cum]); } });
+      return { view, pts };
+    });
+    const all = series.flatMap((s) => s.pts.map((p) => p[1]));
+    const lo = Math.min(...all, 0), hi = Math.max(...all, 0);
+    const x0 = 64, y0 = 12, pw = 556, ph = 250, px = (m) => x0 + m / 36 * pw, py = (val) => y0 + ph - (val - lo) / (hi - lo) * ph;
+    const stepK = Math.max(50000, Math.ceil((hi - lo) / 5 / 50000) * 50000);
+    for (let t = Math.ceil(lo / stepK) * stepK; t <= hi; t += stepK) {
+      svg("line", { x1: x0, x2: x0 + pw, y1: py(t), y2: py(t), stroke: t === 0 ? "var(--ink-3)" : "var(--line)" }, el);
+      svg("text", { x: x0 - 6, y: py(t) + 4, "text-anchor": "end", "font-size": 11 }, el).textContent = fmt.keur(t);
+    }
+    [0, 12, 24, 36].forEach((m) => { svg("text", { x: px(m), y: y0 + ph + 18, "text-anchor": m === 36 ? "end" : m === 0 ? "start" : "middle", "font-size": 11 }, el).textContent = m === 0 ? "go-live" : `month ${m}`; });
+    const colors = { cash: "var(--s1)", capacity: "var(--s3)" };
+    series.forEach((s) => svg("polyline", { points: s.pts.map(([m, c]) => `${px(m)},${py(c)}`).join(" "), fill: "none", stroke: colors[s.view], "stroke-width": 2 }, el));
+    const hover = svg("rect", { x: x0, y: y0, width: pw, height: ph, fill: "transparent" }, el);
+    const cross = svg("line", { y1: y0, y2: y0 + ph, stroke: "var(--ink-3)", "stroke-dasharray": "3 3", opacity: 0 }, el);
+    hover.addEventListener("mousemove", (e) => {
+      const box = el.getBoundingClientRect(); const m = Math.max(0, Math.min(36, Math.round((((e.clientX - box.left) / box.width) * 640 - x0) / pw * 36)));
+      cross.setAttribute("x1", px(m)); cross.setAttribute("x2", px(m)); cross.setAttribute("opacity", 1);
+      tip.show(e, `Month ${m}<br>Cash view ${fmt.keur(series[0].pts[m][1])}<br>Capacity view ${fmt.keur(series[1].pts[m][1])}`);
+    });
+    hover.addEventListener("mouseleave", () => { tip.hide(); cross.setAttribute("opacity", 0); });
+    const y = r.years;
+    const row = (label, f) => `<tr><td>${label}</td>${y.map((yy, i) => `<td class="num">${f(yy, i)}</td>`).join("")}</tr>`;
+    document.getElementById("years").innerHTML = `<tr><th></th><th class="num">Year 1</th><th class="num">Year 2</th><th class="num">Year 3</th></tr>` +
+      row("Clerk hours freed", (yy) => yy.hours_freed.toLocaleString("en-US")) +
+      row("FTE freed / leaving the cost base", (yy) => `${yy.fte_freed.toFixed(2)} / ${yy.cash_fte.toFixed(2)}`) +
+      row("Errors avoided", (yy) => yy.errors_avoided.toLocaleString("en-US")) +
+      row("Cash labour value", (yy) => fmt.eur(yy.cash_labour_value)) +
+      row("Error cost avoided", (yy) => fmt.eur(yy.error_value)) +
+      row("Run cost incl. model usage", (yy) => fmt.eur(-yy.run_cost)) +
+      row("<b>Net, cash view</b>", (yy, i) => `<b>${fmt.eur(r.cash.net_per_year[i])}</b>`);
+  }
+  document.querySelectorAll("#sliders input").forEach((i) => i.addEventListener("input", draw));
+  document.getElementById("reset").addEventListener("click", () => { editable.forEach((k) => (document.getElementById("s-" + k).value = 50)); draw(); });
+  draw();
+
+  const t = bc.tornado, el = document.getElementById("tornado");
+  const vals = t.rows.flatMap((r) => [r.low, r.high]).concat(t.base);
+  const pad = (Math.max(...vals) - Math.min(...vals)) * 0.08, lo = Math.min(...vals) - pad, hi = Math.max(...vals) + pad;
+  const x0 = 340, pw = 400, px = (val) => x0 + (val - lo) / (hi - lo) * pw;
+  svg("line", { x1: px(t.base), x2: px(t.base), y1: 0, y2: 30 * t.rows.length + 4, stroke: "var(--ink-3)" }, el);
+  t.rows.forEach((r, i) => {
+    const yy = i * 30 + 4;
+    svg("text", { x: x0 - 10, y: yy + 16, "text-anchor": "end", "font-size": 11.5, class: "ink" }, el).textContent = bc.labels[r.key].slice(0, 54);
+    [[r.low, "var(--s2)", "low"], [r.high, "var(--s1)", "high"]].forEach(([val, c, side]) => {
+      const a = Math.min(px(t.base), px(val)), b = Math.max(px(t.base), px(val));
+      if (b - a < 1) return;
+      const rect = svg("rect", { x: a, y: yy + 3, width: b - a, height: 18, rx: 3, fill: c }, el);
+      rect.addEventListener("mousemove", (e) => tip.show(e, `${esc(bc.labels[r.key])} at its ${side} value (${show(r.key, bc.values[r.key][side])})<br>NPV ${fmt.keur(val)}`));
+      rect.addEventListener("mouseleave", tip.hide);
+    });
+  });
+  svg("text", { x: px(t.base), y: 30 * t.rows.length + 22, "text-anchor": "middle", "font-size": 11.5, "font-weight": 600, class: "ink" }, el).textContent = `Base ${fmt.keur(t.base)}`;
+});
+</script>
+</body>
+</html>

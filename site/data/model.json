@@ -1,0 +1,2974 @@
+{
+ "business_case": {
+  "assumptions": [
+   {
+    "base": 4000,
+    "basis": "Two-week mailbox count, September 2026, extrapolated.",
+    "high": 4400,
+    "id": "A01",
+    "key": "documents_per_month",
+    "low": 3600,
+    "name": "Documents keyed per month",
+    "source": "measured",
+    "unit": "documents"
+   },
+   {
+    "base": 0.04,
+    "basis": "CFO's 2027-2029 plan.",
+    "high": 0.06,
+    "id": "A02",
+    "key": "volume_growth",
+    "low": 0.02,
+    "name": "Annual volume growth",
+    "source": "client plan",
+    "unit": "%"
+   },
+   {
+    "base": 5.5,
+    "basis": "Discovery time study, 60 documents, two clerks.",
+    "high": 6.5,
+    "id": "A03",
+    "key": "manual_minutes",
+    "low": 4.5,
+    "name": "Minutes to key one document today",
+    "source": "measured",
+    "unit": "minutes"
+   },
+   {
+    "base": 2.5,
+    "basis": "Clerk checks only the flagged fields; to be measured in the first production month.",
+    "high": 3.5,
+    "id": "A04",
+    "key": "review_minutes",
+    "low": 2.0,
+    "name": "Minutes to review a flagged document",
+    "source": "estimate",
+    "unit": "minutes"
+   },
+   {
+    "base": 0.3,
+    "basis": "5% random audit of straight-through documents at 6 minutes each.",
+    "high": 0.5,
+    "id": "A05",
+    "key": "stp_minutes",
+    "low": 0.2,
+    "name": "Minutes per straight-through document (sample audit)",
+    "source": "design",
+    "unit": "minutes"
+   },
+   {
+    "base": "pilot:test.stp_rate",
+    "basis": "Test set result; low and high are the 95% confidence interval.",
+    "high": "pilot:test.stp_ci95.1",
+    "id": "A06",
+    "key": "stp_rate",
+    "low": "pilot:test.stp_ci95.0",
+    "name": "Straight-through rate",
+    "source": "pilot",
+    "unit": "%"
+   },
+   {
+    "base": "pilot:test.manual_rate",
+    "basis": "Not freight documents or type unsure.",
+    "high": "pilot:test.manual_rate",
+    "id": "A07",
+    "key": "manual_rate",
+    "low": "pilot:test.manual_rate",
+    "name": "Share of documents handled fully by hand",
+    "source": "pilot",
+    "unit": "%"
+   },
+   {
+    "base": 34,
+    "basis": "EUR 52,000 loaded cost per clerk / 1,530 productive hours.",
+    "high": 37,
+    "id": "A08",
+    "key": "hourly_cost",
+    "low": 31,
+    "name": "Loaded cost per clerk hour",
+    "source": "client finance",
+    "unit": "EUR"
+   },
+   {
+    "base": 52000,
+    "basis": "HR, 2026 salary scales plus employer costs.",
+    "high": 52000,
+    "id": "A09",
+    "key": "fte_cost",
+    "low": 52000,
+    "name": "Loaded cost per clerk per year",
+    "source": "client finance",
+    "unit": "EUR"
+   },
+   {
+    "base": 1530,
+    "basis": "HR.",
+    "high": 1530,
+    "id": "A10",
+    "key": "fte_hours",
+    "low": 1530,
+    "name": "Productive hours per FTE per year",
+    "source": "client finance",
+    "unit": "hours"
+   },
+   {
+    "base": 0.021,
+    "basis": "Time study: 60 documents double-checked.",
+    "high": 0.028,
+    "id": "A11",
+    "key": "human_error_rate",
+    "low": 0.015,
+    "name": "Documents with a keying error today",
+    "source": "measured",
+    "unit": "%"
+   },
+   {
+    "base": 60,
+    "basis": "Operations and customs leads: rework, customs amendment, share of demurrage. Wide range on purpose.",
+    "high": 110,
+    "id": "A12",
+    "key": "error_cost",
+    "low": 35,
+    "name": "Cost of one error that reaches operations",
+    "source": "estimate",
+    "unit": "EUR"
+   },
+   {
+    "base": "pilot:pooled_escape_rate",
+    "basis": "Dev and test sets pooled (440 documents); high is the upper 95% bound.",
+    "high": "pilot:pooled_escape_ci95.1",
+    "id": "A13",
+    "key": "pilot_escape_rate",
+    "low": "pilot:pooled_escape_rate",
+    "name": "Documents posted with an unflagged error (pilot)",
+    "source": "pilot",
+    "unit": "%"
+   },
+   {
+    "base": 0.3,
+    "basis": "Clerks check a few flagged fields instead of keying all; fewer chances to slip.",
+    "high": 0.5,
+    "id": "A14",
+    "key": "review_error_factor",
+    "low": 0.2,
+    "name": "Error rate on reviewed documents, relative to keying",
+    "source": "estimate",
+    "unit": "x"
+   },
+   {
+    "base": 85000,
+    "basis": "Partner quote range for 10 weeks build and integration plus internal time; pilot cost (EUR 38,000) is sunk and excluded.",
+    "high": 115000,
+    "id": "A15",
+    "key": "one_off_cost",
+    "low": 70000,
+    "name": "One-off cost: production build, TMS integration, change and training",
+    "source": "estimate",
+    "unit": "EUR"
+   },
+   {
+    "base": 19000,
+    "basis": "Hosting and monitoring EUR 7,000; support and model upkeep (0.1 FTE engineer) EUR 12,000.",
+    "high": 26000,
+    "id": "A16",
+    "key": "run_cost",
+    "low": 15000,
+    "name": "Run cost per year excluding model usage",
+    "source": "estimate",
+    "unit": "EUR"
+   },
+   {
+    "base": 2500,
+    "basis": "Prompt plus OCR text of a one-page document.",
+    "high": 4000,
+    "id": "A17",
+    "key": "tokens_in",
+    "low": 2000,
+    "name": "Input tokens per document",
+    "source": "estimate",
+    "unit": "tokens"
+   },
+   {
+    "base": 600,
+    "basis": "Structured JSON with 6-11 fields.",
+    "high": 1000,
+    "id": "A18",
+    "key": "tokens_out",
+    "low": 400,
+    "name": "Output tokens per document",
+    "source": "estimate",
+    "unit": "tokens"
+   },
+   {
+    "base": 4.0,
+    "basis": "Anthropic list price, October 2026.",
+    "high": 4.0,
+    "id": "A19",
+    "key": "price_in_usd_per_mtok",
+    "low": 4.0,
+    "name": "Model price, input (claude-opus-5-5)",
+    "source": "vendor price list",
+    "unit": "USD per million tokens"
+   },
+   {
+    "base": 20.0,
+    "basis": "Anthropic list price, October 2026.",
+    "high": 20.0,
+    "id": "A20",
+    "key": "price_out_usd_per_mtok",
+    "low": 20.0,
+    "name": "Model price, output (claude-opus-5-5)",
+    "source": "vendor price list",
+    "unit": "USD per million tokens"
+   },
+   {
+    "base": 0.9,
+    "basis": "Rounded.",
+    "high": 0.95,
+    "id": "A21",
+    "key": "eur_per_usd",
+    "low": 0.85,
+    "name": "Exchange rate",
+    "source": "assumption",
+    "unit": "EUR per USD"
+   },
+   {
+    "base": 0.6,
+    "basis": "Go-live in month 5 of the roadmap, document types switched on one by one.",
+    "high": 0.75,
+    "id": "A22",
+    "key": "ramp_year1",
+    "low": 0.4,
+    "name": "Share of steady-state benefit reached in year 1",
+    "source": "assumption",
+    "unit": "%"
+   },
+   {
+    "base": 0.5,
+    "basis": "Average 1.4 leavers a year over 2023-2025. Agreed with HR and the works council: no redundancies; every second leaver is not replaced while the pilot scales.",
+    "high": 1.0,
+    "id": "A23",
+    "key": "attrition_fte",
+    "low": 0.0,
+    "name": "Doc desk leavers per year not replaced",
+    "source": "client HR",
+    "unit": "FTE"
+   },
+   {
+    "base": 0.08,
+    "basis": "CFO's hurdle rate.",
+    "high": 0.08,
+    "id": "A24",
+    "key": "discount_rate",
+    "low": 0.08,
+    "name": "Discount rate",
+    "source": "client finance",
+    "unit": "%"
+   }
+  ],
+  "base": {
+   "capacity": {
+    "net_per_year": [
+     76005,
+     146335,
+     152948
+    ],
+    "npv": 232249,
+    "payback_months": 12.7,
+    "roi": 3.415
+   },
+   "cash": {
+    "net_per_year": [
+     53020,
+     120444,
+     152898
+    ],
+    "npv": 188729,
+    "payback_months": 15.2,
+    "roi": 2.84
+   },
+   "error_rate_after": 0.0071,
+   "minutes_after": 1.097,
+   "model_cost_per_document_eur": 0.0198,
+   "one_off": 85000,
+   "review_rate": 0.2545,
+   "saved_minutes_per_document": 4.403,
+   "years": [
+    {
+     "capacity_value": 71865,
+     "cash_fte": 0.94,
+     "cash_labour_value": 48880,
+     "documents": 48000,
+     "error_value": 24090,
+     "errors_avoided": 402,
+     "fte_freed": 1.38,
+     "hours_freed": 2114,
+     "model_cost": 950,
+     "run_cost": 19950,
+     "year": 1
+    },
+    {
+     "capacity_value": 124566,
+     "cash_fte": 1.9,
+     "cash_labour_value": 98675,
+     "documents": 49920,
+     "error_value": 41757,
+     "errors_avoided": 696,
+     "fte_freed": 2.39,
+     "hours_freed": 3664,
+     "model_cost": 988,
+     "run_cost": 19988,
+     "year": 2
+    },
+    {
+     "capacity_value": 129549,
+     "cash_fte": 2.49,
+     "cash_labour_value": 129499,
+     "documents": 51917,
+     "error_value": 43427,
+     "errors_avoided": 724,
+     "fte_freed": 2.49,
+     "hours_freed": 3810,
+     "model_cost": 1028,
+     "run_cost": 20028,
+     "year": 3
+    }
+   ]
+  },
+  "doc_desk_fte": 11,
+  "labels": {
+   "attrition_fte": "Doc desk leavers per year not replaced",
+   "discount_rate": "Discount rate",
+   "documents_per_month": "Documents keyed per month",
+   "error_cost": "Cost of one error that reaches operations",
+   "eur_per_usd": "Exchange rate",
+   "fte_cost": "Loaded cost per clerk per year",
+   "fte_hours": "Productive hours per FTE per year",
+   "hourly_cost": "Loaded cost per clerk hour",
+   "human_error_rate": "Documents with a keying error today",
+   "manual_minutes": "Minutes to key one document today",
+   "manual_rate": "Share of documents handled fully by hand",
+   "one_off_cost": "One-off cost: production build, TMS integration, change and training",
+   "pilot_escape_rate": "Documents posted with an unflagged error (pilot)",
+   "price_in_usd_per_mtok": "Model price, input (claude-opus-5-5)",
+   "price_out_usd_per_mtok": "Model price, output (claude-opus-5-5)",
+   "ramp_year1": "Share of steady-state benefit reached in year 1",
+   "review_error_factor": "Error rate on reviewed documents, relative to keying",
+   "review_minutes": "Minutes to review a flagged document",
+   "run_cost": "Run cost per year excluding model usage",
+   "stp_minutes": "Minutes per straight-through document (sample audit)",
+   "stp_rate": "Straight-through rate",
+   "tokens_in": "Input tokens per document",
+   "tokens_out": "Output tokens per document",
+   "volume_growth": "Annual volume growth"
+  },
+  "noattr": {
+   "net_per_year": [
+    27020,
+    68444,
+    94821
+   ],
+   "npv": 73970,
+   "payback_months": 22.2,
+   "roi": 1.239
+  },
+  "scenarios": {
+   "optimistic": {
+    "capacity": {
+     "net_per_year": [
+      214425,
+      309508,
+      328977
+     ],
+     "npv": 655047,
+     "payback_months": 3.9,
+     "roi": 11.184
+    },
+    "cash": {
+     "net_per_year": [
+      162593,
+      288953,
+      312123
+     ],
+     "npv": 576053,
+     "payback_months": 5.2,
+     "roi": 9.91
+    },
+    "error_rate_after": 0.0069,
+    "minutes_after": 0.843,
+    "model_cost_per_document_eur": 0.0136,
+    "one_off": 70000,
+    "review_rate": 0.1978,
+    "saved_minutes_per_document": 5.657,
+    "years": [
+     {
+      "capacity_value": 138152,
+      "cash_fte": 1.66,
+      "cash_labour_value": 86320,
+      "documents": 52800,
+      "error_value": 91991,
+      "errors_avoided": 836,
+      "fte_freed": 2.44,
+      "hours_freed": 3734,
+      "model_cost": 718,
+      "run_cost": 15718,
+      "year": 1
+     },
+     {
+      "capacity_value": 195254,
+      "cash_fte": 3.36,
+      "cash_labour_value": 174699,
+      "documents": 55968,
+      "error_value": 130015,
+      "errors_avoided": 1182,
+      "fte_freed": 3.45,
+      "hours_freed": 5277,
+      "model_cost": 761,
+      "run_cost": 15761,
+      "year": 2
+     },
+     {
+      "capacity_value": 206969,
+      "cash_fte": 3.66,
+      "cash_labour_value": 190115,
+      "documents": 59326,
+      "error_value": 137815,
+      "errors_avoided": 1253,
+      "fte_freed": 3.66,
+      "hours_freed": 5594,
+      "model_cost": 807,
+      "run_cost": 15807,
+      "year": 3
+     }
+    ]
+   },
+   "pessimistic": {
+    "capacity": {
+     "net_per_year": [
+      -4612,
+      30798,
+      31934
+     ],
+     "npv": -67516,
+     "payback_months": null,
+     "roi": -0.495
+    },
+    "cash": {
+     "net_per_year": [
+      -18739,
+      -11289,
+      445
+     ],
+     "npv": -141676,
+     "payback_months": null,
+     "roi": -1.257
+    },
+    "error_rate_after": 0.0195,
+    "minutes_after": 1.636,
+    "model_cost_per_document_eur": 0.0342,
+    "one_off": 115000,
+    "review_rate": 0.3181,
+    "saved_minutes_per_document": 2.864,
+    "years": [
+     {
+      "capacity_value": 25567,
+      "cash_fte": 0.22,
+      "cash_labour_value": 11440,
+      "documents": 43200,
+      "error_value": -2702,
+      "errors_avoided": -77,
+      "fte_freed": 0.54,
+      "hours_freed": 825,
+      "model_cost": 1477,
+      "run_cost": 27477,
+      "year": 1
+     },
+     {
+      "capacity_value": 65196,
+      "cash_fte": 0.44,
+      "cash_labour_value": 23109,
+      "documents": 44064,
+      "error_value": -6891,
+      "errors_avoided": -197,
+      "fte_freed": 1.37,
+      "hours_freed": 2103,
+      "model_cost": 1507,
+      "run_cost": 27507,
+      "year": 2
+     },
+     {
+      "capacity_value": 66500,
+      "cash_fte": 0.67,
+      "cash_labour_value": 35011,
+      "documents": 44945,
+      "error_value": -7029,
+      "errors_avoided": -201,
+      "fte_freed": 1.4,
+      "hours_freed": 2145,
+      "model_cost": 1537,
+      "run_cost": 27537,
+      "year": 3
+     }
+    ]
+   }
+  },
+  "tornado": {
+   "base": 188729,
+   "rows": [
+    {
+     "high": 232142,
+     "key": "attrition_fte",
+     "low": 73970,
+     "swing": 158172
+    },
+    {
+     "high": 265879,
+     "key": "error_cost",
+     "low": 150155,
+     "swing": 115724
+    },
+    {
+     "high": 229549,
+     "key": "human_error_rate",
+     "low": 153740,
+     "swing": 75809
+    },
+    {
+     "high": 158729,
+     "key": "one_off_cost",
+     "low": 203729,
+     "swing": 45000
+    },
+    {
+     "high": 204545,
+     "key": "manual_minutes",
+     "low": 165463,
+     "swing": 39082
+    },
+    {
+     "high": 208012,
+     "key": "documents_per_month",
+     "low": 169444,
+     "swing": 38568
+    },
+    {
+     "high": 170690,
+     "key": "run_cost",
+     "low": 199038,
+     "swing": 28348
+    },
+    {
+     "high": 194306,
+     "key": "ramp_year1",
+     "low": 180379,
+     "swing": 13927
+    },
+    {
+     "high": 194013,
+     "key": "stp_rate",
+     "low": 182802,
+     "swing": 11211
+    },
+    {
+     "high": 182788,
+     "key": "review_minutes",
+     "low": 191700,
+     "swing": 8912
+    }
+   ]
+  },
+  "values": {
+   "attrition_fte": {
+    "base": 0.5,
+    "high": 1.0,
+    "low": 0.0
+   },
+   "discount_rate": {
+    "base": 0.08,
+    "high": 0.08,
+    "low": 0.08
+   },
+   "documents_per_month": {
+    "base": 4000,
+    "high": 4400,
+    "low": 3600
+   },
+   "error_cost": {
+    "base": 60,
+    "high": 110,
+    "low": 35
+   },
+   "eur_per_usd": {
+    "base": 0.9,
+    "high": 0.95,
+    "low": 0.85
+   },
+   "fte_cost": {
+    "base": 52000,
+    "high": 52000,
+    "low": 52000
+   },
+   "fte_hours": {
+    "base": 1530,
+    "high": 1530,
+    "low": 1530
+   },
+   "hourly_cost": {
+    "base": 34,
+    "high": 37,
+    "low": 31
+   },
+   "human_error_rate": {
+    "base": 0.021,
+    "high": 0.028,
+    "low": 0.015
+   },
+   "manual_minutes": {
+    "base": 5.5,
+    "high": 6.5,
+    "low": 4.5
+   },
+   "manual_rate": {
+    "base": 0.0455,
+    "high": 0.0455,
+    "low": 0.0455
+   },
+   "one_off_cost": {
+    "base": 85000,
+    "high": 115000,
+    "low": 70000
+   },
+   "pilot_escape_rate": {
+    "base": 0.0045,
+    "high": 0.0164,
+    "low": 0.0045
+   },
+   "price_in_usd_per_mtok": {
+    "base": 4.0,
+    "high": 4.0,
+    "low": 4.0
+   },
+   "price_out_usd_per_mtok": {
+    "base": 20.0,
+    "high": 20.0,
+    "low": 20.0
+   },
+   "ramp_year1": {
+    "base": 0.6,
+    "high": 0.75,
+    "low": 0.4
+   },
+   "review_error_factor": {
+    "base": 0.3,
+    "high": 0.5,
+    "low": 0.2
+   },
+   "review_minutes": {
+    "base": 2.5,
+    "high": 3.5,
+    "low": 2.0
+   },
+   "run_cost": {
+    "base": 19000,
+    "high": 26000,
+    "low": 15000
+   },
+   "stp_minutes": {
+    "base": 0.3,
+    "high": 0.5,
+    "low": 0.2
+   },
+   "stp_rate": {
+    "base": 0.7,
+    "high": 0.7567,
+    "low": 0.6364
+   },
+   "tokens_in": {
+    "base": 2500,
+    "high": 4000,
+    "low": 2000
+   },
+   "tokens_out": {
+    "base": 600,
+    "high": 1000,
+    "low": 400
+   },
+   "volume_growth": {
+    "base": 0.04,
+    "high": 0.06,
+    "low": 0.02
+   }
+  }
+ },
+ "client": {
+  "brief": "Our board wants an AI plan by the end of the year. Competitors say they use AI. Where do we start, what is it worth, and how do we do it without getting into trouble?",
+  "certifications": [
+   "ISO 9001",
+   "ISO/IEC 27001:2022 (scope: IT services and customs data, since 2024)",
+   "AEO-F (authorised economic operator)"
+  ],
+  "doc_desk_fte": 11,
+  "employees": 250,
+  "engagement": {
+   "client_team": [
+    "COO (sponsor for the pilot)",
+    "Doc desk team lead (product owner)",
+    "IT manager",
+    "Two doc desk clerks (pilot users, 4h/week)"
+   ],
+   "phases": [
+    {
+     "name": "Discovery sprint",
+     "output": "Readiness assessment, use-case portfolio, business case, roadmap",
+     "weeks": "1-4"
+    },
+    {
+     "name": "Applied AI pilot",
+     "output": "Working freight document pilot, measured against agreed criteria",
+     "weeks": "5-11"
+    },
+    {
+     "name": "Board decision",
+     "output": "Go/no-go for production and wave 2",
+     "weeks": "12"
+    }
+   ],
+   "team": [
+    "AI Transformation Expert (lead, workshops, business case, roadmap)",
+    "AI engineer (pilot build, 7 weeks)",
+    "Service designer (2 workshops, review flow)"
+   ]
+  },
+  "fictional": true,
+  "founded": 1987,
+  "it_team_fte": 6,
+  "location": "Zeebrugge (Brugge), Belgium",
+  "name": "Wendelkaai Logistics NV",
+  "ownership": "Family-owned, second generation",
+  "revenue_eur_m": 78,
+  "services": [
+   "Container and ro-ro forwarding",
+   "Customs brokerage",
+   "Warehousing (2 sites, 40,000 m²)",
+   "Road transport (60 own trucks plus subcontractors)"
+  ],
+  "systems": [
+   "On-premise TMS (2014, vendor-supported, import API)",
+   "ERP for finance (2016)",
+   "Microsoft 365 with Entra ID",
+   "Customs declaration software",
+   "Shared mailboxes and Excel"
+  ]
+ },
+ "pilot": {
+  "chosen_threshold": 0.75,
+  "gate": {
+   "checks": [
+    {
+     "check": "classification accuracy",
+     "op": ">=",
+     "pass": true,
+     "target": 0.97,
+     "value": 1.0
+    },
+    {
+     "check": "error escape rate",
+     "op": "<=",
+     "pass": true,
+     "target": 0.01,
+     "value": 0.0
+    },
+    {
+     "check": "error escape rate below human keying error rate",
+     "op": "<",
+     "pass": true,
+     "target": 0.021,
+     "value": 0.0
+    },
+    {
+     "check": "straight-through rate",
+     "op": ">=",
+     "pass": true,
+     "target": 0.5,
+     "value": 0.7
+    },
+    {
+     "check": "exception catch rate",
+     "op": ">=",
+     "pass": true,
+     "target": 0.95,
+     "value": 1.0
+    },
+    {
+     "check": "configured threshold = threshold picked on dev",
+     "op": "==",
+     "pass": true,
+     "target": 0.75,
+     "value": 0.75
+    }
+   ],
+   "pass": true
+  },
+  "pooled_escape_rate": 0.0045,
+  "sweep_dev": [
+   {
+    "error_escape_rate": 0.0091,
+    "review_rate": 0.1773,
+    "stp_rate": 0.7773,
+    "threshold": 0.5
+   },
+   {
+    "error_escape_rate": 0.0091,
+    "review_rate": 0.1773,
+    "stp_rate": 0.7773,
+    "threshold": 0.55
+   },
+   {
+    "error_escape_rate": 0.0091,
+    "review_rate": 0.1773,
+    "stp_rate": 0.7773,
+    "threshold": 0.6
+   },
+   {
+    "error_escape_rate": 0.0091,
+    "review_rate": 0.2,
+    "stp_rate": 0.7545,
+    "threshold": 0.65
+   },
+   {
+    "error_escape_rate": 0.0091,
+    "review_rate": 0.2,
+    "stp_rate": 0.7545,
+    "threshold": 0.7
+   },
+   {
+    "error_escape_rate": 0.0091,
+    "review_rate": 0.2227,
+    "stp_rate": 0.7318,
+    "threshold": 0.75
+   },
+   {
+    "error_escape_rate": 0.0091,
+    "review_rate": 0.2636,
+    "stp_rate": 0.6909,
+    "threshold": 0.8
+   },
+   {
+    "error_escape_rate": 0.0091,
+    "review_rate": 0.3227,
+    "stp_rate": 0.6318,
+    "threshold": 0.85
+   },
+   {
+    "error_escape_rate": 0.0091,
+    "review_rate": 0.3818,
+    "stp_rate": 0.5727,
+    "threshold": 0.9
+   },
+   {
+    "error_escape_rate": 0.0,
+    "review_rate": 0.6045,
+    "stp_rate": 0.35,
+    "threshold": 0.95
+   }
+  ],
+  "test": {
+   "classification_accuracy": 1.0,
+   "documents": 220,
+   "error_escape_ci95": [
+    0.0,
+    0.0172
+   ],
+   "error_escape_rate": 0.0,
+   "escape_details": [],
+   "escapes": 0,
+   "exception_catch_rate": 1.0,
+   "exception_documents": 12,
+   "field_accuracy": 0.9961,
+   "field_coverage": 0.9906,
+   "manual_rate": 0.0455,
+   "review_rate": 0.2545,
+   "review_usefulness": 0.6429,
+   "stp_ci95": [
+    0.6364,
+    0.7567
+   ],
+   "stp_rate": 0.7
+  },
+  "test_ablation": {
+   "A": {
+    "error_escape_rate": 0.1636,
+    "escapes": 36,
+    "policy": "A: extraction only",
+    "review_rate": 0.0,
+    "stp_rate": 0.9545
+   },
+   "B": {
+    "error_escape_rate": 0.0636,
+    "escapes": 14,
+    "policy": "B: + confidence threshold",
+    "review_rate": 0.1455,
+    "stp_rate": 0.8091
+   },
+   "C": {
+    "error_escape_rate": 0.05,
+    "escapes": 11,
+    "policy": "C: + single-document rules",
+    "review_rate": 0.1591,
+    "stp_rate": 0.7955
+   },
+   "D": {
+    "error_escape_rate": 0.0,
+    "escapes": 0,
+    "policy": "D: + cross-document rules",
+    "review_rate": 0.2545,
+    "stp_rate": 0.7
+   }
+  },
+  "test_noise": {
+   "illegible": {
+    "auto": 0,
+    "documents": 18,
+    "escaped": 0
+   },
+   "label_ocr": {
+    "auto": 20,
+    "documents": 26,
+    "escaped": 0
+   },
+   "missing_seal": {
+    "auto": 0,
+    "documents": 2,
+    "escaped": 0
+   },
+   "no_unit": {
+    "auto": 0,
+    "documents": 10,
+    "escaped": 0
+   },
+   "ocr_container": {
+    "auto": 7,
+    "documents": 12,
+    "escaped": 0
+   },
+   "silent_digit": {
+    "auto": 0,
+    "documents": 6,
+    "escaped": 0
+   },
+   "source_typo": {
+    "auto": 0,
+    "documents": 2,
+    "escaped": 0
+   },
+   "sum_mismatch": {
+    "auto": 0,
+    "documents": 2,
+    "escaped": 0
+   },
+   "weight_mismatch": {
+    "auto": 0,
+    "documents": 6,
+    "escaped": 0
+   }
+  },
+  "thresholds": {
+   "_sources": {
+    "error_budget": "Agreed with the COO in workshop 3: at most 1 in 100 documents may reach the TMS with an error the pilot did not flag.",
+    "human_error_rate": "Discovery time study: 60 documents keyed by the doc desk, double-checked; 2.1% had at least one keying error (see 01-discovery/interview-synthesis.md).",
+    "min_stp_rate": "Below 50% straight-through the business case does not pay back within 24 months (04-business-case/cost-benefit-analysis.md).",
+    "min_threshold": "Workshop 3 decision: the system may not guess silently. Fields read with an assumption (no unit, assumed kg = 0.60; ambiguous date, assumed day-first = 0.70) always go to a person, so the threshold can never sit at or below 0.70."
+   },
+   "error_budget": 0.01,
+   "human_error_rate": 0.021,
+   "min_classification_accuracy": 0.97,
+   "min_exception_catch_rate": 0.95,
+   "min_stp_rate": 0.5,
+   "min_threshold": 0.75
+  }
+ },
+ "portfolio": {
+  "criteria": {
+   "feasibility": {
+    "sub": {
+     "change_ease": 0.15,
+     "data_readiness": 0.35,
+     "integration_ease": 0.25,
+     "technical_simplicity": 0.25
+    },
+    "weight": 0.35
+   },
+   "risk": {
+    "sub": {
+     "error_tolerance": 0.4,
+     "privacy": 0.2,
+     "regulatory": 0.4
+    },
+    "weight": 0.2
+   },
+   "value": {
+    "sub": {
+     "annual_value": 0.7,
+     "strategic_fit": 0.3
+    },
+    "weight": 0.45
+   }
+  },
+  "ranking": [
+   {
+    "ai_act": "minimal",
+    "annual_value_eur": 166000,
+    "depends_on": [],
+    "feasibility": 3.6,
+    "id": "UC-01",
+    "name": "Freight document intelligence",
+    "parked": false,
+    "quadrant": "Do now",
+    "rank": 1,
+    "readiness_dependencies": [
+     "D4",
+     "D5",
+     "T3",
+     "G1",
+     "G3"
+    ],
+    "risk": 4.0,
+    "score": 3.887,
+    "top1": 1.0,
+    "top3": 1.0,
+    "value": 4.06
+   },
+   {
+    "ai_act": "minimal",
+    "annual_value_eur": 75000,
+    "depends_on": [
+     "UC-01"
+    ],
+    "feasibility": 3.75,
+    "id": "UC-09",
+    "name": "Carrier invoice audit",
+    "parked": false,
+    "quadrant": "Fill-in",
+    "rank": 2,
+    "readiness_dependencies": [
+     "D5",
+     "T3"
+    ],
+    "risk": 4.6,
+    "score": 3.33,
+    "top1": 0.0,
+    "top3": 0.646,
+    "value": 2.44
+   },
+   {
+    "ai_act": "limited",
+    "annual_value_eur": 85000,
+    "depends_on": [],
+    "feasibility": 3.6,
+    "id": "UC-02",
+    "name": "Customer e-mail triage and draft replies",
+    "parked": false,
+    "quadrant": "Fill-in",
+    "rank": 3,
+    "readiness_dependencies": [
+     "D5",
+     "T2",
+     "T3",
+     "G1",
+     "P1"
+    ],
+    "risk": 3.8,
+    "score": 3.303,
+    "top1": 0.0,
+    "top3": 0.565,
+    "value": 2.85
+   },
+   {
+    "ai_act": "minimal",
+    "annual_value_eur": 160000,
+    "depends_on": [],
+    "feasibility": 2.35,
+    "id": "UC-07",
+    "name": "Route and load optimisation",
+    "parked": false,
+    "quadrant": "Prepare (strategic bet)",
+    "rank": 4,
+    "readiness_dependencies": [
+     "D2",
+     "D5",
+     "P3",
+     "O4"
+    ],
+    "risk": 4.0,
+    "score": 3.284,
+    "top1": 0.0,
+    "top3": 0.499,
+    "value": 3.69
+   },
+   {
+    "ai_act": "minimal",
+    "annual_value_eur": 130000,
+    "depends_on": [
+     "UC-01"
+    ],
+    "feasibility": 3.0,
+    "id": "UC-03",
+    "name": "Customs classification assistant",
+    "parked": false,
+    "quadrant": "Do now",
+    "rank": 5,
+    "readiness_dependencies": [
+     "D4",
+     "T3",
+     "G1",
+     "G3",
+     "P2"
+    ],
+    "risk": 3.4,
+    "score": 3.24,
+    "top1": 0.0,
+    "top3": 0.289,
+    "value": 3.36
+   },
+   {
+    "ai_act": "minimal",
+    "annual_value_eur": 65000,
+    "depends_on": [],
+    "feasibility": 3.25,
+    "id": "UC-10",
+    "name": "Quote and tender assistant",
+    "parked": false,
+    "quadrant": "Fill-in",
+    "rank": 6,
+    "readiness_dependencies": [
+     "D1",
+     "T2",
+     "G1"
+    ],
+    "risk": 4.0,
+    "score": 3.12,
+    "top1": 0.0,
+    "top3": 0.0,
+    "value": 2.63
+   },
+   {
+    "ai_act": "minimal",
+    "annual_value_eur": 60000,
+    "depends_on": [],
+    "feasibility": 3.15,
+    "id": "UC-04",
+    "name": "Internal knowledge assistant",
+    "parked": false,
+    "quadrant": "Fill-in",
+    "rank": 7,
+    "readiness_dependencies": [
+     "D1",
+     "O1",
+     "T2",
+     "G1"
+    ],
+    "risk": 4.4,
+    "score": 3.005,
+    "top1": 0.0,
+    "top3": 0.0,
+    "value": 2.27
+   },
+   {
+    "ai_act": "minimal",
+    "annual_value_eur": 70000,
+    "depends_on": [],
+    "feasibility": 2.3,
+    "id": "UC-05",
+    "name": "ETA prediction and delay alerts",
+    "parked": false,
+    "quadrant": "Deprioritise",
+    "rank": 8,
+    "readiness_dependencies": [
+     "D2",
+     "D5",
+     "T4"
+    ],
+    "risk": 4.6,
+    "score": 2.798,
+    "top1": 0.0,
+    "top3": 0.0,
+    "value": 2.38
+   },
+   {
+    "ai_act": "minimal",
+    "annual_value_eur": 55000,
+    "depends_on": [],
+    "feasibility": 2.5,
+    "id": "UC-06",
+    "name": "Warehouse volume forecasting for staffing",
+    "parked": false,
+    "quadrant": "Deprioritise",
+    "rank": 9,
+    "readiness_dependencies": [
+     "D1",
+     "D2",
+     "O2"
+    ],
+    "risk": 3.6,
+    "score": 2.592,
+    "top1": 0.0,
+    "top3": 0.0,
+    "value": 2.22
+   },
+   {
+    "ai_act": "high",
+    "annual_value_eur": 40000,
+    "depends_on": [],
+    "feasibility": 2.7,
+    "id": "UC-08",
+    "name": "Driver and warehouse performance monitoring",
+    "parked": true,
+    "quadrant": "Parked (high-risk)",
+    "rank": null,
+    "readiness_dependencies": [
+     "G2",
+     "G4",
+     "P5"
+    ],
+    "risk": 1.4,
+    "score": 1.877,
+    "top1": 0.0,
+    "top3": 0.0,
+    "value": 1.45
+   }
+  ],
+  "use_cases": [
+   {
+    "ai_act": {
+     "basis": "Not in Annex III; does not interact with people or make decisions about them.",
+     "tier": "minimal"
+    },
+    "ai_type": "Document AI (foundation model extraction + rules)",
+    "annual_value_eur": 166000,
+    "depends_on": [],
+    "id": "UC-01",
+    "name": "Freight document intelligence",
+    "owner": "COO",
+    "problem": "11 clerks key about 4,000 documents a month by hand; 2.1% of documents have a keying error that surfaces later as rework, customs corrections or demurrage.",
+    "readiness_dependencies": [
+     "D4",
+     "D5",
+     "T3",
+     "G1",
+     "G3"
+    ],
+    "scores": {
+     "change_ease": 3,
+     "data_readiness": 4,
+     "error_tolerance": 3,
+     "integration_ease": 3,
+     "privacy": 4,
+     "regulatory": 5,
+     "strategic_fit": 5,
+     "technical_simplicity": 4
+    },
+    "summary": "Read bills of lading, CMRs, invoices, packing lists and delivery orders; check them; post clean ones to the TMS and send the rest to a clerk with reasons.",
+    "value_basis": "Business case (04-business-case), capacity view, steady state."
+   },
+   {
+    "ai_act": {
+     "basis": "Art. 50(1) applies if customers interact with an AI system directly; with an agent reviewing every draft, transparency is still good practice.",
+     "tier": "limited"
+    },
+    "ai_type": "LLM classification and drafting",
+    "annual_value_eur": 85000,
+    "depends_on": [],
+    "id": "UC-02",
+    "name": "Customer e-mail triage and draft replies",
+    "owner": "Customer service lead",
+    "problem": "The customer service team of 7 answers about 9,000 e-mails a month; 55% are 'where is my shipment' questions answered from the TMS.",
+    "readiness_dependencies": [
+     "D5",
+     "T2",
+     "T3",
+     "G1",
+     "P1"
+    ],
+    "scores": {
+     "change_ease": 3,
+     "data_readiness": 4,
+     "error_tolerance": 4,
+     "integration_ease": 3,
+     "privacy": 3,
+     "regulatory": 4,
+     "strategic_fit": 4,
+     "technical_simplicity": 4
+    },
+    "summary": "Classify incoming customer e-mails (status questions, changes, complaints), pull the shipment status from the TMS and draft a reply for the agent to send.",
+    "value_basis": "9,000 e-mails/month, 55% status questions, 3 minutes saved each at EUR 34/hour, 60% adoption."
+   },
+   {
+    "ai_act": {
+     "basis": "Not in Annex III. The declarant stays legally responsible for the declaration; financial error impact is the real risk.",
+     "tier": "minimal"
+    },
+    "ai_type": "LLM with retrieval over tariff and past rulings",
+    "annual_value_eur": 130000,
+    "depends_on": [
+     "UC-01"
+    ],
+    "id": "UC-03",
+    "name": "Customs classification assistant",
+    "owner": "Customs lead",
+    "problem": "New product lines need classification research (20-40 minutes each); wrong codes lead to duty corrections and audit findings.",
+    "readiness_dependencies": [
+     "D4",
+     "T3",
+     "G1",
+     "G3",
+     "P2"
+    ],
+    "scores": {
+     "change_ease": 3,
+     "data_readiness": 3,
+     "error_tolerance": 2,
+     "integration_ease": 3,
+     "privacy": 5,
+     "regulatory": 4,
+     "strategic_fit": 4,
+     "technical_simplicity": 3
+    },
+    "summary": "Suggest HS codes for new products from invoice descriptions and past declarations, with the reasoning, for the customs declarant to confirm.",
+    "value_basis": "1,800 new classifications/year, 18 minutes saved each, plus avoided corrections (customs lead estimate, wide range)."
+   },
+   {
+    "ai_act": {
+     "basis": "Internal use; staff are told they use an AI tool (AI literacy).",
+     "tier": "minimal"
+    },
+    "ai_type": "Retrieval-augmented generation (RAG)",
+    "annual_value_eur": 60000,
+    "depends_on": [],
+    "id": "UC-04",
+    "name": "Internal knowledge assistant",
+    "owner": "COO",
+    "problem": "340 customer work instructions on a shared drive, a third outdated; new staff ask colleagues, which interrupts the experienced ones.",
+    "readiness_dependencies": [
+     "D1",
+     "O1",
+     "T2",
+     "G1"
+    ],
+    "scores": {
+     "change_ease": 3,
+     "data_readiness": 2,
+     "error_tolerance": 4,
+     "integration_ease": 4,
+     "privacy": 4,
+     "regulatory": 5,
+     "strategic_fit": 3,
+     "technical_simplicity": 4
+    },
+    "summary": "Answer staff questions from work instructions, customer-specific procedures and SOPs, with links to the source.",
+    "value_basis": "Onboarding time and interruptions; soft value, HR and team leads' estimate."
+   },
+   {
+    "ai_act": {
+     "basis": "No personal data, no decisions about people.",
+     "tier": "minimal"
+    },
+    "ai_type": "Machine learning (forecasting) on external data",
+    "annual_value_eur": 70000,
+    "depends_on": [],
+    "id": "UC-05",
+    "name": "ETA prediction and delay alerts",
+    "owner": "Operations planning",
+    "problem": "Planners check terminal sites and call carriers; customers learn about delays late.",
+    "readiness_dependencies": [
+     "D2",
+     "D5",
+     "T4"
+    ],
+    "scores": {
+     "change_ease": 4,
+     "data_readiness": 2,
+     "error_tolerance": 4,
+     "integration_ease": 2,
+     "privacy": 5,
+     "regulatory": 5,
+     "strategic_fit": 3,
+     "technical_simplicity": 2
+    },
+    "summary": "Predict arrival times for vessels and trucks from AIS, terminal and traffic data; alert customers and planners when a shipment will be late.",
+    "value_basis": "Planner time and customer retention; requires data subscriptions not yet costed."
+   },
+   {
+    "ai_act": {
+     "basis": "Forecasts volumes, not individuals. Would become high-risk if extended to allocating work to individuals (Annex III 4(b)).",
+     "tier": "minimal"
+    },
+    "ai_type": "Machine learning (time-series forecasting)",
+    "annual_value_eur": 55000,
+    "depends_on": [],
+    "id": "UC-06",
+    "name": "Warehouse volume forecasting for staffing",
+    "owner": "Warehouse manager",
+    "problem": "Temp staff are booked the day before at premium rates; volumes vary 40% week to week.",
+    "readiness_dependencies": [
+     "D1",
+     "D2",
+     "O2"
+    ],
+    "scores": {
+     "change_ease": 2,
+     "data_readiness": 2,
+     "error_tolerance": 3,
+     "integration_ease": 3,
+     "privacy": 4,
+     "regulatory": 4,
+     "strategic_fit": 3,
+     "technical_simplicity": 3
+    },
+    "summary": "Forecast inbound and outbound volumes per day and shift, so the warehouse plans temporary staff earlier.",
+    "value_basis": "Fewer last-minute temp bookings (premium 18%)."
+   },
+   {
+    "ai_act": {
+     "basis": "Plans vehicles and loads. Must not be used to evaluate drivers (that would be UC-08).",
+     "tier": "minimal"
+    },
+    "ai_type": "Operations research (optimisation), not generative AI",
+    "annual_value_eur": 160000,
+    "depends_on": [],
+    "id": "UC-07",
+    "name": "Route and load optimisation",
+    "owner": "Transport manager",
+    "problem": "Planning takes two planners half a day; empty kilometres around 21%.",
+    "readiness_dependencies": [
+     "D2",
+     "D5",
+     "P3",
+     "O4"
+    ],
+    "scores": {
+     "change_ease": 2,
+     "data_readiness": 3,
+     "error_tolerance": 3,
+     "integration_ease": 2,
+     "privacy": 4,
+     "regulatory": 5,
+     "strategic_fit": 4,
+     "technical_simplicity": 2
+    },
+    "summary": "Plan daily routes and loads for the 60 own trucks with an optimisation solver, replacing the planners' spreadsheet.",
+    "value_basis": "3 points fewer empty kilometres (fuel, tolls, driver hours), planner time."
+   },
+   {
+    "ai_act": {
+     "basis": "Annex III point 4(b): AI to monitor and evaluate the performance and behaviour of persons in work relationships. Also needs works-council consultation under Belgian collective agreements on new technology and monitoring.",
+     "tier": "high"
+    },
+    "ai_type": "Machine learning on employee data",
+    "annual_value_eur": 40000,
+    "depends_on": [],
+    "id": "UC-08",
+    "name": "Driver and warehouse performance monitoring",
+    "owner": "None proposed",
+    "problem": "Raised by a vendor demo; management wants 'more insight into productivity'.",
+    "readiness_dependencies": [
+     "G2",
+     "G4",
+     "P5"
+    ],
+    "scores": {
+     "change_ease": 1,
+     "data_readiness": 3,
+     "error_tolerance": 2,
+     "integration_ease": 3,
+     "privacy": 1,
+     "regulatory": 1,
+     "strategic_fit": 1,
+     "technical_simplicity": 3
+    },
+    "summary": "Score individual drivers and pickers on speed and behaviour from telematics and scanner data.",
+    "value_basis": "Vendor claim, not validated."
+   },
+   {
+    "ai_act": {
+     "basis": "Business documents between companies; no decisions about people.",
+     "tier": "minimal"
+    },
+    "ai_type": "Document AI + rules (reuses UC-01)",
+    "annual_value_eur": 75000,
+    "depends_on": [
+     "UC-01"
+    ],
+    "id": "UC-09",
+    "name": "Carrier invoice audit",
+    "owner": "CFO",
+    "problem": "About 1,400 carrier invoices a month are approved on a sample basis; finance estimates 1-2% overbilling.",
+    "readiness_dependencies": [
+     "D5",
+     "T3"
+    ],
+    "scores": {
+     "change_ease": 4,
+     "data_readiness": 4,
+     "error_tolerance": 4,
+     "integration_ease": 3,
+     "privacy": 5,
+     "regulatory": 5,
+     "strategic_fit": 3,
+     "technical_simplicity": 4
+    },
+    "summary": "Check subcontractor freight invoices against agreed rates and the actual transport; flag overcharges before payment.",
+    "value_basis": "1.2% of EUR 7.5m subcontracted transport recovered, minus false positives handled by finance."
+   },
+   {
+    "ai_act": {
+     "basis": "Business-to-business drafting reviewed by sales.",
+     "tier": "minimal"
+    },
+    "ai_type": "LLM drafting with retrieval over rate cards",
+    "annual_value_eur": 65000,
+    "depends_on": [],
+    "id": "UC-10",
+    "name": "Quote and tender assistant",
+    "owner": "Sales director",
+    "problem": "Sales answers about 120 requests for quotation a month; complex tenders take days and are often late.",
+    "readiness_dependencies": [
+     "D1",
+     "T2",
+     "G1"
+    ],
+    "scores": {
+     "change_ease": 3,
+     "data_readiness": 3,
+     "error_tolerance": 3,
+     "integration_ease": 4,
+     "privacy": 4,
+     "regulatory": 5,
+     "strategic_fit": 4,
+     "technical_simplicity": 3
+    },
+    "summary": "Draft quotes and tender answers from rate cards, past quotes and capacity, for sales to check and send.",
+    "value_basis": "Sales time and a higher win rate on fast replies (sales director estimate)."
+   }
+  ],
+  "value_scale_eur": 250000
+ },
+ "raci": {
+  "activities": [
+   {
+    "CEO": "A",
+    "CFO": "R",
+    "COO": "C",
+    "IT manager": "C",
+    "Partner team": "C",
+    "activity": "Approve roadmap, budget and gates"
+   },
+   {
+    "CFO": "C",
+    "COO": "A",
+    "Doc desk lead": "R",
+    "IT manager": "C",
+    "Partner team": "C",
+    "activity": "Own UC-01 outcome and value"
+   },
+   {
+    "CFO": "C",
+    "COO": "A",
+    "DPO": "I",
+    "Doc desk lead": "R",
+    "Partner team": "C",
+    "activity": "Set error budget and acceptance criteria"
+   },
+   {
+    "Doc desk lead": "C",
+    "IT manager": "A",
+    "Partner team": "R",
+    "activity": "Build and integrate the pipeline"
+   },
+   {
+    "AI champions": "R",
+    "COO": "I",
+    "Doc desk lead": "A",
+    "activity": "Run the review queue every day"
+   },
+   {
+    "COO": "I",
+    "Doc desk lead": "C",
+    "IT manager": "A",
+    "Partner team": "R",
+    "activity": "Change prompts, models or thresholds"
+   },
+   {
+    "CEO": "I",
+    "COO": "C",
+    "DPO": "C",
+    "Doc desk lead": "R",
+    "IT manager": "A",
+    "activity": "Respond to an AI-caused incident"
+   },
+   {
+    "AI champions": "I",
+    "CEO": "A",
+    "DPO": "R",
+    "HR": "C",
+    "IT manager": "C",
+    "activity": "Maintain AI policy"
+   },
+   {
+    "CEO": "I",
+    "DPO": "A",
+    "IT manager": "R",
+    "Partner team": "C",
+    "activity": "Keep the AI inventory and AI Act classification"
+   },
+   {
+    "COO": "C",
+    "DPO": "A",
+    "IT manager": "R",
+    "activity": "Run DPIAs"
+   },
+   {
+    "DPO": "C",
+    "IT manager": "A",
+    "Partner team": "C",
+    "activity": "Assess AI vendors in the ISMS"
+   },
+   {
+    "CEO": "R",
+    "COO": "C",
+    "HR": "A",
+    "activity": "Inform and consult the works council"
+   },
+   {
+    "AI champions": "R",
+    "HR": "A",
+    "IT manager": "C",
+    "Partner team": "R",
+    "activity": "Deliver AI literacy training"
+   },
+   {
+    "CEO": "I",
+    "CFO": "A",
+    "COO": "C",
+    "Doc desk lead": "R",
+    "activity": "Report KPIs and value realised"
+   },
+   {
+    "AI champions": "C",
+    "CEO": "A",
+    "CFO": "C",
+    "COO": "R",
+    "Customs lead": "C",
+    "Partner team": "R",
+    "activity": "Refresh the use-case portfolio"
+   }
+  ],
+  "roles": [
+   "CEO",
+   "CFO",
+   "COO",
+   "Doc desk lead",
+   "IT manager",
+   "Customs lead",
+   "HR",
+   "DPO",
+   "Partner team",
+   "AI champions"
+  ]
+ },
+ "readiness": {
+  "dimensions": [
+   {
+    "current": 1.8,
+    "id": "S",
+    "level": "Experimenting",
+    "name": "Strategy & leadership",
+    "target": 3.6
+   },
+   {
+    "current": 1.8,
+    "id": "D",
+    "level": "Experimenting",
+    "name": "Data foundations",
+    "target": 3.4
+   },
+   {
+    "current": 2.2,
+    "id": "T",
+    "level": "Experimenting",
+    "name": "Technology & tooling",
+    "target": 3.6
+   },
+   {
+    "current": 1.8,
+    "id": "G",
+    "level": "Experimenting",
+    "name": "Governance, risk & compliance",
+    "target": 3.8
+   },
+   {
+    "current": 1.6,
+    "id": "P",
+    "level": "Experimenting",
+    "name": "People & skills",
+    "target": 3.2
+   },
+   {
+    "current": 2.2,
+    "id": "O",
+    "level": "Experimenting",
+    "name": "Process & operations",
+    "target": 3.4
+   }
+  ],
+  "gaps": [
+   {
+    "current": 1,
+    "dimension": "Governance, risk & compliance",
+    "evidence": "No AI policy. The acceptable-use policy predates generative AI.",
+    "gap": 3,
+    "id": "G1",
+    "needed_by": [
+     "UC-01",
+     "UC-02",
+     "UC-03"
+    ],
+    "priority": 12,
+    "question": "An AI policy says what is allowed",
+    "target": 4
+   },
+   {
+    "current": 2,
+    "dimension": "Data foundations",
+    "evidence": "The TMS has an import API for bookings, undocumented for documents; the ERP only exports files overnight.",
+    "gap": 2,
+    "id": "D5",
+    "needed_by": [
+     "UC-01",
+     "UC-09",
+     "UC-02",
+     "UC-07"
+    ],
+    "priority": 10,
+    "question": "Core systems can be reached through APIs",
+    "target": 4
+   },
+   {
+    "current": 1,
+    "dimension": "Technology & tooling",
+    "evidence": "None. Each experiment calls its own tool directly.",
+    "gap": 2,
+    "id": "T3",
+    "needed_by": [
+     "UC-01",
+     "UC-09",
+     "UC-02",
+     "UC-03"
+    ],
+    "priority": 10,
+    "question": "An AI orchestration layer exists (model access, prompts, logging, evaluation)",
+    "target": 3
+   },
+   {
+    "current": 1,
+    "dimension": "Data foundations",
+    "evidence": "None before the pilot. The pilot built the first labelled sets (2 x 220 documents).",
+    "gap": 2,
+    "id": "D4",
+    "needed_by": [
+     "UC-01",
+     "UC-03"
+    ],
+    "priority": 6,
+    "question": "Labelled historical data exists to evaluate AI",
+    "target": 3
+   },
+   {
+    "current": 2,
+    "dimension": "Governance, risk & compliance",
+    "evidence": "Four-eyes checks exist for customs declarations; no rules for AI output.",
+    "gap": 2,
+    "id": "G3",
+    "needed_by": [
+     "UC-01",
+     "UC-03"
+    ],
+    "priority": 6,
+    "question": "Human oversight and accountability are designed in",
+    "target": 4
+   },
+   {
+    "current": 1,
+    "dimension": "People & skills",
+    "evidence": "No training. Survey: 61% expect AI to 'replace jobs at the desk', 22% feel confident using it.",
+    "gap": 2,
+    "id": "P1",
+    "needed_by": [
+     "UC-02"
+    ],
+    "priority": 4,
+    "question": "Staff understand what AI can and cannot do (AI literacy)",
+    "target": 3
+   },
+   {
+    "current": 1,
+    "dimension": "People & skills",
+    "evidence": "Two enthusiasts (customs, sales) experimenting on their own time.",
+    "gap": 2,
+    "id": "P2",
+    "needed_by": [
+     "UC-03"
+    ],
+    "priority": 4,
+    "question": "There are internal AI champions",
+    "target": 3
+   },
+   {
+    "current": 2,
+    "dimension": "Technology & tooling",
+    "evidence": "No approved tool; the staff survey shows 38% use public chatbots for work, including with customer data.",
+    "gap": 2,
+    "id": "T2",
+    "needed_by": [
+     "UC-02"
+    ],
+    "priority": 4,
+    "question": "Staff have sanctioned AI tools",
+    "target": 4
+   },
+   {
+    "current": 1,
+    "dimension": "Governance, risk & compliance",
+    "evidence": "No inventory. The three experiments were found during interviews.",
+    "gap": 3,
+    "id": "G2",
+    "needed_by": [],
+    "priority": 3,
+    "question": "AI systems are inventoried and classified (EU AI Act)",
+    "target": 4
+   },
+   {
+    "current": 1,
+    "dimension": "Data foundations",
+    "evidence": "Customer and location master data are edited by whoever needs a change. No owner for document data.",
+    "gap": 2,
+    "id": "D1",
+    "needed_by": [],
+    "priority": 2,
+    "question": "Data domains have named owners",
+    "target": 3
+   },
+   {
+    "current": 2,
+    "dimension": "Data foundations",
+    "evidence": "Sample of 200 customer records: 14% duplicates, 9% missing VAT or EORI.",
+    "gap": 1,
+    "id": "D2",
+    "needed_by": [
+     "UC-07"
+    ],
+    "priority": 2,
+    "question": "Core master data is of usable quality",
+    "target": 3
+   },
+   {
+    "current": 2,
+    "dimension": "Process & operations",
+    "evidence": "Volumes and on-time delivery measured; handling time, rework and error cost not.",
+    "gap": 2,
+    "id": "O2",
+    "needed_by": [],
+    "priority": 2,
+    "question": "Process KPIs are measured",
+    "target": 4
+   },
+   {
+    "current": 2,
+    "dimension": "Process & operations",
+    "evidence": "TMS go-live in 2014 remembered as painful; no change approach since.",
+    "gap": 1,
+    "id": "O4",
+    "needed_by": [
+     "UC-07"
+    ],
+    "priority": 2,
+    "question": "There is a change management practice",
+    "target": 3
+   },
+   {
+    "current": 2,
+    "dimension": "People & skills",
+    "evidence": "IT acts as order-taker; no business product owners.",
+    "gap": 1,
+    "id": "P3",
+    "needed_by": [
+     "UC-07"
+    ],
+    "priority": 2,
+    "question": "Product ownership exists for digital solutions",
+    "target": 3
+   },
+   {
+    "current": 2,
+    "dimension": "People & skills",
+    "evidence": "Good relationship; informed about telematics after the fact in 2023, which still causes friction.",
+    "gap": 2,
+    "id": "P5",
+    "needed_by": [],
+    "priority": 2,
+    "question": "The works council is involved early",
+    "target": 4
+   },
+   {
+    "current": 2,
+    "dimension": "Strategy & leadership",
+    "evidence": "The board asked for 'an AI plan'; no goals or KPIs attached. The 2027 business plan names margin pressure and doc desk hiring problems, not AI.",
+    "gap": 2,
+    "id": "S1",
+    "needed_by": [],
+    "priority": 2,
+    "question": "AI ambition is linked to named business goals",
+    "target": 4
+   },
+   {
+    "current": 2,
+    "dimension": "Strategy & leadership",
+    "evidence": "The CEO sponsors informally; no budget line. IT funds tool trials from its own budget.",
+    "gap": 2,
+    "id": "S2",
+    "needed_by": [],
+    "priority": 2,
+    "question": "An executive sponsor owns AI and has a budget",
+    "target": 4
+   },
+   {
+    "current": 1,
+    "dimension": "Strategy & leadership",
+    "evidence": "Three unconnected experiments found (sales ChatGPT prompts, a customs Excel macro with an AI add-in, a warehouse vendor demo). Nobody had an overview.",
+    "gap": 2,
+    "id": "S3",
+    "needed_by": [],
+    "priority": 2,
+    "question": "AI initiatives are managed as one portfolio",
+    "target": 3
+   },
+   {
+    "current": 2,
+    "dimension": "Strategy & leadership",
+    "evidence": "Doc desk volumes are counted per month; handling time and error rates were never measured before the discovery time study.",
+    "gap": 2,
+    "id": "S4",
+    "needed_by": [],
+    "priority": 2,
+    "question": "Value is measured against a baseline",
+    "target": 4
+   },
+   {
+    "current": 3,
+    "dimension": "Data foundations",
+    "evidence": "90% of documents arrive as PDF by e-mail; the rest is scanned at the desk. Archive in the TMS document store, 7 years.",
+    "gap": 1,
+    "id": "D3",
+    "needed_by": [],
+    "priority": 1,
+    "question": "Documents are available digitally",
+    "target": 4
+   },
+   {
+    "current": 3,
+    "dimension": "Governance, risk & compliance",
+    "evidence": "External DPO; DPIAs done for CCTV and telematics. Process exists, never applied to AI.",
+    "gap": 1,
+    "id": "G4",
+    "needed_by": [],
+    "priority": 1,
+    "question": "Privacy reviews (GDPR, DPIA) are routine",
+    "target": 4
+   },
+   {
+    "current": 2,
+    "dimension": "Governance, risk & compliance",
+    "evidence": "Supplier register exists; no criteria for data use, retention or model changes at AI vendors.",
+    "gap": 1,
+    "id": "G5",
+    "needed_by": [],
+    "priority": 1,
+    "question": "Vendor and model risk is managed",
+    "target": 3
+   },
+   {
+    "current": 2,
+    "dimension": "Process & operations",
+    "evidence": "Work instructions per customer in Word files on a shared drive, 340 files, a third older than 3 years.",
+    "gap": 1,
+    "id": "O1",
+    "needed_by": [],
+    "priority": 1,
+    "question": "Core processes are documented",
+    "target": 3
+   },
+   {
+    "current": 2,
+    "dimension": "Process & operations",
+    "evidence": "Exceptions go to whoever is free; no categories, no log.",
+    "gap": 1,
+    "id": "O3",
+    "needed_by": [],
+    "priority": 1,
+    "question": "Exceptions are handled in a defined way",
+    "target": 3
+   },
+   {
+    "current": 3,
+    "dimension": "Process & operations",
+    "evidence": "Monthly operations meeting with improvement actions; strong pragmatism on the floor.",
+    "gap": 1,
+    "id": "O5",
+    "needed_by": [],
+    "priority": 1,
+    "question": "Teams improve their own work",
+    "target": 4
+   },
+   {
+    "current": 2,
+    "dimension": "People & skills",
+    "evidence": "IT team of six: infrastructure and ERP support; one developer with Python and API experience.",
+    "gap": 1,
+    "id": "P4",
+    "needed_by": [],
+    "priority": 1,
+    "question": "Technical skills to run AI solutions are available",
+    "target": 3
+   },
+   {
+    "current": 2,
+    "dimension": "Strategy & leadership",
+    "evidence": "IT prefers the TMS vendor's roadmap; operations wants faster results. No criteria to decide.",
+    "gap": 1,
+    "id": "S5",
+    "needed_by": [],
+    "priority": 1,
+    "question": "There is a view on partners and buy versus build",
+    "target": 3
+   },
+   {
+    "current": 3,
+    "dimension": "Technology & tooling",
+    "evidence": "Microsoft 365 and Entra ID for all staff; one Azure subscription used for backups.",
+    "gap": 1,
+    "id": "T1",
+    "needed_by": [],
+    "priority": 1,
+    "question": "Cloud platform and identity are in place",
+    "target": 4
+   },
+   {
+    "current": 2,
+    "dimension": "Technology & tooling",
+    "evidence": "Infrastructure monitoring exists; no application or business-level monitoring.",
+    "gap": 1,
+    "id": "T4",
+    "needed_by": [],
+    "priority": 1,
+    "question": "Systems are monitored in a way AI can plug into",
+    "target": 3
+   },
+   {
+    "current": 3,
+    "dimension": "Technology & tooling",
+    "evidence": "ISO/IEC 27001 certified for IT services and customs data since 2024; supplier assessments are done, but not for AI services.",
+    "gap": 1,
+    "id": "T5",
+    "needed_by": [],
+    "priority": 1,
+    "question": "Security baseline is mature",
+    "target": 4
+   }
+  ],
+  "level": "Experimenting",
+  "overall": 1.9,
+  "raw": [
+   {
+    "id": "S",
+    "items": [
+     {
+      "evidence": "The board asked for 'an AI plan'; no goals or KPIs attached. The 2027 business plan names margin pressure and doc desk hiring problems, not AI.",
+      "id": "S1",
+      "question": "AI ambition is linked to named business goals",
+      "score": 2,
+      "target": 4
+     },
+     {
+      "evidence": "The CEO sponsors informally; no budget line. IT funds tool trials from its own budget.",
+      "id": "S2",
+      "question": "An executive sponsor owns AI and has a budget",
+      "score": 2,
+      "target": 4
+     },
+     {
+      "evidence": "Three unconnected experiments found (sales ChatGPT prompts, a customs Excel macro with an AI add-in, a warehouse vendor demo). Nobody had an overview.",
+      "id": "S3",
+      "question": "AI initiatives are managed as one portfolio",
+      "score": 1,
+      "target": 3
+     },
+     {
+      "evidence": "Doc desk volumes are counted per month; handling time and error rates were never measured before the discovery time study.",
+      "id": "S4",
+      "question": "Value is measured against a baseline",
+      "score": 2,
+      "target": 4
+     },
+     {
+      "evidence": "IT prefers the TMS vendor's roadmap; operations wants faster results. No criteria to decide.",
+      "id": "S5",
+      "question": "There is a view on partners and buy versus build",
+      "score": 2,
+      "target": 3
+     }
+    ],
+    "name": "Strategy & leadership"
+   },
+   {
+    "id": "D",
+    "items": [
+     {
+      "evidence": "Customer and location master data are edited by whoever needs a change. No owner for document data.",
+      "id": "D1",
+      "question": "Data domains have named owners",
+      "score": 1,
+      "target": 3
+     },
+     {
+      "evidence": "Sample of 200 customer records: 14% duplicates, 9% missing VAT or EORI.",
+      "id": "D2",
+      "question": "Core master data is of usable quality",
+      "score": 2,
+      "target": 3
+     },
+     {
+      "evidence": "90% of documents arrive as PDF by e-mail; the rest is scanned at the desk. Archive in the TMS document store, 7 years.",
+      "id": "D3",
+      "question": "Documents are available digitally",
+      "score": 3,
+      "target": 4
+     },
+     {
+      "evidence": "None before the pilot. The pilot built the first labelled sets (2 x 220 documents).",
+      "id": "D4",
+      "question": "Labelled historical data exists to evaluate AI",
+      "score": 1,
+      "target": 3
+     },
+     {
+      "evidence": "The TMS has an import API for bookings, undocumented for documents; the ERP only exports files overnight.",
+      "id": "D5",
+      "question": "Core systems can be reached through APIs",
+      "score": 2,
+      "target": 4
+     }
+    ],
+    "name": "Data foundations"
+   },
+   {
+    "id": "T",
+    "items": [
+     {
+      "evidence": "Microsoft 365 and Entra ID for all staff; one Azure subscription used for backups.",
+      "id": "T1",
+      "question": "Cloud platform and identity are in place",
+      "score": 3,
+      "target": 4
+     },
+     {
+      "evidence": "No approved tool; the staff survey shows 38% use public chatbots for work, including with customer data.",
+      "id": "T2",
+      "question": "Staff have sanctioned AI tools",
+      "score": 2,
+      "target": 4
+     },
+     {
+      "evidence": "None. Each experiment calls its own tool directly.",
+      "id": "T3",
+      "question": "An AI orchestration layer exists (model access, prompts, logging, evaluation)",
+      "score": 1,
+      "target": 3
+     },
+     {
+      "evidence": "Infrastructure monitoring exists; no application or business-level monitoring.",
+      "id": "T4",
+      "question": "Systems are monitored in a way AI can plug into",
+      "score": 2,
+      "target": 3
+     },
+     {
+      "evidence": "ISO/IEC 27001 certified for IT services and customs data since 2024; supplier assessments are done, but not for AI services.",
+      "id": "T5",
+      "question": "Security baseline is mature",
+      "score": 3,
+      "target": 4
+     }
+    ],
+    "name": "Technology & tooling"
+   },
+   {
+    "id": "G",
+    "items": [
+     {
+      "evidence": "No AI policy. The acceptable-use policy predates generative AI.",
+      "id": "G1",
+      "question": "An AI policy says what is allowed",
+      "score": 1,
+      "target": 4
+     },
+     {
+      "evidence": "No inventory. The three experiments were found during interviews.",
+      "id": "G2",
+      "question": "AI systems are inventoried and classified (EU AI Act)",
+      "score": 1,
+      "target": 4
+     },
+     {
+      "evidence": "Four-eyes checks exist for customs declarations; no rules for AI output.",
+      "id": "G3",
+      "question": "Human oversight and accountability are designed in",
+      "score": 2,
+      "target": 4
+     },
+     {
+      "evidence": "External DPO; DPIAs done for CCTV and telematics. Process exists, never applied to AI.",
+      "id": "G4",
+      "question": "Privacy reviews (GDPR, DPIA) are routine",
+      "score": 3,
+      "target": 4
+     },
+     {
+      "evidence": "Supplier register exists; no criteria for data use, retention or model changes at AI vendors.",
+      "id": "G5",
+      "question": "Vendor and model risk is managed",
+      "score": 2,
+      "target": 3
+     }
+    ],
+    "name": "Governance, risk & compliance"
+   },
+   {
+    "id": "P",
+    "items": [
+     {
+      "evidence": "No training. Survey: 61% expect AI to 'replace jobs at the desk', 22% feel confident using it.",
+      "id": "P1",
+      "question": "Staff understand what AI can and cannot do (AI literacy)",
+      "score": 1,
+      "target": 3
+     },
+     {
+      "evidence": "Two enthusiasts (customs, sales) experimenting on their own time.",
+      "id": "P2",
+      "question": "There are internal AI champions",
+      "score": 1,
+      "target": 3
+     },
+     {
+      "evidence": "IT acts as order-taker; no business product owners.",
+      "id": "P3",
+      "question": "Product ownership exists for digital solutions",
+      "score": 2,
+      "target": 3
+     },
+     {
+      "evidence": "IT team of six: infrastructure and ERP support; one developer with Python and API experience.",
+      "id": "P4",
+      "question": "Technical skills to run AI solutions are available",
+      "score": 2,
+      "target": 3
+     },
+     {
+      "evidence": "Good relationship; informed about telematics after the fact in 2023, which still causes friction.",
+      "id": "P5",
+      "question": "The works council is involved early",
+      "score": 2,
+      "target": 4
+     }
+    ],
+    "name": "People & skills"
+   },
+   {
+    "id": "O",
+    "items": [
+     {
+      "evidence": "Work instructions per customer in Word files on a shared drive, 340 files, a third older than 3 years.",
+      "id": "O1",
+      "question": "Core processes are documented",
+      "score": 2,
+      "target": 3
+     },
+     {
+      "evidence": "Volumes and on-time delivery measured; handling time, rework and error cost not.",
+      "id": "O2",
+      "question": "Process KPIs are measured",
+      "score": 2,
+      "target": 4
+     },
+     {
+      "evidence": "Exceptions go to whoever is free; no categories, no log.",
+      "id": "O3",
+      "question": "Exceptions are handled in a defined way",
+      "score": 2,
+      "target": 3
+     },
+     {
+      "evidence": "TMS go-live in 2014 remembered as painful; no change approach since.",
+      "id": "O4",
+      "question": "There is a change management practice",
+      "score": 2,
+      "target": 3
+     },
+     {
+      "evidence": "Monthly operations meeting with improvement actions; strong pragmatism on the floor.",
+      "id": "O5",
+      "question": "Teams improve their own work",
+      "score": 3,
+      "target": 4
+     }
+    ],
+    "name": "Process & operations"
+   }
+  ],
+  "scale": {
+   "1": "Exploring: no structure, individual initiatives",
+   "2": "Experimenting: some pilots and awareness, no common approach",
+   "3": "Formalising: policy, ownership and repeatable practice in place",
+   "4": "Scaling: several AI solutions in production, measured and governed",
+   "5": "Transforming: AI is part of how the company plans, works and competes"
+  },
+  "target_overall": 3.5
+ },
+ "risks": {
+  "risks": [
+   {
+    "category": "Adoption",
+    "controls": [
+     "ISO/IEC 42001 7.3 Awareness"
+    ],
+    "id": "RK-01",
+    "impact": 4,
+    "likelihood": 3,
+    "mitigation": "Co-designed review queue; pilot clerks as champions; written commitment on no redundancies; weekly numbers shared with the team.",
+    "owner": "Doc desk team lead",
+    "risk": "Clerks distrust the system and re-key documents anyway, or work around it"
+   },
+   {
+    "category": "Quality",
+    "controls": [
+     "ISO/IEC 27001 A.8.16 Monitoring activities",
+     "ISO/IEC 42001 9.1 Monitoring, measurement, analysis and evaluation"
+    ],
+    "id": "RK-02",
+    "impact": 4,
+    "likelihood": 2,
+    "mitigation": "Error budget of 1%; validation and cross-document rules; 5% random audit of straight-through documents; escape rate on the KPI dashboard; release gate before every change.",
+    "owner": "COO",
+    "risk": "Wrong data reaches the TMS without a flag (error escape)"
+   },
+   {
+    "category": "Delivery",
+    "controls": [
+     "ISO/IEC 27001 A.5.20 Addressing information security within supplier agreements"
+    ],
+    "id": "RK-03",
+    "impact": 3,
+    "likelihood": 4,
+    "mitigation": "Vendor engaged in week 1; file-drop import as fallback (already supported for bookings).",
+    "owner": "IT manager",
+    "risk": "TMS vendor delivers the document API late"
+   },
+   {
+    "category": "Technology",
+    "controls": [
+     "ISO/IEC 27001 A.8.32 Change management",
+     "ISO/IEC 42001 A.6 AI system life cycle"
+    ],
+    "id": "RK-04",
+    "impact": 3,
+    "likelihood": 3,
+    "mitigation": "Provider behind the orchestration layer; pinned model version; evaluation gate runs before any switch; offline rules provider as degraded mode.",
+    "owner": "IT manager",
+    "risk": "Model provider changes or retires the model; behaviour changes"
+   },
+   {
+    "category": "Privacy & security",
+    "controls": [
+     "ISO/IEC 27001 A.5.23 Information security for use of cloud services",
+     "ISO/IEC 27001 A.5.34 Privacy and protection of PII",
+     "GDPR Art. 28"
+    ],
+    "id": "RK-05",
+    "impact": 4,
+    "likelihood": 2,
+    "mitigation": "Commercial terms reviewed: no training on inputs, retention limits, processing region; vendor assessed in the ISMS supplier process; data minimised (OCR text only, no attachments beyond the document).",
+    "owner": "DPO",
+    "risk": "Customer data is retained or used for training by the AI vendor, or processed outside agreed regions"
+   },
+   {
+    "category": "Privacy & security",
+    "controls": [
+     "ISO/IEC 27001 A.8.26 Application security requirements",
+     "OWASP Top 10 for LLM Applications: LLM01"
+    ],
+    "id": "RK-06",
+    "impact": 3,
+    "likelihood": 2,
+    "mitigation": "The model only extracts: no tools, no actions; output constrained by a JSON schema; every value re-parsed and validated by code; prompt tells the model to ignore instructions in documents.",
+    "owner": "IT manager",
+    "risk": "A document contains text that tries to steer the model (prompt injection)"
+   },
+   {
+    "category": "Value",
+    "controls": [],
+    "id": "RK-07",
+    "impact": 4,
+    "likelihood": 3,
+    "mitigation": "Cash view is the decision basis; attrition decision explicit and agreed; value tracked monthly per gate.",
+    "owner": "CFO",
+    "risk": "Freed hours are absorbed without measurable value"
+   },
+   {
+    "category": "Privacy & security",
+    "controls": [
+     "ISO/IEC 27001 A.5.10 Acceptable use of information",
+     "ISO/IEC 27001 A.8.12 Data leakage prevention",
+     "ISO/IEC 27001 A.6.3 Information security awareness, education and training"
+    ],
+    "id": "RK-08",
+    "impact": 3,
+    "likelihood": 4,
+    "mitigation": "AI policy; one sanctioned assistant inside Microsoft 365; literacy training; DLP rules for known chatbot domains.",
+    "owner": "CEO",
+    "risk": "Staff keep pasting customer data into public chatbots (shadow AI)"
+   },
+   {
+    "category": "Compliance",
+    "controls": [
+     "EU AI Act Art. 6 and Annex III",
+     "ISO/IEC 42001 6.1.4 AI system impact assessment"
+    ],
+    "id": "RK-09",
+    "impact": 5,
+    "likelihood": 2,
+    "mitigation": "AI inventory with a reclassification trigger on every scope change; UC-08 parked; works council informed of every new use case.",
+    "owner": "DPO",
+    "risk": "A use case drifts into a high-risk category (for example forecasting used to allocate work to individuals)"
+   },
+   {
+    "category": "Adoption",
+    "controls": [
+     "Belgian collective agreement no. 39 (new technologies)"
+    ],
+    "id": "RK-10",
+    "impact": 4,
+    "likelihood": 2,
+    "mitigation": "Information and consultation before go-live (week 1, 14, 30); no individual performance monitoring; jobs statement in writing.",
+    "owner": "HR",
+    "risk": "Works council objects late and stops a roll-out"
+   },
+   {
+    "category": "Delivery",
+    "controls": [],
+    "id": "RK-11",
+    "impact": 3,
+    "likelihood": 3,
+    "mitigation": "Partner support during year 1; runbook; champion paired on every change.",
+    "owner": "IT manager",
+    "risk": "Dependency on one internal developer"
+   },
+   {
+    "category": "Quality",
+    "controls": [
+     "ISO/IEC 42001 A.7 Data for AI systems"
+    ],
+    "id": "RK-12",
+    "impact": 4,
+    "likelihood": 3,
+    "mitigation": "Shadow mode on real volume before go-live; gate G2 measured on real documents, not on the pilot sets; real labelled set built during review.",
+    "owner": "COO",
+    "risk": "Pilot results do not hold on real documents"
+   },
+   {
+    "category": "Value",
+    "controls": [],
+    "id": "RK-13",
+    "impact": 2,
+    "likelihood": 1,
+    "mitigation": "Cost per document tracked in the orchestration layer; budget alert at 150% of plan.",
+    "owner": "IT manager",
+    "risk": "Model usage costs more than planned"
+   },
+   {
+    "category": "Quality",
+    "controls": [
+     "EU AI Act Art. 14 (human oversight, as good practice)",
+     "ISO/IEC 42001 A.9 Use of AI systems"
+    ],
+    "id": "RK-14",
+    "impact": 3,
+    "likelihood": 3,
+    "mitigation": "Flagged fields need an explicit confirm or correct; reasons shown; audit sample includes reviewed documents; review speed outliers discussed, not punished.",
+    "owner": "Doc desk team lead",
+    "risk": "Reviewers approve flagged fields without looking (automation bias)"
+   }
+  ],
+  "scale": "Likelihood and impact 1-5; score = likelihood x impact; 12 and above is red."
+ },
+ "roadmap": {
+  "gates": [
+   {
+    "criteria": [
+     "Integration design signed by IT and the TMS vendor",
+     "KPI dashboard live with the pre-AI baseline",
+     "AI policy approved"
+    ],
+    "id": "G1",
+    "name": "Build ready",
+    "week": 4
+   },
+   {
+    "criteria": [
+     "Shadow mode on real documents: straight-through rate at least 60%",
+     "Error escape rate at most 1% on the audited sample",
+     "Clerks trained; review queue in daily use"
+    ],
+    "id": "G2",
+    "name": "First go-live",
+    "week": 13
+   },
+   {
+    "criteria": [
+     "All five document types live",
+     "Value realised tracked monthly against the business case",
+     "UC-09 pilot measured; UC-02 go/no-go"
+    ],
+    "id": "G3",
+    "name": "UC-01 complete, wave 2 decision",
+    "week": 26
+   },
+   {
+    "criteria": [
+     "UC-09 and UC-02 in production",
+     "Business cases for UC-03 and UC-07 reviewed"
+    ],
+    "id": "G4",
+    "name": "Wave 2 live",
+    "week": 39
+   },
+   {
+    "criteria": [
+     "Readiness re-assessed",
+     "Portfolio refreshed",
+     "Year-2 budget proposed"
+    ],
+    "id": "G5",
+    "name": "Annual review",
+    "week": 52
+   }
+  ],
+  "items": [
+   {
+    "deliverable": "Pipeline posting to the TMS import API, with retries and an audit log",
+    "end": 8,
+    "id": "R01",
+    "owner": "IT manager",
+    "start": 1,
+    "stream": "pilot",
+    "title": "Production build and TMS integration"
+   },
+   {
+    "deliverable": "Queue that shows flagged fields, reasons and the source document side by side",
+    "end": 10,
+    "id": "R02",
+    "owner": "Doc desk team lead",
+    "start": 3,
+    "stream": "pilot",
+    "title": "Review queue in the doc desk's tooling"
+   },
+   {
+    "deliverable": "Pipeline runs next to the clerks; differences labelled; first real evaluation set",
+    "end": 11,
+    "id": "R03",
+    "owner": "Doc desk team lead",
+    "start": 7,
+    "stream": "pilot",
+    "title": "Shadow mode on real documents"
+   },
+   {
+    "deliverable": "Two document types straight-through within the error budget",
+    "end": 13,
+    "id": "R04",
+    "owner": "COO",
+    "start": 12,
+    "stream": "pilot",
+    "title": "Go-live: bills of lading and packing lists"
+   },
+   {
+    "deliverable": "All five document types live",
+    "end": 20,
+    "id": "R05",
+    "owner": "COO",
+    "start": 14,
+    "stream": "pilot",
+    "title": "Go-live: invoices, CMRs, delivery orders"
+   },
+   {
+    "deliverable": "Straight-through rate, escapes from the audit sample, review time, value realised",
+    "end": 5,
+    "id": "R06",
+    "owner": "CFO",
+    "start": 2,
+    "stream": "pilot",
+    "title": "Business KPI dashboard"
+   },
+   {
+    "deliverable": "Reuses the document pipeline; measured on 3 months of carrier invoices",
+    "end": 24,
+    "id": "R07",
+    "owner": "CFO",
+    "start": 15,
+    "stream": "waves",
+    "title": "UC-09 carrier invoice audit: pilot"
+   },
+   {
+    "deliverable": "Drafts for status questions, agent sends; measured on handling time and quality",
+    "end": 30,
+    "id": "R08",
+    "owner": "Customer service lead",
+    "start": 18,
+    "stream": "waves",
+    "title": "UC-02 customer e-mail triage: pilot"
+   },
+   {
+    "deliverable": "Both live, monitored on the same platform",
+    "end": 39,
+    "id": "R09",
+    "owner": "COO",
+    "start": 27,
+    "stream": "waves",
+    "title": "UC-09 and UC-02 to production"
+   },
+   {
+    "deliverable": "Pilot on 300 past classifications, declarant in the loop",
+    "end": 46,
+    "id": "R10",
+    "owner": "Customs lead",
+    "start": 30,
+    "stream": "waves",
+    "title": "UC-03 customs classification: discovery and pilot"
+   },
+   {
+    "deliverable": "Clean location data; buy decision between 3 planning tools",
+    "end": 48,
+    "id": "R11",
+    "owner": "Transport manager",
+    "start": 32,
+    "stream": "waves",
+    "title": "UC-07 route optimisation: data clean-up and vendor selection"
+   },
+   {
+    "deliverable": "Model gateway, prompt registry, logging, evaluation harness, cost tracking",
+    "end": 12,
+    "id": "R12",
+    "owner": "IT manager",
+    "start": 1,
+    "stream": "platform",
+    "title": "AI orchestration layer v1"
+   },
+   {
+    "deliverable": "Documented endpoint for document records; file-drop fallback",
+    "end": 6,
+    "id": "R13",
+    "owner": "IT manager",
+    "start": 1,
+    "stream": "platform",
+    "title": "TMS document API agreed with the vendor"
+   },
+   {
+    "deliverable": "Named owners, change process, monthly quality report",
+    "end": 8,
+    "id": "R14",
+    "owner": "COO",
+    "start": 2,
+    "stream": "platform",
+    "title": "Data owners for customer, location and document data"
+   },
+   {
+    "deliverable": "Real documents, labelled during review, refreshed quarterly",
+    "end": 40,
+    "id": "R15",
+    "owner": "Doc desk team lead",
+    "start": 8,
+    "stream": "platform",
+    "title": "Labelled evaluation sets per use case"
+   },
+   {
+    "deliverable": "One-page policy, approved tools list, rules for customer data",
+    "end": 4,
+    "id": "R16",
+    "owner": "CEO",
+    "start": 1,
+    "stream": "governance",
+    "title": "AI policy and acceptable use"
+   },
+   {
+    "deliverable": "Register of AI systems with risk tier, owner and review date; quarterly refresh",
+    "end": 6,
+    "id": "R17",
+    "owner": "DPO",
+    "start": 2,
+    "stream": "governance",
+    "title": "AI inventory and EU AI Act classification"
+   },
+   {
+    "deliverable": "AI suppliers assessed, risk register and Statement of Applicability updated",
+    "end": 16,
+    "id": "R18",
+    "owner": "IT manager",
+    "start": 4,
+    "stream": "governance",
+    "title": "AI in the ISO/IEC 27001 ISMS"
+   },
+   {
+    "deliverable": "DPIA signed before the UC-02 pilot touches real e-mails",
+    "end": 20,
+    "id": "R19",
+    "owner": "DPO",
+    "start": 14,
+    "stream": "governance",
+    "title": "DPIA for customer e-mail triage"
+   },
+   {
+    "deliverable": "All staff 90 minutes; users half a day; builders two days",
+    "end": 20,
+    "id": "R20",
+    "owner": "HR",
+    "start": 3,
+    "stream": "people",
+    "title": "AI literacy programme (three tiers)"
+   },
+   {
+    "deliverable": "Plan presented before go-live; agreement on no redundancies and attrition",
+    "end": 4,
+    "id": "R21",
+    "owner": "HR",
+    "start": 1,
+    "stream": "people",
+    "title": "Works council information and consultation"
+   },
+   {
+    "deliverable": "One approved assistant inside Microsoft 365; covers drafting and knowledge needs (UC-04, UC-10) without custom builds",
+    "end": 24,
+    "id": "R22",
+    "owner": "IT manager",
+    "start": 8,
+    "stream": "people",
+    "title": "Sanctioned AI assistant for all office staff"
+   },
+   {
+    "deliverable": "Eight champions, two hours a week, monthly show-and-tell",
+    "end": 52,
+    "id": "R23",
+    "owner": "COO",
+    "start": 6,
+    "stream": "people",
+    "title": "AI champions network"
+   },
+   {
+    "deliverable": "Updated scorecard, ranked portfolio, year-2 plan",
+    "end": 52,
+    "id": "R24",
+    "owner": "CEO",
+    "start": 48,
+    "stream": "governance",
+    "title": "Readiness re-assessment and portfolio refresh"
+   }
+  ],
+  "start": "Week 1 = first week after the board decision",
+  "streams": [
+   {
+    "id": "pilot",
+    "name": "UC-01 to production"
+   },
+   {
+    "id": "waves",
+    "name": "Next use cases"
+   },
+   {
+    "id": "platform",
+    "name": "Platform & data"
+   },
+   {
+    "id": "governance",
+    "name": "Governance & compliance"
+   },
+   {
+    "id": "people",
+    "name": "People & change"
+   }
+  ],
+  "waves": {
+   "After data foundations": [
+    "UC-05",
+    "UC-06"
+   ],
+   "Covered by the sanctioned assistant": [
+    "UC-04",
+    "UC-10"
+   ],
+   "Parked": [
+    "UC-08"
+   ],
+   "Wave 1 (weeks 1-20)": [
+    "UC-01"
+   ],
+   "Wave 2 (weeks 15-39)": [
+    "UC-09",
+    "UC-02"
+   ],
+   "Wave 3 (weeks 30-52)": [
+    "UC-03",
+    "UC-07"
+   ]
+  }
+ },
+ "stakeholders": [
+  {
+   "concern": "Wants a plan the board believes; afraid of an expensive science project.",
+   "engagement": "Sponsor; steering every 4 weeks; presents at the board.",
+   "id": "CEO",
+   "influence": 5,
+   "interest": 4,
+   "name": "Ilse Vandamme",
+   "needs": "A decision in euros with the risks named.",
+   "role": "CEO, second-generation owner",
+   "stance": "supporter"
+  },
+  {
+   "concern": "Has seen 'efficiency' that never reached the P&L.",
+   "engagement": "Owns the business case and KPI dashboard; signs off gates.",
+   "id": "CFO",
+   "influence": 5,
+   "interest": 3,
+   "name": "Koen De Clercq",
+   "needs": "Cash view separate from capacity view; monthly value tracking.",
+   "role": "CFO",
+   "stance": "sceptic"
+  },
+  {
+   "concern": "Cannot hire clerks fast enough; error costs show up in her budget.",
+   "engagement": "Owns UC-01; weekly pilot review.",
+   "id": "COO",
+   "influence": 4,
+   "interest": 5,
+   "name": "Nadia El Amrani",
+   "needs": "Something that works on Monday morning, not a slide.",
+   "role": "COO",
+   "stance": "champion"
+  },
+  {
+   "concern": "Team fears for jobs; worried about errors he will be blamed for.",
+   "engagement": "Product owner for UC-01; co-designed the review queue.",
+   "id": "DOC",
+   "influence": 3,
+   "interest": 5,
+   "name": "Bart Lievens",
+   "needs": "A say in the review flow; a clear rule on who is accountable.",
+   "role": "Doc desk team lead",
+   "stance": "neutral"
+  },
+  {
+   "concern": "Declarations are legally hers; AI must not create liability.",
+   "engagement": "Owner UC-03; AI champion.",
+   "id": "CUS",
+   "influence": 3,
+   "interest": 4,
+   "name": "Sofie Verhaeghe",
+   "needs": "Declarant in the loop, audit trail.",
+   "role": "Customs lead",
+   "stance": "champion"
+  },
+  {
+   "concern": "Six people, already full; the TMS vendor is slow.",
+   "engagement": "Owns integration and the orchestration layer.",
+   "id": "IT",
+   "influence": 4,
+   "interest": 4,
+   "name": "Pieter Maes",
+   "needs": "A platform, not ten tools; support from the partner during build.",
+   "role": "IT manager",
+   "stance": "neutral"
+  },
+  {
+   "concern": "E-mail volume grows faster than the team.",
+   "engagement": "Owner UC-02.",
+   "id": "CS",
+   "influence": 2,
+   "interest": 4,
+   "name": "Lotte Claeys",
+   "needs": "Drafts that sound like Wendelkaai, not like a robot.",
+   "role": "Customer service lead",
+   "stance": "supporter"
+  },
+  {
+   "concern": "The 2023 telematics roll-out was announced too late.",
+   "engagement": "Owns literacy programme and works council track.",
+   "id": "HR",
+   "influence": 3,
+   "interest": 3,
+   "name": "Hilde Peeters",
+   "needs": "Early information; a clear statement on jobs.",
+   "role": "HR manager and works council liaison",
+   "stance": "neutral"
+  },
+  {
+   "concern": "Customer e-mails contain personal data; vendor terms.",
+   "engagement": "Owns AI inventory and DPIA.",
+   "id": "DPO",
+   "influence": 3,
+   "interest": 3,
+   "name": "Joris Vermeulen",
+   "needs": "Inventory, DPIA where needed, vendor data terms.",
+   "role": "External DPO",
+   "stance": "neutral"
+  },
+  {
+   "concern": "Competitors pitch 'AI' to his customers.",
+   "engagement": "Owner UC-10; informed monthly.",
+   "id": "SAL",
+   "influence": 3,
+   "interest": 2,
+   "name": "Wim Desmet",
+   "needs": "A story for customers; faster quotes.",
+   "role": "Sales director",
+   "stance": "supporter"
+  },
+  {
+   "concern": "Not in wave 1; wants forecasting later.",
+   "engagement": "Data owner for warehouse data; informed quarterly.",
+   "id": "WH",
+   "influence": 2,
+   "interest": 2,
+   "name": "Ahmed Benali",
+   "needs": "To know when it is his turn and what data to fix first.",
+   "role": "Warehouse manager",
+   "stance": "neutral"
+  },
+  {
+   "concern": "Jobs, monitoring of employees, being informed late.",
+   "engagement": "Informed and consulted at weeks 1, 14 and 30; UC-08 parked.",
+   "id": "WC",
+   "influence": 4,
+   "interest": 4,
+   "name": "Works council",
+   "needs": "Information before decisions; no individual monitoring.",
+   "role": "Employee representatives",
+   "stance": "sceptic"
+  }
+ ]
+}

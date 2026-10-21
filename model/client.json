@@ -1,0 +1,24 @@
+{
+ "name": "Wendelkaai Logistics NV",
+ "fictional": true,
+ "location": "Zeebrugge (Brugge), Belgium",
+ "founded": 1987,
+ "ownership": "Family-owned, second generation",
+ "employees": 250,
+ "revenue_eur_m": 78,
+ "services": ["Container and ro-ro forwarding", "Customs brokerage", "Warehousing (2 sites, 40,000 m²)", "Road transport (60 own trucks plus subcontractors)"],
+ "systems": ["On-premise TMS (2014, vendor-supported, import API)", "ERP for finance (2016)", "Microsoft 365 with Entra ID", "Customs declaration software", "Shared mailboxes and Excel"],
+ "doc_desk_fte": 11,
+ "it_team_fte": 6,
+ "certifications": ["ISO 9001", "ISO/IEC 27001:2022 (scope: IT services and customs data, since 2024)", "AEO-F (authorised economic operator)"],
+ "brief": "Our board wants an AI plan by the end of the year. Competitors say they use AI. Where do we start, what is it worth, and how do we do it without getting into trouble?",
+ "engagement": {
+  "phases": [
+   {"name": "Discovery sprint", "weeks": "1-4", "output": "Readiness assessment, use-case portfolio, business case, roadmap"},
+   {"name": "Applied AI pilot", "weeks": "5-11", "output": "Working freight document pilot, measured against agreed criteria"},
+   {"name": "Board decision", "weeks": "12", "output": "Go/no-go for production and wave 2"}
+  ],
+  "team": ["AI Transformation Expert (lead, workshops, business case, roadmap)", "AI engineer (pilot build, 7 weeks)", "Service designer (2 workshops, review flow)"],
+  "client_team": ["COO (sponsor for the pilot)", "Doc desk team lead (product owner)", "IT manager", "Two doc desk clerks (pilot users, 4h/week)"]
+ }
+}

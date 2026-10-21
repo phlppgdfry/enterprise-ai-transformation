@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Pilot gate, model, documents, workbooks, site
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Pilot data matches its recipe
+        working-directory: 06-applied-ai/prototype
+        run: python scripts/make_data.py --check
+      - name: Pilot unit tests
+        working-directory: 06-applied-ai/prototype
+        run: python -m unittest discover -s tests -t . -v
+      - name: Pilot release gate
+        working-directory: 06-applied-ai/prototype
+        run: python -m evals.run --gate
+      - name: Evaluation report is committed and current
+        run: git diff --exit-code -- 06-applied-ai/prototype/evals/
+      - name: Every number, table, chart, workbook and site file matches the model
+        run: python scripts/build.py --check
+      - name: Model, claims, workbook formulas and browser model
+        run: python -m unittest discover -s tests -t . -v
+      - name: Browser model matches the Python model
+        run: node scripts/check_js.js
+      - name: Relative links resolve
+        run: python scripts/check_links.py
+      - name: Rendered media are present
+        run: |
+          test -s 08-executive-presentation/board-presentation.pdf
+          test -s site/media/social-card.png
+          test -s site/media/pilot-tour.gif

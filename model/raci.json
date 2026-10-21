@@ -1,0 +1,18 @@
+{"roles": ["CEO", "CFO", "COO", "Doc desk lead", "IT manager", "Customs lead", "HR", "DPO", "Partner team", "AI champions"],
+ "activities": [
+  {"activity": "Approve roadmap, budget and gates", "CEO": "A", "CFO": "R", "COO": "C", "IT manager": "C", "Partner team": "C"},
+  {"activity": "Own UC-01 outcome and value", "COO": "A", "Doc desk lead": "R", "CFO": "C", "IT manager": "C", "Partner team": "C"},
+  {"activity": "Set error budget and acceptance criteria", "COO": "A", "Doc desk lead": "R", "CFO": "C", "Partner team": "C", "DPO": "I"},
+  {"activity": "Build and integrate the pipeline", "IT manager": "A", "Partner team": "R", "Doc desk lead": "C"},
+  {"activity": "Run the review queue every day", "Doc desk lead": "A", "AI champions": "R", "COO": "I"},
+  {"activity": "Change prompts, models or thresholds", "IT manager": "A", "Partner team": "R", "Doc desk lead": "C", "COO": "I"},
+  {"activity": "Respond to an AI-caused incident", "IT manager": "A", "Doc desk lead": "R", "COO": "C", "DPO": "C", "CEO": "I"},
+  {"activity": "Maintain AI policy", "CEO": "A", "DPO": "R", "IT manager": "C", "HR": "C", "AI champions": "I"},
+  {"activity": "Keep the AI inventory and AI Act classification", "DPO": "A", "IT manager": "R", "Partner team": "C", "CEO": "I"},
+  {"activity": "Run DPIAs", "DPO": "A", "IT manager": "R", "COO": "C"},
+  {"activity": "Assess AI vendors in the ISMS", "IT manager": "A", "DPO": "C", "Partner team": "C"},
+  {"activity": "Inform and consult the works council", "HR": "A", "CEO": "R", "COO": "C"},
+  {"activity": "Deliver AI literacy training", "HR": "A", "Partner team": "R", "AI champions": "R", "IT manager": "C"},
+  {"activity": "Report KPIs and value realised", "CFO": "A", "Doc desk lead": "R", "COO": "C", "CEO": "I"},
+  {"activity": "Refresh the use-case portfolio", "CEO": "A", "COO": "R", "Partner team": "R", "Customs lead": "C", "CFO": "C", "AI champions": "C"}
+ ]}

@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Readiness Assessment</title>
+<meta name="description" content="Wendelkaai's AI readiness: 30 items in six dimensions, scored on evidence, with the gaps that block the top use cases.">
+<link rel="icon" href="../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600&family=JetBrains+Mono:wght@500;600&display=swap">
+<link rel="stylesheet" href="../assets/style.css">
+<style>
+  .dim summary { cursor: pointer; display: flex; justify-content: space-between; gap: 12px; font-weight: 600; list-style: none; }
+  .dim summary::-webkit-details-marker { display: none; }
+  .bar { height: 8px; background: var(--surface-2); border-radius: 4px; position: relative; margin: 8px 0 2px; }
+  .bar i { position: absolute; top: 0; bottom: 0; left: 0; border-radius: 4px; background: var(--s1); }
+  .bar b { position: absolute; top: -3px; width: 2px; height: 14px; background: var(--s2); }
+  .item { padding: 10px 0; border-top: 1px solid var(--line); font-size: 13.5px; }
+  .item .q { font-weight: 600; }
+</style>
+</head>
+<body data-root=".." data-page="readiness/">
+<main class="wrap">
+  <div class="eyebrow">Phase 2 · AI readiness</div>
+  <h1>Ready to use AI, not yet to govern it</h1>
+  <p class="lede">Overall <strong><!--n:rd.overall-->1.9<!--/n--></strong> of 5 (<!--n:rd.level-->Experimenting<!--/n-->), target <!--n:rd.target-->3.5<!--/n--> in 12 months. Thirty items, each scored on evidence by the consultant and the COO separately, then reconciled.</p>
+  <section class="grid g2">
+    <div class="card">
+      <div class="legend"><span><i class="dot" style="background:var(--s1)"></i>Today</span><span><i class="dot" style="background:var(--s2)"></i>Target in 12 months</span></div>
+      <svg id="radar" class="chart" viewBox="0 0 520 440" role="img" aria-label="Readiness radar chart"></svg>
+    </div>
+    <div class="card">
+      <h3>Levels</h3>
+      <div id="levels"></div>
+    </div>
+  </section>
+  <section>
+    <h2>Six dimensions</h2>
+    <p class="muted">Open a dimension to see the evidence behind each score. Blue bar: today; orange tick: target.</p>
+    <div class="grid g2" id="dims"></div>
+  </section>
+  <section>
+    <h2>The gaps that matter first</h2>
+    <p class="muted">Priority = gap × (1 + number of top-five use cases that depend on it).</p>
+    <div class="card table-wrap"><table id="gaps"></table></div>
+  </section>
+</main>
+<script src="../assets/app.js"></script>
+<script>
+loadJSON("model").then(({ readiness: rd }) => {
+  const el = document.getElementById("radar"), cx = 260, cy = 220, R = 150, n = rd.dimensions.length;
+  const pt = (i, v) => { const a = -Math.PI / 2 + 2 * Math.PI * i / n; return [cx + R * v / 5 * Math.cos(a), cy + R * v / 5 * Math.sin(a)]; };
+  for (let l = 1; l <= 5; l++) {
+    svg("polygon", { points: rd.dimensions.map((_, i) => pt(i, l).join(",")).join(" "), fill: "none", stroke: "var(--line)" }, el);
+    svg("text", { x: cx + 4, y: cy - R * l / 5 - 3, "font-size": 10 }, el).textContent = l;
+  }
+  for (const [key, color, dash, op] of [["target", "var(--s2)", "6 4", 0], ["current", "var(--s1)", "", 0.18]]) {
+    svg("polygon", { points: rd.dimensions.map((d, i) => pt(i, d[key]).join(",")).join(" "), fill: color, "fill-opacity": op, stroke: color, "stroke-width": 2, "stroke-dasharray": dash }, el);
+    rd.dimensions.forEach((d, i) => {
+      const [x, y] = pt(i, d[key]);
+      const c = svg("circle", { cx: x, cy: y, r: 9, fill: "transparent" }, el);
+      svg("circle", { cx: x, cy: y, r: 4, fill: color, "pointer-events": "none" }, el);
+      c.addEventListener("mousemove", (e) => tip.show(e, `<b>${esc(d.name)}</b><br>Today ${d.current.toFixed(1)} · target ${d.target.toFixed(1)}`));
+      c.addEventListener("mouseleave", tip.hide);
+    });
+  }
+  rd.dimensions.forEach((d, i) => {
+    const a = -Math.PI / 2 + 2 * Math.PI * i / n, x = cx + (R + 22) * Math.cos(a), y = cy + (R + 22) * Math.sin(a);
+    const anchor = Math.abs(Math.cos(a)) < 0.3 ? "middle" : Math.cos(a) > 0 ? "start" : "end";
+    const t = svg("text", { x, y, "text-anchor": anchor, "font-size": 12.5, "font-weight": 600, class: "ink" }, el);
+    t.textContent = d.name;
+    svg("text", { x, y: y + 15, "text-anchor": anchor, "font-size": 11.5 }, el).textContent = `${d.current.toFixed(1)} → ${d.target.toFixed(1)}`;
+  });
+  document.getElementById("levels").innerHTML = Object.entries(rd.scale).map(([k, v]) =>
+    `<div class="item"><span class="q">${k}. ${esc(v.split(":")[0])}</span><br><span class="muted">${esc(v.split(":").slice(1).join(":"))}</span></div>`).join("");
+  document.getElementById("dims").innerHTML = rd.raw.map((d) => {
+    const s = rd.dimensions.find((x) => x.id === d.id);
+    return `<details class="card dim"><summary><span>${esc(d.name)}</span><span class="mono">${s.current.toFixed(1)} → ${s.target.toFixed(1)}</span></summary>
+      <div class="bar"><i style="width:${s.current / 5 * 100}%"></i><b style="left:${s.target / 5 * 100}%"></b></div>
+      ${d.items.map((it) => `<div class="item"><div class="q">${it.id} · ${esc(it.question)} <span class="pill">${it.score} → ${it.target}</span></div><div class="muted">${esc(it.evidence)}</div></div>`).join("")}
+    </details>`;
+  }).join("");
+  document.getElementById("gaps").innerHTML = `<tr><th>#</th><th>Gap</th><th>Dimension</th><th class="num">Today → target</th><th>Needed by</th><th class="num">Priority</th></tr>` +
+    rd.gaps.slice(0, 10).map((g) => `<tr><td class="mono">${g.id}</td><td>${esc(g.question)}</td><td>${esc(g.dimension)}</td><td class="num">${g.current} → ${g.target}</td><td>${g.needed_by.join(", ") || "–"}</td><td class="num">${g.priority}</td></tr>`).join("");
+});
+</script>
+</body>
+</html>

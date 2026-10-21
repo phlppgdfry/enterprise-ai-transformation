@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+.DS_Store
+.venv/
+06-applied-ai/prototype/evals/report-claude.*
