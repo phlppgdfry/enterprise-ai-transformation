@@ -1,6 +1,6 @@
 # Five-minute walkthrough for the CEO (script)
 
-A recorded walkthrough in which the consultant presents the findings to the (fictional) CEO, using the deck and the live review queue. Recording it is on the candidate's list; this is the script. Target: 5:00, spoken at about 140 words a minute.
+A recorded walkthrough in which the consultant presents the findings to the (fictional) CEO, using the deck and the live review queue. The screen part is generated: `python scripts/record_walkthrough.py OUT_DIR` records the deck and the pilot demo on this timing and writes subtitles (`walkthrough.srt`) timed on the recording; add `--captions` for a version with the text burned in. The voice-over is recorded by the presenter. Target: 5:00, spoken at about 140 words a minute.
 
 | Time | Screen | What to say |
 |---|---|---|

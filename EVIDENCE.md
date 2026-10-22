@@ -21,6 +21,7 @@ What in this repository was executed, what was simulated, and what was not done.
 | What | How |
 |---|---|
 | Board deck PDF, social card, pilot GIF | `python scripts/render_media.py` (Playwright + local Chrome + ffmpeg) |
+| Screen recording of the 5-minute walkthrough, with subtitles | `python scripts/record_walkthrough.py OUT_DIR [--captions]`; not committed |
 | BPMN files checked in bpmn-js | Opened in the bpmn.io viewer during development; not part of CI |
 
 ## Simulated
@@ -38,7 +39,7 @@ What in this repository was executed, what was simulated, and what was not done.
 - No call to the Claude API (it costs money per document and needs credentials).
 - No production build: mailbox connector, OCR hand-off, TMS integration, review UI beyond the demo, monitoring.
 - No legal review of the EU AI Act, GDPR and labour-law statements.
-- The five-minute CEO walkthrough is a script; it has not been recorded.
+- The five-minute CEO walkthrough has a generated screen recording, but no voice-over by the presenter yet.
 
 ## Iterations that are part of the record
 
